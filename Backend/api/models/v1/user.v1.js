@@ -26,21 +26,30 @@ var validateLocalStrategyPassword = function(password) {
  * User Schema
  */
 var UserSchema = new Schema({
-	firstName: {
+	firstname: {
 		type: String,
 		trim: true,
 		default: '',
-		validate: [validateLocalStrategyProperty, 'Please fill in your first name']
+		validate: [validateLocalStrategyProperty, 'Entrez votre prénom']
 	},
-	lastName: {
+	name: {
 		type: String,
 		trim: true,
 		default: '',
-		validate: [validateLocalStrategyProperty, 'Please fill in your last name']
+		validate: [validateLocalStrategyProperty, 'Entrez votre nom']
 	},
-	displayName: {
+	date: {
 		type: String,
-		trim: true
+		trim: true,
+		default: '',
+		validate: [validateLocalStrategyProperty, 'Entrez votre date de naissance']
+	},
+	username: {
+		type: String,
+		trim: true,
+		default: '',
+		validate: [validateLocalStrategyProperty, 'Entrez un pseudo valide']
+	
 	},
 	email: {
 		type: String,
@@ -49,17 +58,12 @@ var UserSchema = new Schema({
 		validate: [validateLocalStrategyProperty, 'Please fill in your email'],
 		match: [/.+\@.+\..+/, 'Please fill a valid email address']
 	},
-	username: {
-		type: String,
-		unique: 'testing error message',
-		required: 'Please fill in a username',
-		trim: true
-	},
 	password: {
 		type: String,
 		default: '',
 		validate: [validateLocalStrategyPassword, 'Password should be longer']
 	},
+
 	salt: {
 		type: String
 	},
@@ -158,7 +162,7 @@ UserSchema.statics.findUniqueUsername = function(username, suffix, callback) {
 };
 
 UserSchema.statics.canCreate = function(user) {
-	return _.intersection(user.roles, ['admin']).length > 0;
+	return true; //_.intersection(user.roles, ['admin']).length > 0;
 }
 
 UserSchema.statics.canRead = function(user) {

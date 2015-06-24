@@ -54,26 +54,6 @@ function authenticate(req, res, next) {
 	})(req, res, next);
 }
 
-function authenticateWithoutPassword(req, res, next) {
-	var User = req.schema;
-
-	User.findOne({
-		username: req.body.username
-	}, function(err, user) {
-		if (err) {
-			console.log(err)
-			return res.sendStatus(500);
-		}
-		if (!user) {
-			return res.status(400).send({
-				message: 'Utilisateur inconnu'
-			});
-
-		}
-
-		sendToken(req, res, user);
-	});
-}
 
 function getPassport(User) {
 	passport.use(new LocalStrategy({
@@ -81,10 +61,11 @@ function getPassport(User) {
 			passwordField: 'password'
 		},
 		function(username, password, done) {
-			console.log('no password', password)
+
 			User.findOne({
 				username: username
 			}, function(err, user) {
+				console.log(err,user)
 				if (err) {
 					return done(err);
 				}
@@ -105,13 +86,11 @@ function getPassport(User) {
 }
 
 exports.signin = function(req, res, next) {
+
 	ressourceManager.injectSchema(req, res, function() {
-		if (_.isUndefined(req.body.password) || req.body.password === '') {
-			authenticateWithoutPassword(req, res, next);
-		} else {
+	
 			getPassport(req.schema);
 			authenticate(req, res, next);
-		}
 
 	}, 'user');
 };

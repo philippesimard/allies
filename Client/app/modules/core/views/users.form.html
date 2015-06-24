@@ -3,8 +3,7 @@
   <form ng-submit="addUser()"
 				name="userForm"
 				novalidate
-				class="row"
-				>
+				class="row">
 		
 		<div class="row">
       <md-input-container flex>
@@ -93,10 +92,15 @@
           name="password" 
           class="form-control"
           required
+          ng-blur="minlength = true"
+          ng-focus="minlength = false"
+          ng-minlength="7"
        	 	ng-model="newUser.password"/>
-
     <div ng-messages="userForm.password.$error" ng-if="showErrors">
       <div ng-message="required">Ce champs est requis.</div>
+    </div>
+    <div ng-messages="userForm.password.$error" ng-if="minlength">
+      <div ng-message="minlength">Votre mot de passe doit être d'au moins 7 caractères</div>
     </div>
 </div>
     
@@ -110,7 +114,7 @@
              ng-blur="validPassword = true"
              ng-focus="validPassword = false"
              password-verify="newUser.password"
-      			 ng-model="newUser.confirmPassword" />
+      			 ng-model="newUser.confirmPassword"/>
 
     <div ng-messages="userForm.passwordConfirm.$error" ng-if="showErrors">
       <div ng-message="required">Ce champs est requis.</div>

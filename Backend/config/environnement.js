@@ -48,8 +48,8 @@ function prepDbs(dbUrl) {
         var iamUser = new User({
           firstName: 'super',
           lastName: 'admin',
-          email: 'info@iam-apps.com',
-          username: 'iam',
+          email: 'email@example.com',
+          username: 'user',
           password: '12345678',
           roles: ['admin']
         });
