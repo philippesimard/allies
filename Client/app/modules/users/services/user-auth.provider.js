@@ -31,6 +31,8 @@ angular.module('users').provider('UserAuth',
 
         return {
 
+          config: config,
+
           login: function (credentials) {
 
             return $http.post(config.apiUrls.signin, credentials)
@@ -41,7 +43,7 @@ angular.module('users').provider('UserAuth',
                 $window.sessionStorage.token = JSON.stringify(response.data.token);
                 $window.sessionStorage.user = JSON.stringify(user);
 
-                $rootScope.$broadcast('IAMUserAuth:login:success', user);
+                $rootScope.$broadcast('UserAuth:login:success', user);
 
                 return user;
 
@@ -61,7 +63,7 @@ angular.module('users').provider('UserAuth',
                   error = 'unknown';
                 }
 
-                $rootScope.$broadcast('IAMUserAuth:login:error:' + error, response);
+                $rootScope.$broadcast('UserAuth:login:error:' + error, response);
                 deffered.reject(error);
                 return deffered.promise;
               });

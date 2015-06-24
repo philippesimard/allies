@@ -1,0 +1,51 @@
+<md-content layout-padding>
+<h2>Login utilisateur</h2>
+  <form ng-submit="login()"
+				name="loginForm"
+				novalidate
+				class="row">
+		
+		<div class="row">
+      
+  	  
+		<div class="form-group">
+      <md-input-container flex>
+    		<label for="">Email</label>
+       		<input 
+             type="email" 
+             name="email" 
+             class="form-control"
+             required
+             ng-blur="validEmail = true"
+             ng-focus="validEmail = false"
+       		   ng-model="loginInfo.username"/>
+      <div ng-messages="loginForm.email.$error" ng-if="showErrors">
+        <div ng-message="required">Ce champs est requis.</div>
+      </div>
+      <div ng-messages="loginForm.email.$error" ng-if="validEmail">
+        <div ng-message="email">Entrez un email valide</div>
+      </div>
+    </div>
+    
+
+		<div class="form-group">
+      <md-input-container flex>
+    		<label for="">Mot de passe</label>
+       	 	<input type="password" 
+          name="password" 
+          class="form-control"
+          required
+          ng-model="loginInfo.password"/>
+    <div ng-messages="loginForm.password.$error" ng-if="showErrors">
+      <div ng-message="required">Ce champs est requis.</div>
+    </div>
+    
+  </div>
+
+{{loginInfo}}
+    
+		<div layout="row" layout-align="end center">
+      <md-button md-no-ink type="submit"class="md-raised md-primary">Se connecter</md-button>
+    </div>
+  </form>
+</md-content>    

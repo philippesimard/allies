@@ -60,10 +60,10 @@ function getPassport(User) {
 			usernameField: 'username',
 			passwordField: 'password'
 		},
-		function(username, password, done) {
-
+		function(email, password, done) {
+			console.log(email)
 			User.findOne({
-				username: username
+				email: email
 			}, function(err, user) {
 				console.log(err,user)
 				if (err) {
@@ -86,6 +86,7 @@ function getPassport(User) {
 }
 
 exports.signin = function(req, res, next) {
+
 
 	ressourceManager.injectSchema(req, res, function() {
 	

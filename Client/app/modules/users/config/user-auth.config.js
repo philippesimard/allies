@@ -2,7 +2,7 @@
 
 angular.module('users').config(
 
-function ($httpProvider) {
+  function ($httpProvider) {
 
     $httpProvider.interceptors.push(
       function ($q, $window, $rootScope) {
@@ -33,34 +33,16 @@ function ($httpProvider) {
 
 angular.module('users').run(
 
-  function ($rootScope, UserAuth, $state, $location) {
-
-    function goToLogin(toParams) {
-      $state.go(UserAuth.config.loginStateName, toParams);
-    }
-
-    function autoLogin(toState, toParams) {
-      UserAuth.login(UserAuth.config.autoLogin).then(function () {
-        if (toState.name === UserAuth.config.loginStateName) {
-          $location.path('/');
-        } else {
-          $state.go(toState.name, toParams);
-        }
-      });
-    }
+  function ($rootScope, UserAuth, $state) {
 
     $rootScope.$on('$stateChangeStart',
       function (event, toState, toParams) {
 
         if (!UserAuth.isAuthentified()) {
 
-          if (UserAuth.config.autoLogin) {
+          if (UserAuth.config.loginStateName && toState.name !== UserAuth.config.loginStateName) {
             event.preventDefault();
-            autoLogin(toState, toParams);
-
-          } else if (UserAuth.config.loginStateName && toState.name !== UserAuth.config.loginStateName) {
-            event.preventDefault();
-            goToLogin(toParams);
+            $state.go(UserAuth.config.loginStateName, toParams);
           }
         }
       });
