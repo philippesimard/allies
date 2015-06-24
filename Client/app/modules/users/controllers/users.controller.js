@@ -1,23 +1,46 @@
 'use strict';
 
 angular.module('users').controller('UsersController',
-  function ($scope, UserService) {
+  function ($scope, users, user, User) {
 
-    $scope.titreSection = 'Nos Bénévoles';
+    $scope.users = users;
+    $scope.user = user;
 
-    $scope.users = UserService.getUsers();
+    /*
+    User.find() // Liste utilisateurs
+    User.findOne(id) // retour un utilisateur.
 
+    User.findOne(1234567).then(function(user) {
+        user.firstname = 'MAthieu';
+        
+        user.update();
+        user.destroy();
+    });
+
+    User.create({
+      firstname: 'Steve',
+      name: 'Boisbert'
+    }).then(function(user) {
+      user === le nouvel utilisateur
+    });
+
+    */
+    
     $scope.addUser = function () {
 
       if ($scope.userForm.$invalid) {
         $scope.showErrors = true;
       } else {
 
-        UserService.addUser($scope.newUser);
+        User.create($scope.newUser).then(function(newUser) {
+          $scope.users.push(newUser);
 
-        $scope.showErrors = false;
+          $scope.showErrors = false;
 
-        $scope.newUser = undefined;
+          $scope.newUser = undefined;
+        });
+
+        
       }
 
     };
