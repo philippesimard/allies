@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- build:css styles/vendor.css -->
+  <!-- injector:bowercss -->
+  <!-- endinjector -->
+  <!-- endbuild -->
+
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+
+  <!-- build:css styles/custom.css -->
+  <!-- injector:css -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- endinjector -->
+  <!-- endbuild -->
+</head>
+
+<body>
+  <section ui-view></section>
+
+<!-- build:js scripts/vendor.js -->
+<!-- injector:bowerjs -->
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular-resource/angular-resource.js"></script>
+<script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="lib/angular-sanitize/angular-sanitize.js"></script>
+<script src="lib/angular-touch/angular-touch.js"></script>
+<script src="lib/angular-messages/angular-messages.js"></script>
+<script src="lib/angular-materialize/src/angular-materialize.js"></script>
+<!-- endinjector -->
+<!-- endbuild -->
+
+<!-- build:js scripts/custom.js -->
+<!-- injector:js -->
+<script src="js/config.js"></script>
+<script src="js/application.js"></script>
+<script src="modules/core/core.module.js"></script>
+<script src="modules/core/config/core.routes.js"></script>
+<script src="modules/core/services/users.service.js"></script>
+<script src="modules/core/controllers/home.controller.js"></script>
+<script src="modules/core/controllers/propos.controller.js"></script>
+<script src="modules/core/controllers/users.controller.js"></script>
+<!-- endinjector -->
+<!-- endbuild -->
+
+</body>
+</html>

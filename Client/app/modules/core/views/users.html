@@ -1,0 +1,95 @@
+<h1>{{ titreSection }}</h1>
+
+<ul>
+	<li ng-repeat="user in users">
+		{{ user.firstname }}
+		{{ user.name }}
+
+		
+	</li>
+<ul>
+
+
+	<form ng-submit="addUser()"
+				name="userForm"
+				novalidate
+				class="row"
+				>
+		
+		<div class="row"
+				 ng-class="{'has-error': showErrors && userForm.name.$error.required}">
+  		<label for="name">Nom</label>
+    	<input type="text"
+    		     name="name"
+    		     class="form-control"
+    		     required
+    		     ng-model="newUser.name"/>
+   		<div ng-messages="userForm.name.$error" ng-if="showErrors">
+      	<div ng-message="required" class="bg-warning">Ce champs est requis.</div>
+    	</div>
+   	</div>
+   
+
+    <div class="form-group"
+    		 ng-class="{'has-error': showErrors && userForm.firstname.$error.required}">
+  		<label for="">Prénom</label>
+      <input type="text"
+    				 name="firstname"
+    				 class="form-control"
+    				 required
+    				 ng-model="newUser.firstname"/>
+ 		</div>
+ 			<div ng-messages="userForm.firstname.$error" ng-if="showErrors">
+      <div ng-message="required">Ce champs est requis.</div>
+    </div>
+
+    <div class="form-group"
+    		 ng-class="{'has-error': showErrors && userForm.name.$error.required}">
+			<label for="">Date de naissance (aaaa-mm-jj)</label>
+    	<input type="date"
+    				 name="date"
+    				 class="form-control"
+    				 ng-model="newUser.date"/>
+ 		</div>
+   
+    <div class="form-group">
+  		<label for="">Pseudo</label>
+      <input type="text"
+      			 name="username"
+      			 class="form-control"
+      			 ng-model="newUser.username"/>
+ 		</div>
+  	  
+		<div class="form-group">
+    		<label for="">Email</label>
+       		<input type="email" name="email" class="form-control"
+       					 ng-model="newUser.email"/>
+    	</div>
+    
+
+		<div class="form-group">
+    		<label for="">Mot de passe</label>
+       	 	<input type="password" name="password" class="form-control"
+       	 				 ng-model="newUser.password"/>
+ 		</div>
+    
+		<div class="form-group">
+  		<label for="">Confirmation mot de passe</label>
+      <input type="password"
+             name="password_confirm"
+             class="form-control"
+      			 ng-model="newUser.confirmPassword" />
+  	</div>
+    
+   
+    <br/>
+   
+    
+    <br/>
+    <br/>
+   
+      <button type="submit" class="btn btn-primary">M'inscrire</button></br>
+      
+      
+      
+    </form>
