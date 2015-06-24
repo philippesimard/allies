@@ -17,11 +17,5 @@ angular.module('core').config(
       url: '/propos',
       templateUrl: 'modules/core/views/propos.html',
       controller: 'ProposController'
-    })
-
-    .state('usersForm', {
-      url: '/utilisateur/ajout',
-      templateUrl: 'modules/core/views/users.form.html',
-      controller: 'UsersController'
     });
   });
