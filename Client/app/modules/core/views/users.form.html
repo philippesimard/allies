@@ -1,0 +1,127 @@
+<md-content layout-padding>
+<h2>Nouvel utilisateur</h2>
+  <form ng-submit="addUser()"
+				name="userForm"
+				novalidate
+				class="row"
+				>
+		
+		<div class="row">
+      <md-input-container flex>
+  		<label for="name">Nom</label>
+    	<input type="text"
+    		     name="name"
+    		     class="form-control"
+    		     required
+    		     ng-model="newUser.name"/>
+   		<div ng-messages="userForm.name.$error" ng-if="showErrors">
+      	<div ng-message="required" >Ce champs est requis.</div>
+    	</div>
+   	</div>
+   
+
+    <div class="form-group"
+    		 ng-class="{'has-error': showErrors && userForm.firstname.$error.required}">
+      <md-input-container flex>
+  		<label for="">Prénom</label>
+      <input type="text"
+    				 name="firstname"
+    				 class="form-control"
+    				 required
+    				 ng-model="newUser.firstname"/>
+ 		
+      <div ng-messages="userForm.firstname.$error" ng-if="showErrors">
+      <div ng-message="required">Ce champs est requis.</div>
+    </div>
+ 			
+    </div>
+
+    <div class="form-group"
+    		 ng-class="{'has-error': showErrors && userForm.name.$error.required}">
+      <md-input-container flex>
+			<label for="">Date de naissance</label>
+    	<input type="date"
+    				 name="date"
+    				 class="form-control"
+             required
+    				 ng-model="newUser.date"/>
+
+    <div ng-messages="userForm.date.$error" ng-if="showErrors">
+      <div ng-message="required">Ce champs est requis.</div>
+ 		</div>
+    </div>
+   
+    <div class="form-group">
+      <md-input-container flex>
+  		<label for="">Pseudo</label>
+      <input type="text"
+      			 name="username"
+      			 class="form-control"
+             required
+      			 ng-model="newUser.username"/>
+
+
+    <div ng-messages="userForm.username.$error" ng-if="showErrors">
+      <div ng-message="required">Ce champs est requis.</div>
+    </div>
+ 		</div>
+  	  
+		<div class="form-group">
+      <md-input-container flex>
+    		<label for="">Email</label>
+       		<input 
+             type="email" 
+             name="email" 
+             class="form-control"
+             required
+             ng-blur="validEmail = true"
+             ng-focus="validEmail = false"
+       		   ng-model="newUser.email"/>
+      <div ng-messages="userForm.email.$error" ng-if="showErrors">
+        <div ng-message="required">Ce champs est requis.</div>
+      </div>
+      <div ng-messages="userForm.email.$error" ng-if="validEmail">
+        <div ng-message="email">Entrez un email valide</div>
+      </div>
+    </div>
+    
+
+		<div class="form-group">
+      <md-input-container flex>
+    		<label for="">Mot de passe</label>
+       	 	<input type="password" 
+          name="password" 
+          class="form-control"
+          required
+       	 	ng-model="newUser.password"/>
+
+    <div ng-messages="userForm.password.$error" ng-if="showErrors">
+      <div ng-message="required">Ce champs est requis.</div>
+    </div>
+</div>
+    
+		<div class="form-group">
+      <md-input-container flex>
+  		<label for="">Confirmation mot de passe</label>
+      <input type="password"
+             name="passwordConfirm"
+             class="form-control"
+             required
+             ng-blur="validPassword = true"
+             ng-focus="validPassword = false"
+             password-verify="newUser.password"
+      			 ng-model="newUser.confirmPassword" />
+
+    <div ng-messages="userForm.passwordConfirm.$error" ng-if="showErrors">
+      <div ng-message="required">Ce champs est requis.</div>
+    </div>
+    <div ng-messages="userForm.passwordConfirm.$error" ng-if="validPassword">
+      <div ng-message="passwordVerify">Les mots de passe ne correspondent pas</div>
+    </div>
+  	</div>
+
+    <div layout="row" layout-align="end center">
+      <md-button md-no-ink type="submit"class="md-raised md-primary">M'inscrire</md-button>
+    </div>
+  </form>
+</md-content>    
