@@ -1,5 +1,7 @@
-<md-content layout-padding>
-<h2>Login utilisateur</h2>
+<div class="container">
+
+<h1 class="header center">Connexion </h1>
+
   <form ng-submit="login()"
 				name="loginForm"
 				novalidate
@@ -8,8 +10,8 @@
 		<div class="row">
       
   	  
-		<div class="form-group">
-      <md-input-container flex>
+		<div class="input-field">
+      
     		<label for="">Email</label>
        		<input 
              type="email" 
@@ -28,8 +30,8 @@
     </div>
     
 
-		<div class="form-group">
-      <md-input-container flex>
+		<div class="input-field">
+      
     		<label for="">Mot de passe</label>
        	 	<input type="password" 
           name="password" 
@@ -48,4 +50,4 @@
       <md-button md-no-ink type="submit"class="md-raised md-primary">Se connecter</md-button>
     </div>
   </form>
-</md-content>    
+</div>   
