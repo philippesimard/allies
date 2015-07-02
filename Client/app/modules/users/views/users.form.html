@@ -1,12 +1,17 @@
-<md-content layout-padding>
-<h2>Nouvel utilisateur</h2>
+
+<div class="container">
+
+<h1 class="header center">Ajouter utilisateur </h1>
+
+    
+
   <form ng-submit="addUser()"
 				name="userForm"
 				novalidate
 				class="row">
 		
-		<div class="row">
-      <md-input-container flex>
+		<div class="input-field col s6">
+      
   		<label for="name">Nom</label>
     	<input type="text"
     		     name="name"
@@ -19,9 +24,9 @@
    	</div>
    
 
-    <div class="form-group"
+    <div class="input-field col s6"
     		 ng-class="{'has-error': showErrors && userForm.firstname.$error.required}">
-      <md-input-container flex>
+      
   		<label for="">Prénom</label>
       <input type="text"
     				 name="firstname"
@@ -128,4 +133,6 @@
       <md-button md-no-ink type="submit"class="md-raised md-primary">M'inscrire</md-button>
     </div>
   </form>
-</md-content>    
+</md-content> 
+
+</div>   
