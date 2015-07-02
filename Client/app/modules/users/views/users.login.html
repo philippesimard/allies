@@ -16,7 +16,7 @@
        		<input 
              type="email" 
              name="email" 
-             class="form-control"
+             class="validate"
              required
              ng-blur="validEmail = true"
              ng-focus="validEmail = false"
@@ -35,7 +35,7 @@
     		<label for="">Mot de passe</label>
        	 	<input type="password" 
           name="password" 
-          class="form-control"
+          class="validate"
           required
           ng-model="loginInfo.password"/>
     <div ng-messages="loginForm.password.$error" ng-if="showErrors">
@@ -43,11 +43,11 @@
     </div>
     
   </div>
-
-{{loginInfo}}
+</br>
     
-		<div layout="row" layout-align="end center">
-      <md-button md-no-ink type="submit"class="md-raised md-primary">Se connecter</md-button>
+		<div>
+      <button type="submit"class="waves-effect waves-light btn-large right blue">Se connecter</button>
     </div>
   </form>
-</div>   
+</div> 
+ 
