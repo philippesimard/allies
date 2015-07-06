@@ -21,6 +21,7 @@
     "angular": false,
     "$": false,
     "ApplicationConfiguration": false,
-    "_": false
+    "_": false,
+    "Materialize": false
   }
 }
