@@ -37,5 +37,16 @@ angular.module('users').config(
       url: '/login',
       templateUrl: 'modules/users/views/users.login.html',
       controller: 'LoginController'
+    })
+
+    .state('parameters', {
+      url: '/utilisateur/parameters/:userId',
+      resolve: {
+        user: function ($stateParams, User) {
+          return User.findOne($stateParams.userId);
+        }
+      },
+      templateUrl: 'modules/users/views/users.parameters.html',
+      controller: 'ParametersController'
     });
   });
