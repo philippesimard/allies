@@ -35,12 +35,14 @@ angular.module('users').run(
 
   function ($rootScope, UserAuth, $state) {
 
+    var authorizedRoutes = [UserAuth.config.loginStateName].concat(UserAuth.config.authorizedRoutes);
+
     $rootScope.$on('$stateChangeStart',
       function (event, toState, toParams) {
 
         if (!UserAuth.isAuthentified()) {
 
-          if (UserAuth.config.loginStateName && toState.name !== UserAuth.config.loginStateName) {
+          if (UserAuth.config.loginStateName && !_.contains(authorizedRoutes, toState.name)) {
             event.preventDefault();
             $state.go(UserAuth.config.loginStateName, toParams);
           }

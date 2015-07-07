@@ -42,8 +42,8 @@ var RessourceManager = function(version) {
 			var ressource = new req.schema(req.body);
 
 			ressource.created = {
-				user: req.user._id,
-				date: new Date().toGMTString()
+				//user: req.user._id,
+				//date: new Date().toGMTString()
 			};
 
 			ressource.save(function(err) {
@@ -105,7 +105,7 @@ var RessourceManager = function(version) {
 
 		update: function(req, res) {
 
-			ressource = _.extend(req.ressource, req.body);
+			var ressource = _.extend(req.ressource, req.body);
 
 			ressource.alterations.push({
 				user: req.user._id,

@@ -7,6 +7,7 @@ angular.module('users').config(
         signin: 'auth/signin',
         signout: 'auth/signout'
       },
-      loginStateName: 'login'
+      loginStateName: 'login',
+      authorizedRoutes: ['home', 'userForm']
     });
   });

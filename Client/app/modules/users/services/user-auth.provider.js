@@ -76,7 +76,6 @@ angular.module('users').provider('UserAuth',
           logout: function () {
             $window.sessionStorage.clear();
             return $http.post(config.apiUrls.signout);
-
           }
         };
       }]

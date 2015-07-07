@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('users').controller('ParametersController',
-  function ($scope, user) {
+  function ($scope, user, MaterializeService) {
 
     $scope.user = user;
 
-    $scope.editUser = function () {
+    $scope.modifyUser = function () {
 
       if ($scope.userForm.$invalid) {
         $scope.showErrors = true;
@@ -15,9 +15,9 @@ angular.module('users').controller('ParametersController',
 
           $scope.user = updatedUser;
 
-          $scope.showErrors = false;
+          MaterializeService.toast('Informations ok', 3000);
 
-          $scope.newUser = undefined;
+          $scope.showErrors = false;
         });
       }
     };

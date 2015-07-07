@@ -15,7 +15,6 @@
 
   <!-- build:css styles/custom.css -->
   <!-- injector:css -->
-  <link rel="stylesheet" href="css/account.css">
   <link rel="stylesheet" href="css/main.css">
   <!-- endinjector -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -24,17 +23,7 @@
 
 <body>
 
-  <nav>
-    <div class="nav-wrapper blue">
-    <div class="container">
-      <a href="#!/" class="brand-logo">Accueil</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#!/utilisateur/ajout">Inscription </a></li>
-        <li><a href="#!/login">Login</a></li>
-      </ul>
-  </div>
-    </div>
-  </nav>
+<header></header>
 
   <section ui-view></section>
 
@@ -58,6 +47,7 @@
 <script src="js/application.js"></script>
 <script src="modules/core/core.module.js"></script>
 <script src="modules/favorite-pages/favorite-pages.module.js"></script>
+<script src="modules/navigation/navigation.module.js"></script>
 <script src="modules/ressources/ressources.module.js"></script>
 <script src="modules/users/users.module.js"></script>
 <script src="modules/core/config/core.config.js"></script>
@@ -74,8 +64,9 @@
 <script src="modules/ressources/services/ressource.provider.js"></script>
 <script src="modules/users/services/user-auth.provider.js"></script>
 <script src="modules/users/services/users.factory.js"></script>
-<script src="modules/core/directives/like-button.directive.js"></script>
 <script src="modules/core/directives/password-verify.directive.js"></script>
+<script src="modules/favorite-pages/directives/like-button.directive.js"></script>
+<script src="modules/navigation/directives/header.directive.js"></script>
 <script src="modules/core/controllers/home.controller.js"></script>
 <script src="modules/core/controllers/propos.controller.js"></script>
 <script src="modules/users/controllers/login.controller.js"></script>

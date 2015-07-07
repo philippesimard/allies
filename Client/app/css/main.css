@@ -19,7 +19,7 @@ body {
   }
 
 
-<<<<<<< HEAD
+
 body {
     display: -webkit-box;
     display: -webkit-flex;
@@ -39,11 +39,9 @@ body {
         -ms-flex: 1 0 auto;
             flex: 1 0 auto;
   }
-=======
 
 like-button {
   position: absolute;
   bottom: 80px;
   right: 24px;
 }
->>>>>>> origin/master

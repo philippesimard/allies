@@ -1,0 +1,13 @@
+<nav>
+  <div class="nav-wrapper blue">
+    <div class="container">
+      <a href="#!/" class="brand-logo">Accueil</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li ng-hide="isConnected"><a href="#!/utilisateur/ajout">Inscription </a></li>
+        <li ng-hide="isConnected"><a href="#!/login">Login</a></li>
+        <li ng-show="isConnected" ng-click="monCompte()">Mon compte</li>
+        <li ng-show="isConnected" ng-click="deconnect()">Déconnexion</li>
+      </ul>
+    </div>
+  </div>
+</nav>

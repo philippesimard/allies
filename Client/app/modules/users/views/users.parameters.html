@@ -1,4 +1,4 @@
-<div id="index-banner" class="parallax-container" src="../img/red-pentagonal-background.png">
+<div id="index-banner" src="../img/red-pentagonal-background.png">
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
@@ -8,38 +8,151 @@
         </div>
         </div>
     </div>
-    <div class="parallax"><img src="../img/red-pentagonal-background.png"></div>
+    <div class="parallax"><img src="img/red-pentagonal-background.png"></div>
+    </div>
+
+    <div class="container">
+
+    
+  <form ng-submit="modifyUser(userForm, user)"
+        name="userForm"
+        novalidate
+        class="row">
+    
+    <div class="input-field col s12" placeholder="Placeholder">
+
+      
+      
+      <input type="text" 
+             name="name"
+             class="validate"
+             required
+             ng-model="user.name"/>
+      <div ng-messages="userForm.name.$error" ng-if="showErrors">
+        <div ng-message="required" >Ce champs est requis.</div>
+      </div>
+    </div>
+   
+
+    <div class="input-field col s12"
+         ng-class="{'has-error': showErrors && userForm.firstname.$error.required}">
+      
+      
+      <input type="text"
+             name="firstname"
+             class="validate"
+             required
+             ng-model="user.firstname"/>
+    
+      <div ng-messages="userForm.firstname.$error" ng-if="showErrors">
+      <div ng-message="required">Ce champs est requis.</div>
+    </div>
+      
+    </div>
+
+    <!--<div class="input-field col s12"
+         ng-class="{'has-error': showErrors && userForm.name.$error.required}">
+      
+      <input type="date"
+             name="date"
+             class="validate"
+             required
+             ng-model="user.date"/>
+
+    <div ng-messages="userForm.date.$error" ng-if="showErrors">
+      <div ng-message="required">Ce champs est requis.</div>
+    </div>
+    </div>-->
+   
+    <div class="input-field col s12">
+     
+      <input type="text"
+             name="username"
+             class="validate"
+             required
+             ng-model="user.username"/>
+
+
+    <div ng-messages="userForm.username.$error" ng-if="showErrors">
+      <div ng-message="required">Ce champs est requis.</div>
+    </div>
+    </div>
+      
+    <div class="input-field col s12">
+          <input
+             type="email" 
+             name="email" 
+             class="validate"
+             required
+             ng-blur="validEmail = true"
+             ng-focus="validEmail = false"
+             ng-model="user.email"/>
+      <div ng-messages="userForm.email.$error" ng-if="showErrors">
+        <div ng-message="required">Ce champs est requis.</div>
+      </div>
+      <div ng-messages="userForm.email.$error" ng-if="validEmail">
+        <div ng-message="email">Entrez un email valide</div>
+      </div>
     </div>
 
 
-<form class="container"action="" method="post">
 
+    
 
-	<h5>Nom</h5>
-	<div class="row">
-		<div class="input-field col s6">
-      	<input value={{user.username}} id="first_name2" type="text" class="validate">
-      	<label class="active" for="first_name2"></label>
+    <div class="input-field col s6">
+    
+        
+          <input type="password" 
+          placeholder="Nouveau mot de passe"
+          name="password" 
+          class="validate"
+          ng-blur="minlength = true"
+          ng-focus="minlength = false"
+          ng-minlength="7"
+          ng-model="newUser.password"/>
+    <div ng-messages="userForm.password.$error" ng-if="showErrors">
+      <div ng-message="required">Ce champs est requis.</div>
+    </div>
+    <div ng-messages="userForm.password.$error" ng-if="minlength">
+      <div ng-message="minlength">Votre mot de passe doit être d'au moins 7 caractères</div>
+    </div>
+</div>
+    
+    <div class="input-field col s6">
+      
+      
+      <input type="password"
+            placeholder="Confirmation mot de passe"
+             name="passwordConfirm"
+             class="validate"
+             ng-requiered="newUser.password !== undefined"
+             ng-blur="validPassword = true"
+             ng-focus="validPassword = false"
+             password-verify="newUser.password"
+             ng-model="newUser.confirmPassword"/>
 
+    <div ng-messages="userForm.passwordConfirm.$error" ng-if="showErrors">
+      <div ng-message="required">Ce champs est requis.</div>
+    </div>
+    <div ng-messages="userForm.passwordConfirm.$error" ng-if="validPassword">
+      <div ng-message="passwordVerify">Les mots de passe ne correspondent pas</div>
     </div>
     </div>
 
-    <h5>Prénom</h5>
-	<div class="row">
-		<div class="input-field col s6">
-      	<input value={{user.username}} id="first_name2" type="text" class="validate">
-      	<label class="active" for="first_name2"></label>
+</br>
+
+    <div>
+<button type="submit" class="waves-effect waves-light btn right blue">Modifier mes informations</button>
+    </br>
+<br/>
+
 
     </div>
-    </div>
 
-    <h5>Date de naissance</h5>
-	<div class="row">
-		<div class="input-field col s6">
-      	<input value={{user.username}} id="first_name2" type="date" class="validate">
-      	<label class="active" for="first_name2"></label>
 
-    </div>
-    </div>
 
-</form>
+  </form>
+
+</div>   
+
+

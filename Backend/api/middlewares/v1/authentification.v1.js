@@ -97,7 +97,6 @@ exports.signin = function(req, res, next) {
 };
 
 exports.signout = function(req, res) {
-
 	// TODO: DÉTRUIRE PASSPORT ET LE JWT TOKEN
 	res.sendStatus(200);
 };

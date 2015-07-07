@@ -46,14 +46,15 @@ function prepDbs(dbUrl) {
     User.find({}, function(err, users) {
       if (users.length === 0) {
         var iamUser = new User({
-          firstName: 'super',
-          lastName: 'admin',
+          firstname: 'super',
+          name: 'admin',
           email: 'email@example.com',
           username: 'user',
           password: '12345678',
           roles: ['admin']
         });
         iamUser.save(function(err) {
+          console.log(err)
           mongoose.disconnect();
           done();
         });
