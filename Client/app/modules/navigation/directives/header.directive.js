@@ -29,7 +29,8 @@ angular.module('core').directive('header',
         };
 
         scope.monCompte = function () {
-          console.log('mon Compte');
+          $state.go('userAccount');
+          scope.isConnected = UserAuth.isAuthentified();
         };
 
       },
