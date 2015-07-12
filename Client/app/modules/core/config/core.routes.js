@@ -8,8 +8,19 @@ angular.module('core').config(
     $stateProvider
 
       .state('home', {
-      url: '/',
-      templateUrl: 'modules/core/views/home.html',
+        url: '/',
+        templateUrl: 'modules/core/views/home.html',
+        controller: 'HomeController'
+      })
+      .state('parcours', {
+        url: '/parcours',
+        templateUrl: 'modules/core/views/parcours.html',
+        controller: 'HomeController'
+      })
+
+    .state('ressources', {
+      url: '/ressources',
+      templateUrl: 'modules/core/views/ressources.html',
       controller: 'HomeController'
     })
 

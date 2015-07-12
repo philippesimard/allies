@@ -8,6 +8,6 @@ angular.module('users').config(
         signout: 'auth/signout'
       },
       loginStateName: 'login',
-      authorizedRoutes: ['home', 'userForm']
+      authorizedRoutes: ['home', 'userForm', 'propos', 'ressources', 'parcours']
     });
   });

@@ -23,3 +23,41 @@ like-button {
   bottom: 100px;
   right: 24px;
 }
+
+.menu {
+    
+  margin-left: 15px;
+
+              }
+
+
+.jumbotron {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  color: inherit;
+  background-image: url("image ici");
+  background-color: #f9f9f9;
+            }
+
+
+.accueil {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  margin-bottom: 30px;
+  color: inherit;
+  background-image: url("image ici");
+  background-color: #f9f9f9;
+            }
+
+
+.espace {
+
+padding-top: 30px;
+  padding-bottom: 45px;
+  margin-bottom: 45px;
+  
+}
+
+.gris {
+  background-color: #83A7C0 !important; }
