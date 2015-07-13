@@ -7,12 +7,12 @@
     <div class="section no-pad-bot" >
       <div class="container">
         <br><br>
-        <h1 class="header center">Bonjour {{user.username}} </h1>
+        <h1 class="header center light white-text">Bonjour {{user.username}} </h1>
         <div class="row center">
-          <h5 class="header col s12 light">Bienvenue dans votre espace membre {{user.name}} ! Le tableau de bord et le meilleur endroit afin de gérer vos contenus et participer au developpement de la plateforme.</h5>
+          <h5 class="header col s12 light white-text">Bienvenue dans votre espace membre {{user.name}} ! Le tableau de bord et le meilleur endroit afin de gérer vos contenus et participer au developpement de la plateforme.</h5>
         </div>
         <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect blue-grey darken-4">Visite guidée de l'interface</a>
+          <a ng-click="visite()" id="download-button" class="btn-large waves-effect  orange darken-3">Visite guidée de l'interface</a>
         </div>
         <br><br>
 
@@ -25,45 +25,45 @@
   <div class="espace">
   <div class="row">
         
-        <div class="col s12 m4">
+        <div class="col s12 m4" ng-click="contenus()">
           <div class="icon-block">
-            <h2 class="center blue-grey-text"><i class="material-icons">favorite</i></h2>
+            <h2 class="center orange-text"><i class="material-icons">favorite</i></h2>
             <h5 class="center">Vos contenus</h5>
 
             <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non mi ullamcorper, lobortis.</p>
           </div>
         </div>
 
-        <div class="col s12 m4">
+        <div class="col s12 m4" ng-click="experience()">
           <div class="icon-block">
-            <h2 class="center blue-grey-text"><i class="material-icons">stars</i></h2>
+            <h2 class="center orange-text"><i class="material-icons">stars</i></h2>
             <h5 class="center">Partage d'expérience</h5>
 
             <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non mi ullamcorper, lobortis.</p>
           </div>
         </div>
 
-        <div class="col s12 m4">
+        <div class="col s12 m4" ng-click="activite()">
           <div class="icon-block">
-            <h2 class="center blue-grey-text"><i class="material-icons">dashboard</i></h2>
+            <h2 class="center orange-text"><i class="material-icons">dashboard</i></h2>
             <h5 class="center">Activités</h5>
 
             <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non mi ullamcorper, lobortis.</p>
           </div>
         </div>
 
-        <div class="col s12 m4">
+        <div class="col s12 m4" ng-click="contribution()">
           <div class="icon-block">
-            <h2 class="center blue-grey-text"><i class="material-icons">help</i></h2>
-            <h5 class="center">Zone contributeur</h5>
+            <h2 class="center orange-text"><i class="material-icons">help</i></h2>
+            <h5 class="center">Zone contribution</h5>
 
             <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non mi ullamcorper, lobortis.</p>
           </div>
         </div>
 
-        <div class="col s12 m4">
+        <div class="col s12 m4" ng-click="contact()">
           <div class="icon-block">
-            <h2 class="center blue-grey-text"><i class="material-icons">email</i></h2>
+            <h2 class="center orange-text"><i class="material-icons">email</i></h2>
             <h5 class="center">Nous joindre</h5>
 
             <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non mi ullamcorper, lobortis.</p>
@@ -72,7 +72,7 @@
 
         <div class="col s12 m4" ng-click="parameters()">
           <div class="icon-block">
-            <h2 class="center blue-grey-text"><i class="material-icons">account_circle</i></h2>
+            <h2 class="center orange-text"><i class="material-icons">account_circle</i></h2>
             <h5 class="center">Paramètres</h5>
 
             <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non mi ullamcorper, lobortis.</p>

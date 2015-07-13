@@ -37,7 +37,7 @@ like-button {
   margin-bottom: 30px;
   color: inherit;
   background-image: url("image ici");
-  background-color: #f9f9f9;
+  background-color: #83A7C0;
             }
 
 
@@ -46,8 +46,7 @@ like-button {
   padding-bottom: 100px;
   margin-bottom: 30px;
   color: inherit;
-  background-image: url("image ici");
-  background-color: #f9f9f9;
+  background-color: #83A7C0;
             }
 
 
@@ -56,8 +55,16 @@ like-button {
 padding-top: 30px;
   padding-bottom: 45px;
   margin-bottom: 45px;
+  margin-top: 45px;
   
 }
 
 .gris {
   background-color: #83A7C0 !important; }
+
+.spacer
+{
+    font-size: 0; 
+    height: 10px;
+    line-height: 0;
+}

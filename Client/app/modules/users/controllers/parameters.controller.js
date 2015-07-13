@@ -15,7 +15,7 @@ angular.module('users').controller('ParametersController',
 
           $scope.user = updatedUser;
 
-          MaterializeService.toast('Informations ok', 3000);
+          MaterializeService.toast('Mises à jour de vos informations', 3000);
 
           $scope.showErrors = false;
         });

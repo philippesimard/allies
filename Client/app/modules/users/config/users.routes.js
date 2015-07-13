@@ -11,6 +11,12 @@ angular.module('users').config(
       controller: 'UsersAjoutController'
     })
 
+    .state('visite', {
+      url: '/utilisateur/visite',
+      templateUrl: 'modules/users/views/users.visite.html',
+      controller: 'UserAccountController'
+    })
+
     .state('userList', {
       url: '/utilisateur',
       resolve: {
@@ -37,6 +43,61 @@ angular.module('users').config(
       url: '/login',
       templateUrl: 'modules/users/views/users.login.html',
       controller: 'LoginController'
+    })
+
+    .state('contenus', {
+      url: '/utilisateur/contenus/:userId',
+      resolve: {
+        user: function ($stateParams, User) {
+          return User.findOne($stateParams.userId);
+        }
+      },
+      templateUrl: 'modules/users/views/users.contenus.html',
+      controller: 'ContenusController'
+    })
+
+    .state('experience', {
+      url: '/utilisateur/experience/:userId',
+      resolve: {
+        user: function ($stateParams, User) {
+          return User.findOne($stateParams.userId);
+        }
+      },
+      templateUrl: 'modules/users/views/users.experience.html',
+      controller: 'ExperienceController'
+    })
+
+    .state('activite', {
+      url: '/utilisateur/activite/:userId',
+      resolve: {
+        user: function ($stateParams, User) {
+          return User.findOne($stateParams.userId);
+        }
+      },
+      templateUrl: 'modules/users/views/users.activite.html',
+      controller: 'ActiviteController'
+    })
+
+    .state('contribution', {
+      url: '/utilisateur/contribution/:userId',
+      resolve: {
+        user: function ($stateParams, User) {
+          return User.findOne($stateParams.userId);
+        }
+      },
+      templateUrl: 'modules/users/views/users.contribution.html',
+      controller: 'ContributionController'
+    })
+
+    .state('contact', {
+      url: '/utilisateur/contact/:userId',
+      resolve: {
+        user: function ($stateParams, User) {
+          return User.findOne($stateParams.userId);
+        }
+      },
+      templateUrl: 'modules/users/views/users.contact.html',
+      controller: 'ContactController'
     })
 
     .state('parameters', {
