@@ -21,7 +21,7 @@ body {
 like-button {
   position: absolute;
   bottom: 100px;
-  right: 24px;
+  right: 35px;
 }
 
 .menu {
@@ -38,6 +38,13 @@ like-button {
   color: inherit;
   background-image: url("image ici");
   background-color: #83A7C0;
+            }
+
+.contenus {
+  padding-top: 10px;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  width: 230px;
             }
 
 
@@ -68,3 +75,35 @@ padding-top: 30px;
     height: 10px;
     line-height: 0;
 }
+
+.pointer {
+    cursor: pointer;
+}
+
+/* label color */
+   .input-field label {
+     color: #000;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color:  #F26533;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #83A7C0;
+     box-shadow: 0 1px 0 0 #83A7C0;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #2ecc71;
+     box-shadow: 0 1px 0 0 #2ecc71;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #EE2F58;
+     box-shadow: 0 1px 0 0 #EE2F58;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #8bc34a;
+   }

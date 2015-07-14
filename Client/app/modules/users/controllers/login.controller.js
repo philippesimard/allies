@@ -18,7 +18,7 @@ angular.module('users').controller('LoginController',
 
         $rootScope.$on('UserAuth:login:error:wrongUserNameOrPass', function () {
 
-          MaterializeService.toast('Erreur', 3000);
+          MaterializeService.toast('Erreur identifiant ou mot de passe', 3000);
           $scope.showErrors = false;
           $scope.loginInfo.password = undefined;
         });

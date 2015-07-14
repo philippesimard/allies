@@ -26,17 +26,17 @@ angular.module('core').directive('likeButton',
 
         scope.addToFavorites = function () {
           FavoritePagesService.addContenu().then(function () {
-            MaterializeService.toast('<i class="material-icons orange-text">favorite</i>&nbsp;&nbsp;Cette page à été ajoutée à vos favoris', toastTime);
+            MaterializeService.toast('<i class="material-icons pink-text">favorite</i>&nbsp;&nbsp;Cette page à été ajoutée à vos favoris', toastTime);
           });
         };
 
         scope.signaler = function () {
           console.log('signaler');
-          MaterializeService.toast('<span><i class="material-icons red-text">warning</i>&nbsp;&nbsp;Pour signaler cette page </span><a class="waves-effect waves-light btn red"; href=&quot;#!&quot;>Cliquez ici<a>', toastTime);
+          MaterializeService.toast('<i class="material-icons red-text">warning</i>&nbsp;&nbsp;Pour signaler cette page </span><a class="waves-effect waves-light btn red"; href=&quot;#!&quot;>Cliquez ici<a>', toastTime);
         };
 
         scope.contribuer = function () {
-          console.log('contrib');
+          console.log('contribuer');
         };
       },
       // controller: function ($scope) {},

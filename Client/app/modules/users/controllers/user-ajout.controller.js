@@ -34,6 +34,7 @@ angular.module('users').controller('UsersAjoutController',
           $scope.showErrors = false;
 
           $scope.newUser = undefined;
+
         });
       }
     };
