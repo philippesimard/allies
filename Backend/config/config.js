@@ -1,53 +1,40 @@
 'use strict';
 
-/**
- * Module dependencies.
- */
-var _ = require('lodash'),
-	glob = require('glob');
+module.exports = {
 
-/**
- * Load app configurations
- */
-module.exports = _.extend(
-	require('./env/all')
-);
+	appTitle: 'Alliés',
 
-/**
- * Get files by glob patterns
- */
-module.exports.getGlobbedFiles = function(globPatterns, removeRoot) {
-	// For context switching
-	var _this = this;
+	port: process.env.PORT || 3030,
 
-	// URL paths regex
-	var urlRegex = new RegExp('^(?:[a-z]+:)?\/\/', 'i');
+	mongoose: {
+		URI: 'mongodb://localhost/allies'
+	},
 
-	// The output array
-	var output = [];
+	expressUserAuth: {
+		resetPassword: {
+			mailOptions: {
+				from: 'Steve Boisvert ✔ <leseulsteve@gmail.com>',
+				subject: 'Réinitialisation de votre mot de passe'
+			}
+		},
+		confirmEmail: {
+			mailOptions: {
+				from: 'Steve Boisvert ✔ <leseulsteve@gmail.com>',
+				subject: 'Confirmation de votre courriel'
+			}
+		},
+		token: {
+			options: {
+				expiresInMinutes: 1440
+			},
+			secret: '7279BEE6EBCC80400E2CED8D12D0591D34EA5C5F3B3D557A1773F1680F217780',
+		},
+		apiRoot: 'api/*'
+		//unprotectedRoutes: []
+	},
 
-	// If glob pattern is array so we use each pattern in a recursive way, otherwise we use glob 
-	if (_.isArray(globPatterns)) {
-		globPatterns.forEach(function(globPattern) {
-			output = _.union(output, _this.getGlobbedFiles(globPattern, removeRoot));
-		});
-	} else if (_.isString(globPatterns)) {
-		if (urlRegex.test(globPatterns)) {
-			output.push(globPatterns);
-		} else {
-			glob(globPatterns, {
-				sync: true
-			}, function(err, files) {
-				if (removeRoot) {
-					files = files.map(function(file) {
-						return file.replace(removeRoot, '');
-					});
-				}
-
-				output = _.union(output, files);
-			});
-		}
+	mailer: {
+		host: '127.0.0.1',
+    port: 1025
 	}
-
-	return output;
 };

@@ -11,11 +11,15 @@
     "lodash": "~3.9.3",
     "angular-materialize": "*",
     "materialize": "~0.97.0",
-    "elasticui": "*"
+    "elasticui": "*",
+    "angular-user-auth": "git+https://github.com/leseulsteve/angular-user-auth.git"
   },
   "devDependencies": {
     "angular-mocks": "^1.3.0"
   },
   "appPath": "app",
-  "moduleName": "clientApp"
+  "moduleName": "clientApp",
+  "resolutions": {
+    "lodash": "~3.10.0"
+  }
 }

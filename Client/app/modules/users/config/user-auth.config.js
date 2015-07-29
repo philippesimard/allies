@@ -2,49 +2,37 @@
 
 angular.module('users').config(
 
-  function ($httpProvider) {
+  function (UserAuthProvider) {
 
-    $httpProvider.interceptors.push(
-      function ($q, $window, $rootScope) {
-        return {
+    UserAuthProvider.config({
 
-          request: function (config) {
-            config.headers = config.headers || {};
-            var token = $window.sessionStorage.token;
-            if (token) {
-              config.headers.Authorization = 'Bearer ' + JSON.parse(token).id;
-            }
-            return config;
-          },
-
-          responseError: function (rejection) {
-            switch (rejection.status) {
-            case 401:
-              $rootScope.$broadcast('IAMUserAuth:request:unauthorized', rejection);
-              break;
-            }
-
-            return $q.reject(rejection);
-          }
-        };
-      }
-    );
+      sendPasswordToken: {
+        urlRedirection: 'http://localhost:9001/#!/reset_password',
+      },
+      confirmEmail: {
+        urlRedirection: 'http://localhost:9001/#!/confirm_email',
+      },
+      apiRoot: 'http://localhost:9000/api/v1'
+    });
   });
 
 angular.module('users').run(
 
   function ($rootScope, UserAuth, $state) {
 
-    var authorizedRoutes = [UserAuth.config.loginStateName].concat(UserAuth.config.authorizedRoutes);
+    var config = {
+      loginStateName: 'login',
+      authorizedRoutes: ['home', 'userForm', 'propos', 'ressources', 'parcours']
+    };
 
     $rootScope.$on('$stateChangeStart',
       function (event, toState, toParams) {
 
         if (!UserAuth.isAuthentified()) {
 
-          if (UserAuth.config.loginStateName && !_.contains(authorizedRoutes, toState.name)) {
+          if (UserAuth.config.loginStateName && !_.contains(config.authorizedRoutes, toState.name)) {
             event.preventDefault();
-            $state.go(UserAuth.config.loginStateName, toParams);
+            $state.go(config.loginStateName, toParams);
           }
         }
       });
