@@ -1,24 +1,24 @@
     <nav>
-      <div class="nav-wrapper grey darken-4">
+      <div class="nav-wrapper grey white">
         <div class="container">
           
             <!-- Menu droite normal--> 
 
             <ul id="nav" class="right hide-on-med-and-down">
-              <li ng-hide="isConnected" ><a href="#!/utilisateur/ajout"><i class="material-icons left">create</i>Inscription</a></li>
-              <li ng-hide="isConnected" ><a href="#!/login"><i class="material-icons left">account_circle</i>Login</a></li>
+              <li ng-hide="isConnected" ><a href="#!/login"><i class="material-icons left black-text">account_circle</i></a></li>
             <!-- Menu droite utilisateur--> 
-              <li class="menu" ng-show="isConnected" ng-click="monCompte()"><i class="material-icons left">account_circle</i></a></li>
-              <li class="menu" ng-show="isConnected" ng-click="deconnect()"><i class="material-icons left">clear</i></a></li>
+              <li class="menu" ng-show="isConnected" ng-click="monCompte()"><i class="material-icons left black-text">account_circle</i></a></li>
+              <li class="menu" ng-show="isConnected" ng-click="deconnect()"><i class="material-icons left black-text">clear</i></a></li>
             </ul>
             <!-- Menu gauche-->       
             
           
           <ul id="nav" class="left hide-on-med-and-down">
-            <li><a ng-href="#!/home">Accueil</a></li>
-            <li><a ng-href="#!/propos">À propos</a></li>
-            <li><a ng-href="#!/parcours">Parcours</a></li>
-            <li><a ng-href="#!/ressources">Ressources</a></li>
+            <li><a ng-href="#!/home" class="black-text">Accueil</a></li>
+            <li><a ng-href="#!/propos" class="black-text">À propos</a></li>
+            <li><a ng-href="#!/parcours" class="black-text">Parcours</a></li>
+            <li><a ng-href="#!/ressources" class="black-text">Ressources</a></li>
+            <li><a ng-href="#!/recherche" class="black-text">Recherche</a></li>
           </ul>
 
            <!-- Menu mobile--> 
