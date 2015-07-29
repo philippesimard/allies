@@ -1,2 +1,6 @@
 
 ngrok
+
+*.lock
+
+Backend/data/database/mongod.lock
