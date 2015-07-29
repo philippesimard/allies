@@ -35,6 +35,14 @@
   <!-- endbuild -->
 <body>
 
+<!-- ElasticSearch ici -->
+<script src="/bower_components/elasticsearch/elasticsearch.js"></script>
+<script>
+  var client = elasticsearch.Client({
+    host: 'localhost:9200'
+  });
+</script>
+
 <header></header>
   <section ui-view></section>
 
@@ -71,6 +79,7 @@
 <script src="modules/users/config/user-auth.config.js"></script>
 <script src="modules/users/config/users.config.js"></script>
 <script src="modules/users/config/users.routes.js"></script>
+<script src="modules/core/services/elasticsearch.service.js"></script>
 <script src="modules/core/services/materialize.service.js"></script>
 <script src="modules/favorite-pages/services/favorite-pages.js"></script>
 <script src="modules/ressources/services/cache-factory.factory.js"></script>
@@ -85,6 +94,7 @@
 <script src="modules/core/controllers/home.controller.js"></script>
 <script src="modules/core/controllers/parcours.controller.js"></script>
 <script src="modules/core/controllers/propos.controller.js"></script>
+<script src="modules/core/controllers/recherche.controller.js"></script>
 <script src="modules/core/controllers/ressources.controller.js"></script>
 <script src="modules/users/controllers/activite.controller.js"></script>
 <script src="modules/users/controllers/contact.controller.js"></script>

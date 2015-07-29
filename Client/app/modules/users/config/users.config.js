@@ -1,5 +1,7 @@
 'use strict';
 
+// Cette page permet d'ajouter des pages visibles sans être connecté //
+
 angular.module('users').config(
   function (UserAuthProvider) {
     UserAuthProvider.config({
@@ -8,6 +10,6 @@ angular.module('users').config(
         signout: 'auth/signout'
       },
       loginStateName: 'login',
-      authorizedRoutes: ['home', 'userForm', 'propos', 'ressources', 'parcours']
+      authorizedRoutes: ['home', 'userForm', 'propos', 'ressources', 'parcours', 'recherche']
     });
   });

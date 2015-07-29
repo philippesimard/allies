@@ -6,6 +6,9 @@ var ApplicationConfiguration = (function () {
   var applicationModuleName = 'angularjsapp';
   var applicationModuleVendorDependencies = ['ngTouch', 'ngSanitize', 'ui.router', 'ngResource', 'ngMessages'];
 
+  
+  // Include the "elasticsearch" module app
+  var myApp = angular.module('myApp', ['elasticsearch']);
   // Add a new vertical module
   var registerModule = function (moduleName, dependencies) {
     // Create angular module
