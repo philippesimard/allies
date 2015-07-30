@@ -1,5 +1,7 @@
 'use strict';
 
+// Cette page permet d'ajouter des pages visibles sans être connecté //
+
 angular.module('users').config(
 
   function (UserAuthProvider) {
@@ -22,7 +24,7 @@ angular.module('users').run(
 
     var config = {
       loginStateName: 'login',
-      authorizedRoutes: ['home', 'userForm', 'propos', 'ressources', 'parcours']
+      authorizedRoutes: ['home', 'userForm', 'propos', 'ressources', 'parcours', 'recherche']
     };
 
     $rootScope.$on('$stateChangeStart',

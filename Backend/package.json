@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "private": false,
   "dependencies": {
-    "express-user-auth": "git+https://github.com/leseulsteve/express-user-auth.git",
     "express-base": "git+https://github.com/leseulsteve/express-base.git",
-    "mongoose": "^4.0.2",
+    "express-user-auth": "git+https://github.com/leseulsteve/express-user-auth.git",
+    "mongoose": "^4.1.0",
+    "lodash-node": "^3.10.0",
     "mongoose-schema-extend": "^0.1.7",
     "nodemailer": "^1.4.0"
   },
