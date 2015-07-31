@@ -1,4 +1,3 @@
 /node_modules/
 npm-debug.log
-db/journal/*
-db/mongod.lock
+db/*
