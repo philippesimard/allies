@@ -5,13 +5,7 @@ angular.module('users').config(
 
     $stateProvider
 
-      .state('userForm', {
-      url: '/utilisateur/ajout',
-      templateUrl: 'modules/users/views/users.form.html',
-      controller: 'UsersAjoutController'
-    })
-
-    .state('visite', {
+      .state('visite', {
       url: '/utilisateur/visite',
       templateUrl: 'modules/users/views/users.visite.html',
       controller: 'UserAccountController'
@@ -37,12 +31,6 @@ angular.module('users').config(
       },
       templateUrl: 'modules/users/views/users.account.html',
       controller: 'UserAccountController'
-    })
-
-    .state('login', {
-      url: '/login',
-      templateUrl: 'modules/users/views/users.login.html',
-      controller: 'LoginController'
     })
 
     .state('contenus', {
