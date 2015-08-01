@@ -1,5 +1,5 @@
 {
-  "name": "express-base-app",
+  "name": "allies-backend",
   "version": "0.0.1",
   "private": false,
   "dependencies": {
