@@ -1,180 +1,130 @@
 <div id="index-banner" class="jumbotron">
   <div class="section no-pad-bot" >
     <div class="container">
-      <br><br>
       <h1 class="header white-text">S'inscrire sur la plateforme</h1>
       <h5 class="header col s12 light white-text">Pour s'inscrire sur AcommeAlliéEs remplissez ce formulaire.</h5>
-
-
     </div>
   </div>
-
 </div>
-
-
 
 <div class="container espace">
 
   <form ng-submit="addUser()"
-  name="userForm"
-  novalidate
-  class="row">
+        name="userForm"
+        novalidate
+        class="row">
 
-  <div class="input-field col s12">
-
-
-    <label for="name">Nom</label>
-    <input type="text"
-
-    name="name"
-    class="validate"
-    required
-    ng-model="newUser.name"/>
-    <div ng-messages="userForm.name.$error" ng-if="showErrors">
-     <div ng-message="required" >Ce champs est requis.</div>
-   </div>
- </div>
+    <div class="input-field col s12">
+      <label for="name">Nom</label>
+      <input type="text"
+             name="name"
+             class="validate"
+             required
+             ng-model="newUser.name"/>
+      <div ng-messages="userForm.name.$error" ng-if="userForm.$submitted">
+        <div ng-message="required" >Ce champs est requis.</div>
+      </div>
+    </div>
 
 
- <div class="input-field col s12"
- ng-class="{'has-error': showErrors && userForm.firstname.$error.required}">
+    <div class="input-field col s12">
+      <label for="firstname">Prénom</label>
+      <input type="text"
+             name="firstname"
+             class="validate"
+             required
+             ng-model="newUser.firstname"/>
+      <div ng-messages="userForm.firstname.$error" ng-if="userForm.$submitted">
+        <div ng-message="required">Ce champs est requis.</div>
+      </div>
+    </div>
 
- <label for="">Prénom</label>
- <input type="text"
- name="firstname"
- class="validate"
- required
- ng-model="newUser.firstname"/>
+    <div class="input-field col s12">
+      <label for="dateNaissance">Date de naissance (aaaa-mm-jj)</label>
+      <input type="text"
+             name="dateNaissance"
+             class="validate"
+             required
+             ng-model="newUser.dateNaissance"/>
+      <div ng-messages="userForm.dateNaissance.$error" ng-if="userForm.$submitted">
+        <div ng-message="required">Ce champs est requis.</div>
+      </div>
+    </div>
 
- <div ng-messages="userForm.firstname.$error" ng-if="showErrors">
-  <div ng-message="required">Ce champs est requis.</div>
-</div>
+    <div class="input-field col s12">
+      <label for="pseudo">Pseudo</label>
+      <input type="text"
+             name="pseudo"
+             class="validate"
+             required
+             ng-model="newUser.pseudo"/>
+      <div ng-messages="userForm.pseudo.$error" ng-if="userForm.$submitted">
+        <div ng-message="required">Ce champs est requis.</div>
+      </div>
+    </div>
 
-</div>
-
-<div class="input-field col s12"
-ng-class="{'has-error': showErrors && userForm.name.$error.required}">
-
-<label for="">Date de naissance (aaaa-mm-jj)</label>
-<input type="text"
-name="date"
-class="validate"
-required
-ng-model="newUser.date"/>
-
-<div ng-messages="userForm.date.$error" ng-if="showErrors">
-  <div ng-message="required">Ce champs est requis.</div>
-</div>
-</div>
-
-<div class="input-field col s12">
-  <label for="">Pseudo</label>
-  <input type="text"
-  name="username"
-  class="validate"
-  required
-  ng-model="newUser.username"/>
-
-
-  <div ng-messages="userForm.username.$error" ng-if="showErrors">
-    <div ng-message="required">Ce champs est requis.</div>
-  </div>
-</div>
-
-<div class="input-field col s12">
-
-  <label for="">Email</label>
-  <input 
-  type="email" 
-  name="email" 
-  class="validate"
-  required
-  ng-model="newUser.email"/>
-  <div ng-messages="userForm.email.$error" ng-if="showErrors">
-    <div ng-message="required">Ce champs est requis.</div>
-  </div>
-  <div ng-messages="userForm.email.$error" ng-if="validEmail">
-    <div ng-message="email">Entrez un email valide</div>
-  </div>
-</div>
+    <div class="input-field col s12">
+      <label for="email">Email</label>
+      <input type="email" 
+             name="email" 
+             class="validate"
+             required
+             ng-model="newUser.email"/>
+      <div ng-messages="userForm.email.$error" ng-if="userForm.$submitted">
+        <div ng-message="required">Ce champs est requis.</div>
+        <div ng-message="email">Entrez un email valide</div>
+      </div>
+    </div>
 
 
-<div class="input-field col s6">
+    <div class="input-field col s6">
 
-  <label for="">Mot de passe</label>
-  <input type="password" 
-  name="password" 
-  class="validate"
-  required
-  ng-blur="minlength = true"
-  ng-focus="minlength = false"
-  ng-minlength="7"
-  ng-model="newUser.password"/>
-  <div ng-messages="userForm.password.$error" ng-if="showErrors">
-    <div ng-message="required">Ce champs est requis.</div>
-  </div>
-  <div ng-messages="userForm.password.$error" ng-if="minlength">
-    <div ng-message="minlength">Votre mot de passe doit être d'au moins 7 caractères</div>
-  </div>
-</div>
+      <label for="password">Mot de passe</label>
+      <input type="password" 
+             name="password" 
+             class="validate"
+             required
+             ng-blur="showMinlengthError = true"
+             ng-focus="showMinlengthError = false"
+             ng-minlength="7"
+             ng-model="newUser.password"/>
+      <div ng-messages="userForm.password.$error" ng-if="userForm.$submitted">
+        <div ng-message="required">Ce champs est requis.</div>
+      </div>
+      <div ng-messages="userForm.password.$error" ng-if="showMinlengthError">
+        <div ng-message="minlength">Votre mot de passe doit être d'au moins 7 caractères</div>
+      </div>
+    </div>
 
-<div class="input-field col s6">
+    <div class="input-field col s6">
+      <label for="passwordConfirm">Confirmation mot de passe</label>
+      <input type="password"
+             name="passwordConfirm"
+             class="validate"
+             required
+             ng-blur="showValidPasswordError = true"
+             ng-focus="showValidPasswordError = false"
+             password-verify="newUser.password"
+             ng-model="newUser.confirmPassword"/>
 
-  <label for="">Confirmation mot de passe</label>
-  <input type="password"
-  name="passwordConfirm"
-  class="validate"
-  required
-  ng-blur="validPassword = true"
-  ng-focus="validPassword = false"
-  password-verify="newUser.password"
-  ng-model="newUser.confirmPassword"/>
+      <div ng-messages="userForm.passwordConfirm.$error" ng-if="userForm.$submitted">
+        <div ng-message="required">Ce champs est requis.</div>
+      </div>
+      <div ng-messages="userForm.passwordConfirm.$error" ng-if="showValidPasswordError">
+        <div ng-message="passwordVerify">Les mots de passe ne correspondent pas</div>
+      </div>
+    </div>
 
-  <div ng-messages="userForm.passwordConfirm.$error" ng-if="showErrors">
-    <div ng-message="required">Ce champs est requis.</div>
-  </div>
-  <div ng-messages="userForm.passwordConfirm.$error" ng-if="validPassword">
-    <div ng-message="passwordVerify">Les mots de passe ne correspondent pas</div>
-  </div>
-</div>
+    <div class="input-field col s12">
+      <button class="waves-effect waves-light btn orange darken-3"
+              type="button"
+              modal-trigger="modules/users/views/conditions-utilisation.modal.html">Conditions d'utilisation</button>
+    </div>
+    <!-- END Modal Trigger -->
 
-<!-- Modal Trigger -->
-
-
-<!-- Modal Structure -->
-<div id="modal1" class="modal">
-  <div class="modal-content">
-    <h4>Conditions d'utilisation</h4>
-    <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-    </p>
-  </div>
-  <div class="modal-footer">
-    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat ">Je confirme avoir lu les conditions d'utilisation</a>
-
-  </div>
-
-  <script>
-  $(document).ready(function(){
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal-trigger').leanModal();
-  });
-
-  </script>
-</div>
-
-<div class="input-field col s12">
-  <a class="modal-trigger waves-effect waves-light btn orange darken-3" href="#modal1">Conditions d'utilisation</a>
-</div>
-
-
-<div class="input-field col s12">
-  <button type="submit" ng-click="partager()" class="waves-effect waves-light btn-large left orange darken-3">S'inscrire</button>
-
-</div>
-
-
-
-</form>
+    <div class="input-field col s12">
+      <button type="submit" class="waves-effect waves-light btn-large left orange darken-3">S'inscrire</button>
+    </div>
+  </form>
 
 </div>   
