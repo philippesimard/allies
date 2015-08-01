@@ -12,14 +12,14 @@ angular.module('core').config(
               urlPrefix = '';
 
             if (_.contains(['localhost', '127.0.0.1'], host)) {
-              urlPrefix = 'http://localhost:3030';
-            } else if (typeof cordova !== 'undefined' || typeof phonegap !== 'undefined') {
-              //urlPrefix = 'http://exemple.ca';
+              urlPrefix = 'http://localhost:9001';
+            } else if (typeof cordova !== 'undefined' || typeof phonegap !== 'undefined') {} else {
+              urlPrefix = 'http://' + host;
             }
 
             var route = config.url.split('/')[config.url.split('/').length - 2];
 
-            if (!_.contains(['img', 'icons'], route)) {
+            if (!_.contains(['img', 'icons', '/'], route)) {
               urlPrefix += '/api/v1';
               config.url = urlPrefix + '/' + config.url;
             }
@@ -29,4 +29,9 @@ angular.module('core').config(
         }
       };
     });
+  });
+
+angular.module('core').run(
+  function ($rootScope, $state) {
+    $rootScope.$state = $state;
   });

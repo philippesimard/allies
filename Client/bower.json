@@ -9,7 +9,6 @@
     "angular-touch": "~1.4.1",
     "angular-messages": "~1.4.1",
     "lodash": "~3.9.3",
-    "angular-materialize": "*",
     "materialize": "~0.97.0",
     "angular-user-auth": "git+https://github.com/leseulsteve/angular-user-auth.git",
     "elasticsearch": "~5.0.0",

@@ -9,12 +9,12 @@ angular.module('users').config(
     UserAuthProvider.config({
 
       sendPasswordToken: {
-        urlRedirection: 'http://localhost:9001/#!/reset_password',
+        urlRedirection: 'http://localhost:9000/#!/reset_password',
       },
       confirmEmail: {
-        urlRedirection: 'http://localhost:9001/#!/confirm_email',
+        urlRedirection: 'http://localhost:9000/#!/confirm_email',
       },
-      apiRoot: 'http://localhost:9000/api/v1'
+      apiRoot: ''
     });
   });
 
