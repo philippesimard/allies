@@ -3,12 +3,11 @@
         <div class="container">
           
             <!-- Menu droite normal--> 
-
             <ul id="nav" class="right hide-on-med-and-down">
-              <li ng-hide="isConnected" ><a href="#!/login"><i class="material-icons left black-text">account_circle</i></a></li>
-            <!-- Menu droite utilisateur--> 
+              <li ng-hide="isConnected || $state.current.name === 'login'" ui-sref="login"><i class="material-icons left black-text">lock_outline</i></a></li>
+            <!-- Menu droite utilisateur-->
               <li class="menu" ng-show="isConnected" ng-click="monCompte()"><i class="material-icons left black-text">account_circle</i></a></li>
-              <li class="menu" ng-show="isConnected" ng-click="deconnect()"><i class="material-icons left black-text">clear</i></a></li>
+              <li class="menu" ng-show="isConnected" ng-click="deconnect()"><i class="material-icons left black-text">exit_to_app</i></a></li>
             </ul>
             <!-- Menu gauche-->       
             
