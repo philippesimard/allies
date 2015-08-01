@@ -11,8 +11,10 @@
     "lodash": "~3.9.3",
     "angular-materialize": "*",
     "materialize": "~0.97.0",
-    "elasticui": "*",
-    "angular-user-auth": "git+https://github.com/leseulsteve/angular-user-auth.git"
+    "angular-user-auth": "git+https://github.com/leseulsteve/angular-user-auth.git",
+    "elasticsearch": "~5.0.0",
+    "elastic.js": "~1.2.0",
+    "elasticui": "*"
   },
   "devDependencies": {
     "angular-mocks": "^1.3.0"

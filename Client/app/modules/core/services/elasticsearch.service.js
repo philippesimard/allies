@@ -1,7 +1,8 @@
 'use strict';
 
-module.service('client', function (esFactory) {
-  return esFactory({
-    host: 'localhost:9200',
+angular.module('core').service('es',
+  function (esFactory) {
+    return esFactory({
+      host: 'localhost:9200',
+    });
   });
-});
