@@ -9,19 +9,20 @@
 
 <div class="container espace">
 
-  <form ng-submit="addUser()"
+  <form signup-form
         name="userForm"
+        ng-submit="signup(userForm, newUser)"
         novalidate
         class="row">
 
     <div class="input-field col s12">
-      <label for="name">Nom</label>
+      <label for="lastname">Nom</label>
       <input type="text"
-             name="name"
+             name="lastname"
              class="validate"
              required
-             ng-model="newUser.name"/>
-      <div ng-messages="userForm.name.$error" ng-if="userForm.$submitted">
+             ng-model="newUser.lastname"/>
+      <div ng-messages="userForm.lastname.$error" ng-if="userForm.$submitted">
         <div ng-message="required" >Ce champs est requis.</div>
       </div>
     </div>
@@ -39,7 +40,7 @@
     </div>
 
     <div class="input-field col s12">
-      <label for="dateNaissance">Date de naissance (aaaa-mm-jj)</label>
+      <label for="dateNaissance">Date de naissance</label>
       <input type="text"
              name="dateNaissance"
              class="validate"
@@ -82,6 +83,7 @@
              name="password" 
              class="validate"
              required
+             autocomplete="off"
              ng-blur="showMinlengthError = true"
              ng-focus="showMinlengthError = false"
              ng-minlength="7"
@@ -100,6 +102,7 @@
              name="passwordConfirm"
              class="validate"
              required
+             autocomplete="off"
              ng-blur="showValidPasswordError = true"
              ng-focus="showValidPasswordError = false"
              password-verify="newUser.password"
