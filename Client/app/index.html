@@ -36,16 +36,17 @@
   <!-- endbuild -->
 <body>
 
-<!-- ElasticSearch ici -->
-<script src="/bower_components/elasticsearch/elasticsearch.js"></script>
-<script>
-  var client = elasticsearch.Client({
-    host: 'localhost:9200'
-  });
-</script>
-
 <header></header>
   <section ui-view></section>
+  <like-button></like-button>
+<footer class="page-footer grey darken-4">         
+  <div class="footer-copyright">
+    <div class="container">
+    © 2015 Copyright PSW Design - BETA 1
+    <a class="grey-text text-lighten-4 right" href="#!">Liens</a>
+    </div>
+  </div>
+</footer>
 
 <!-- build:js scripts/vendor.js -->
 <!-- injector:bowerjs -->
@@ -57,14 +58,15 @@
 <script src="lib/angular-touch/angular-touch.js"></script>
 <script src="lib/angular-messages/angular-messages.js"></script>
 <script src="lib/lodash/lodash.js"></script>
-<script src="lib/angular-materialize/src/angular-materialize.js"></script>
 <script src="lib/materialize/bin/materialize.js"></script>
-<script src="lib/elastic.js/dist/elastic.js"></script>
-<script src="lib/elasticsearch/elasticsearch.js"></script>
-<script src="lib/elasticui/dist/elasticui.min.js"></script>
+<script src="lib/angular-materialize/src/angular-materialize.js"></script>
 <script src="lib/angular-animate/angular-animate.js"></script>
 <script src="lib/angular-user-auth/dist/angular-user-auth.js"></script>
+<script src="lib/elasticsearch/elasticsearch.js"></script>
+<script src="lib/elastic.js/dist/elastic.js"></script>
+<script src="lib/elasticui/dist/elasticui.min.js"></script>
 <!-- endinjector -->
+<script src="lib/elasticsearch/elasticsearch.angular.js"></script>
 <!-- endbuild -->
 
 <!-- build:js scripts/custom.js -->
@@ -112,19 +114,4 @@
 <!-- endbuild -->
 
 </body>
-
-
-<like-button></like-button>
-<footer class="page-footer grey darken-4">
-          
-          <div class="footer-copyright">
-            <div class="container">
-            © 2015 Copyright PSW Design - BETA 1
-            <a class="grey-text text-lighten-4 right" href="#!">Liens</a>
-            </div>
-          </div>
-        </footer>
-</footer>
-
-
 </html>
