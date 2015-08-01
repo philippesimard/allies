@@ -25,20 +25,20 @@ module.exports = {
 
 		resetPassword: {
 			mailOptions: {
-				from: 'Steve Boisvert ✔ <leseulsteve@gmail.com>',
+				from: 'Gris Québec ✔ <nepasrepondre@grisquebec.org>',
 				subject: 'Réinitialisation de votre mot de passe'
 			}
 		},
 		
 		confirmEmail: {
 			mailOptions: {
-				from: 'Steve Boisvert ✔ <leseulsteve@gmail.com>',
+				from: 'Gris Québec ✔ <nepasrepondre@grisquebec.org>',
 				subject: 'Confirmation de votre courriel'
 			}
 		},
 
 		signup: {
-			sendConfirmationEmail: false
+			sendConfirmationEmail: true
 		},
 
 		findUser: {
@@ -58,6 +58,7 @@ module.exports = {
 
 	mailer: {
 		host: '127.0.0.1',
-    port: 1025
+    port: 1025,
+    ignoreTLS: true
 	}
 };
