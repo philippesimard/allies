@@ -41,4 +41,8 @@ angular.module('users').run(
       MaterializeService.toast(message, toastDelay);
     });
 
+    $rootScope.$on('User:changeInfos:success', function () {
+      MaterializeService.toast('Informations mises à jour', toastDelay);
+    });
+
   });

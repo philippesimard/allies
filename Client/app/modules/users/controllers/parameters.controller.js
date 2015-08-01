@@ -1,23 +1,22 @@
 'use strict';
 
 angular.module('users').controller('ParametersController',
-  function ($scope, user, MaterializeService) {
+  function ($rootScope, $scope, user) {
 
     $scope.user = user;
 
-    $scope.modifyUser = function () {
+    $scope.modifyUser = function (userForm, user) {
 
-      if ($scope.userForm.$invalid) {
-        $scope.showErrors = true;
-      } else {
+      if (userForm.$valid) {
 
-        $scope.user.update().then(function (updatedUser) {
+        user.update().then(function (updatedUser) {
 
           $scope.user = updatedUser;
 
-          MaterializeService.toast('Mises à jour de vos informations', 3000);
+          $rootScope.$broadcast('User:changeInfos:success', updatedUser);
 
-          $scope.showErrors = false;
+          // Étant donné qu'on ne change pas de page, on reset les propriétés du formulaire
+          userForm.$setPristine();
         });
       }
     };
