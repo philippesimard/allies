@@ -7,45 +7,52 @@
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
   require('time-grunt')(grunt);
 
   grunt.initConfig({
     express: {
+      options: {
+        port: process.env.PORT || 9001
+      },
+      dev: {
         options: {
-            port: process.env.PORT || 9001
-        },
-        dev: {
-            options: {
-                script: 'index.js'
-            }
-        },
-        prod: {
-            options: {
-                script: 'index.js',
-                'node_env': 'production'
-            }
+          script: 'index.js'
         }
+      },
+      prod: {
+        options: {
+          script: 'index.js',
+          'node_env': 'production'
+        }
+      }
     },
 
     watch: {
       express: {
-          files: [
-              'index.js',
-              'src/{,*//*}*.{js,json}'
-          ],
-          tasks: ['express:dev'],
-          options: {
-              livereload: 35728,
-              nospawn: true //Without this option specified express won't be reloaded
-          }
+        files: [
+          'index.js',
+          'src/{,*//*}*.{js,json}'
+        ],
+        tasks: ['express:dev'],
+        options: {
+          livereload: 35728,
+          nospawn: true //Without this option specified express won't be reloaded
+        }
       },
       gruntfile: {
         files: ['Gruntfile.js']
       }
     },
-    
+
+    maildev: {
+      run: {
+        keepAlive: true,
+        open: true
+      }
+    },
+
     jshint: {
       options: {
         jshintrc: '.jshintrc',
@@ -67,5 +74,5 @@ module.exports = function (grunt) {
     },
   });
 
-  grunt.registerTask('dev', ['shell:mongo', 'express:dev', 'watch']);
+  grunt.registerTask('dev', ['shell:mongo', 'express:dev', 'maildev', 'watch']);
 };
