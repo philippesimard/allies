@@ -14,7 +14,8 @@
     "angular-user-auth": "git+https://github.com/leseulsteve/angular-user-auth.git",
     "elasticsearch": "~5.0.0",
     "elastic.js": "~1.2.0",
-    "elasticui": "*"
+    "elasticui": "*",
+    "angular-uuid-service": "~0.1.0"
   },
   "devDependencies": {
     "angular-mocks": "^1.3.0"
