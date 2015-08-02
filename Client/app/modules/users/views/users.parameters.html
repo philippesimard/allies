@@ -8,12 +8,33 @@
   </div>
 </div>
 
-<div class="container">   
+<div class="container espace">
+
+<div class="card grey lighten-4 z-depth-0">
+            <div class="card-content black-text">
+            <blockquote>
+              <span class="card-title black-text">Important</span>
+              
+             <p>Utilisez le formulaire afin de modifier vos paramètres personnelles. Vous n'êtes pas obliger de modifier tous les champs. </p>
+           </blockquote>
+           <div class="card-action orange-darken-3-text">
+               <a class="btn-flat white black-text">Conditions d'utilisation</a>
+               <a class="btn-flat white black-text">Suprimer mon compte</a>
+            </div>
+            </div>
+          </div>
+
   <form ng-submit="modifyUser(userForm, user)"
         name="userForm"
         novalidate
         class="row">
 
+        <div class="section">
+        <h5>Informations personnelles</h5>
+        <p>Entré ici vos informations personelles </p>
+        <div class="space"></div>
+
+    <div class="row">
     <div class="input-field col s12">
       <input type="text" 
              name="lastname"
@@ -24,7 +45,9 @@
         <div ng-message="required" >Ce champs est requis.</div>
       </div>
     </div>
+    </div>
 
+    <div class="row">
     <div class="input-field col s12">
       <input type="text"
              name="firstname"
@@ -34,6 +57,7 @@
       <div ng-messages="userForm.firstname.$error" ng-if="userForm.$submitted">
         <div ng-message="required">Ce champs est requis.</div>
       </div>
+    </div>
     </div>
 
     <!--<div class="input-field col s12"
@@ -50,6 +74,8 @@
     </div>
     </div>-->
          
+    
+    <div class="row">
     <div class="input-field col s12">
       <input type="email" 
              name="email" 
@@ -65,10 +91,16 @@
         <div ng-message="email">Entrez un email valide</div>
       </div>
     </div>
+    </div>
+    <div>
 
-    <div>Inscrire qu'ils ne sont pas obligés des changer leur mot de passe</div>
+    <div class="section">
+        <h5>Mot de passe</h5>
+        <p>Remplir les deux champs pour changer votre mot de passe</p>
+        <div class="space"></div>
 
-    <div class="input-field col s6">        
+    <div class="row">
+    <div class="input-field col s12">        
       <input type="password" 
              placeholder="Nouveau mot de passe"
              name="password" 
@@ -81,8 +113,10 @@
         <div ng-message="minlength">Votre mot de passe doit être d'au moins 7 caractères</div>
       </div>
     </div>
+    </div>
     
-    <div class="input-field col s6">
+    <div class="row">
+    <div class="input-field col s12">
       <input type="password"
              placeholder="Confirmation mot de passe"
              name="passwordConfirm"
@@ -99,11 +133,12 @@
         <div ng-message="passwordVerify">Les mots de passe ne correspondent pas</div>
       </div>
     </div>
+    </div>
+    </div>
 
-    </br>
 
     <div>
-      <button type="submit" class="waves-effect waves-light btn right blue">Modifier mes informations</button>
+      <button type="submit" class="waves-effect waves-light btn-large left orange darken-3">Modifier mes informations</button>
       </br>
     </div>
   </form>

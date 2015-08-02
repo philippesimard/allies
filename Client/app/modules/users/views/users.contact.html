@@ -1,9 +1,106 @@
-<div id="index-banner" class="jumbotron">
-    <div class="section no-pad-bot" >
-      <div class="container">
-        <br><br>
-        <h1 class="header light white-text">Formulaire de contact</h1>
-          <h5 class="header light white-text">Ici utilisateur contact</h5>
-       </div>
-    </div>
-  </div>
+	<div id="index-banner" class="jumbotron">
+	    <div class="section no-pad-bot" >
+	      <div class="container">
+	        <h1 class="header light white-text">Formulaire de contact</h1>
+	          <h5 class="header light white-text">Ici utilisateur contact</h5>
+	       </div>
+	    </div>
+	  </div>
+
+
+
+	<div class="container espace">
+
+		<div class="section">
+	    <div class="row">
+      
+          <div class="card grey lighten-4 z-depth-0">
+            <div class="card-content black-text">
+            <blockquote>
+              <span class="card-title black-text">Important</span>
+              
+             <p>Utilisez le formulaire de contact afin de joindre notre équipe. Si vous souhaiter obtenir de l'aide voir la section aide du site. Pour signaler une page ou un contenu voir la page signaler un contenu.</p>
+           </blockquote>
+            </div>
+            <div class="card-action orange-darken-3-text">
+               <a class="btn-flat white black-text">Section aide</a>
+               <a class="btn-flat white black-text">Signaler une page</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+	    <form class="col s12">
+
+			<div class="section">
+	    	<h5>Informations personnelles</h5>
+    		<p>Entré ici vos informations personelles </p>
+    		<div class="space"></div>
+
+	      <div class="row">
+	        <div class="input-field col s6">
+	          <input id="name" type="text" class="validate">
+	          <label for="first_name" data-error="Erreur" data-success="ok">Nom</label>
+	        </div>
+
+	        <div class="input-field col s6">
+	          <input id="last_name" type="text" class="validate">
+	          <label for="first_name" data-error="Erreur" data-success="ok">Prénom</label>
+	        </div>
+	      </div>
+
+	      <div class="row">
+	        <div class="input-field col s12">
+	          <input id="email" type="email" class="validate">
+	          <label for="first_name" data-error="Erreur" data-success="ok">Email</label>
+	        </div>
+	      </div>
+	      <div>
+
+	      	<div class="section">
+	    	<h5>Message</h5>
+    		<p>Comment pouvons-nous vous aider ?</p>
+    		<div class="space"></div>
+
+			<div class="row">
+			<div class="input-field col s12">
+	         <input id="input_text" type="text" length="10" class="validate">
+	         <label for="first_name" data-error="Erreur" data-success="ok">Titre du message</label>
+	        </div>
+	      </div>
+
+	      <div class="row">
+	          <div class="input-field col s12">
+	            <textarea id="textarea1" class="materialize-textarea" length="500"></textarea>
+	            <label for="first_name" >Votre message</label>
+	          </div>
+	        </div>
+	  
+
+<div class="input-field col s12">
+<a  type="submit" class="waves-effect waves-light btn-large left orange darken-3"><i class="material-icons left">send</i>Envoyer</a>
+</div>
+</form>
+	</div>
+	</div>
+
+
+<script>
+$(document).ready(function() {
+$('input#input_text, textarea#textarea1').characterCounter();
+  });
+</script>
+
+<!--
+<div class="row">
+	      	<div class="input-field col s12">
+    		<select class="browser-default">
+      			<option value="" disabled selected>Sujet du message</option>
+      			<option value="1">Option 1</option>
+      			<option value="2">Option 2</option>
+     			 <option value="3">Option 3</option>
+    		</select>
+    		</div>
+    	</div>
+
+ -->
