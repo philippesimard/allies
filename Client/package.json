@@ -1,8 +1,24 @@
 {
-  "name": "client",
-  "version": "0.0.0",
+  "name": "Alliés-Client",
+  "version": "0.0.1",
+  "private": "true",
+  "description": "La première plateforme web interactive regroupant un large éventail d’outils et de ressources pour l’inclusion de la diversité sexuelle et de genre.",
+  "keywords": "diversité sexuelle genre allies gris-quebec",
+  "homepage": "",
+  "contributors": [{
+    "name": "Philippe Simard",
+    "email": "http://pswdesign.ca",
+    "url": "https://github.com/philippesimard"
+  }, {
+    "name": "Steve Boisvert",
+    "email": "leseulsteve@gmail.com",
+    "url": "https://github.com/leseulsteve"
+  }],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/philippesimard/allies"
+  },
   "dependencies": {},
-  "repository": {},
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-autoprefixer": "^2.0.0",
@@ -31,7 +47,6 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "grunt test",
     "postinstall": "bower install --config.interactive=false"
   }
 }

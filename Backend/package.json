@@ -1,10 +1,26 @@
 {
-  "name": "allies-backend",
+  "name": "Alliés-Backend",
   "version": "0.0.1",
-  "private": false,
+  "private": "true",
+  "description": "La première plateforme web interactive regroupant un large éventail d’outils et de ressources pour l’inclusion de la diversité sexuelle et de genre.",
+  "keywords": "diversité sexuelle genre allies gris-quebec",
+  "homepage": "",
+  "contributors": [{
+    "name": "Philippe Simard",
+    "email": "http://pswdesign.ca",
+    "url": "https://github.com/philippesimard"
+  }, {
+    "name": "Steve Boisvert",
+    "email": "leseulsteve@gmail.com",
+    "url": "https://github.com/leseulsteve"
+  }],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/philippesimard/allies"
+  },
   "dependencies": {
-    "express-base": "git+https://github.com/leseulsteve/express-base.git",
-    "express-user-auth": "git+https://github.com/leseulsteve/express-user-auth.git",
+    "express-base": "leseulsteve/express-base",
+    "express-user-auth": "leseulsteve/express-user-auth",
     "mongoose": "^4.1.0",
     "lodash-node": "^3.10.0",
     "mongoose-schema-extend": "^0.1.7",
