@@ -41,9 +41,8 @@ like-button {
 
 
 .jumbotron {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  margin-bottom: 30px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   color: inherit;
   background-color: #f57c00;
             }
@@ -55,12 +54,21 @@ like-button {
   width: 230px;
             }
 
+.presentation {
+
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #f5f5f5;
+
+
+}
+
 .espace {
 
-padding-top: 50px;
-  padding-bottom: 50px;
-  margin-bottom: 50px;
-  margin-top: 50px;
+padding-top: 40px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  margin-top: 40px;
   
 }
 

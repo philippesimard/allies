@@ -26,7 +26,7 @@ angular.module('core').directive('likeButton',
 
         scope.addToFavorites = function () {
           FavoritePagesService.addContenu().then(function () {
-            MaterializeService.toast('<i class="material-icons pink-text">favorite</i>&nbsp;&nbsp;Cette page à été ajoutée à vos favoris', toastTime);
+            MaterializeService.toast('<i class="material-icons red-text">favorite</i>&nbsp;&nbsp;Cette page à été ajoutée à vos favoris', toastTime);
           });
         };
 
@@ -35,8 +35,9 @@ angular.module('core').directive('likeButton',
           MaterializeService.toast('<i class="material-icons red-text">warning</i>&nbsp;&nbsp;Pour signaler cette page </span><a class="waves-effect waves-light btn red"; href=&quot;#!&quot;>Cliquez ici<a>', toastTime);
         };
 
-        scope.contribuer = function () {
-          console.log('contribuer');
+        scope.likepage = function () {
+          console.log('likepage');
+          MaterializeService.toast('<i class="material-icons red-text">warning</i>&nbsp;&nbsp;Pour signaler cette page </span><a class="waves-effect waves-light btn red"; href=&quot;#!&quot;>Cliquez ici<a>', toastTime);
         };
       },
       // controller: function ($scope) {},

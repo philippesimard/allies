@@ -2,27 +2,31 @@
   <div class="section no-pad-bot" >
     <div class="container">
       <br><br>
-      <h1 class="header light white-text">Paramètres personnelles</h1>
-        <h5 class="header light white-text">Ici utilisateur paramètres modification</h5>
+      <h1 class="header light white-text">Paramètres</h1>
+        <h5 class="header light white-text">Cette page permet de mofifier vos informations et paramètres personnelles.</h5>
      </div>
   </div>
 </div>
 
-<div class="container espace">
+<div class="presentation">
+  <div class="container">
 
-<div class="card grey lighten-4 z-depth-0">
-            <div class="card-content black-text">
-            <blockquote>
-              <span class="card-title black-text">Important</span>
-              
-             <p>Utilisez le formulaire afin de modifier vos paramètres personnelles. Vous n'êtes pas obliger de modifier tous les champs. </p>
-           </blockquote>
-           <div class="card-action orange-darken-3-text">
-               <a class="btn-flat white black-text">Conditions d'utilisation</a>
-               <a class="btn-flat white black-text">Suprimer mon compte</a>
-            </div>
-            </div>
-          </div>
+    <div class="divider"></div>
+    <div class="section">
+      <h5>Informations</h5>
+      <p>Modifier ici vos informations comme vous le souhaitez. Vous n'êtes pas obliger de remplir tous les champs sauf ceux requis comme le mot de passe.</p>
+    </div>
+
+    <div>
+     <a ui-sref="help" class="btn-flat white black-text">Section aide</a>
+     <a ui-sref="deleteaccount" class="btn-flat red white-text">Suprimer mon compte</a>
+   </div>
+
+
+ </div>
+</div>
+
+<div class="container espace">
 
   <form ng-submit="modifyUser(userForm, user)"
         name="userForm"
@@ -31,7 +35,7 @@
 
         <div class="section">
         <h5>Informations personnelles</h5>
-        <p>Entré ici vos informations personelles </p>
+        <p>Entrez ici vos informations personnelles </p>
         <div class="space"></div>
 
     <div class="row">

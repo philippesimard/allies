@@ -24,7 +24,7 @@ angular.module('users').run(
 
     var config = {
       loginStateName: 'login',
-      authorizedRoutes: ['home', 'userForm', 'propos', 'ressources', 'parcours', 'recherche']
+      authorizedRoutes: ['home', 'userForm', 'propos', 'ressources', 'parcours', 'recherche', 'aide']
     };
 
     $rootScope.$on('$stateChangeStart',
