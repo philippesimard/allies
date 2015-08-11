@@ -1,4 +1,4 @@
-<div id="index-banner" class="jumbotron animated fadeIn">
+<div id="index-banner" class="jumbotron">
     <div class="section no-pad-bot" >
       <div class="container">
         <h1 class="header light white-text">Recherche</h1>
@@ -7,7 +7,6 @@
     </div>
   </div>
 
-<head>
     <title>Moteur de recherche</title>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
     <script src="http://code.angularjs.org/1.2.16/angular.js"></script>
@@ -39,8 +38,8 @@
             .module('tutorial', ['elasticui'])
             .constant('euiHost', 'http://localhost:9200'); // ACTION: change to cluster address
     </script>
-</head>
-<body ng-app="tutorial" eui-index="'localhost8888alliees-1'"><!-- ACTION: change to index name -->
+
+ng-app="tutorial" eui-index="'localhost8888alliees-1'"><!-- ACTION: change to index name -->
 
     <div class="container-fluid">
 
@@ -81,4 +80,3 @@
             </div>
         </div>
     </div>
-</body>

@@ -16,9 +16,32 @@
             <li><a ui-sref="home" class="black-text">Accueil</a></li>
             <li><a ui-sref="propos" class="black-text">À propos</a></li>
             <li><a ui-sref="parcours" class="black-text">Parcours</a></li>
-            <li><a ui-sref="ressources" class="black-text">Ressources</a></li>
+            <li><a class='dropdown-button btn-white black-text' data-beloworigin="true" ui-sref="ressources" data-activates='ressources'>Ressources</a></li>
             <li><a ui-sref="recherche" class="black-text">Recherche</a></li>
           </ul>
+
+
+          <!-- Contenus -->
+          <ul id='ressources' class='dropdown-content'>
+            <li><a class="pink-text" ui-sref="film">Films</a></li>
+            <li><a class="green-text" ui-sref="bd">BD</a></li>
+            <li><a class="red-text" ui-sref="livre">Livres pour enfants</a></li>
+            <li><a class="blue-text" ui-sref="document">Documents</a></li>
+            <li><a class="orange-text" ui-sref="roman">Romans</a></li>
+          </ul>
+
+          <script>
+$('.dropdown-button').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrain_width: false, // Does not change width of dropdown to that of the activator
+      hover: true, // Activate on hover
+      gutter: 0, // Spacing from edge
+      belowOrigin: false // Displays dropdown below the button
+    }
+  );
+
+          </script>
 
            <!-- Menu mobile--> 
            
