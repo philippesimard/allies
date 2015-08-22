@@ -1,0 +1,112 @@
+{ "domains":
+
+  [
+    {
+      "money" : "123.326",
+      "id": "billing-date-job-test-01.com",
+      "domain_id": "billing-date-job-test-01.com",
+      "registrar": "",
+      "reg_prov_status": null,
+      "domain_status": null,
+      "transfer_locked": false,
+      "organization_contact_id": null,
+      "organization_id": null,
+      "provisioning_id": 1234567468,
+      "service_key": "FUSDJFDFSDJFLK",
+      "system_status": "active",
+      "login": "migracaoenom"
+    },
+
+    {
+      "id": "customer-login-refact-01.com",
+      "domain_id": "customer-login-refact-01.com",
+      "registrar": "",
+      "reg_prov_status": null,
+      "domain_status": null,
+      "transfer_locked": false,
+      "organization_contact_id": null,
+      "organization_id": null,
+      "provisioning_id": 1234567468,
+      "service_key": "FUSDJFDFSDJFLK",
+      "system_status": "active",
+      "login": "migracaoenom"
+    },
+
+    {
+      "id": "customer-login-refact-01.com.br",
+      "domain_id": "customer-login-refact-01.com.br",
+      "registrar": "",
+      "reg_prov_status": null,
+      "domain_status": null,
+      "transfer_locked": false,
+      "organization_contact_id": null,
+      "organization_id": null,
+      "provisioning_id": 1234567468,
+      "service_key": "FUSDJFDFSDJFLK",
+      "system_status": "active",
+      "login": "migracaoenom"
+    },
+
+    {
+      "id": "customer-login-refact-01.org",
+      "domain_id": "customer-login-refact-01.org",
+      "registrar": "",
+      "reg_prov_status": null,
+      "domain_status": null,
+      "transfer_locked": false,
+      "organization_contact_id": null,
+      "organization_id": null,
+      "provisioning_id": 1234567468,
+      "service_key": "FUSDJFDFSDJFLK",
+      "system_status": "active",
+      "login": "migracaoenom"
+    },
+
+    {
+      "id": "customer-login-refact-02.com",
+      "domain_id": "customer-login-refact-02.com",
+      "registrar": "",
+      "reg_prov_status": null,
+      "domain_status": null,
+      "transfer_locked": false,
+      "organization_contact_id": null,
+      "organization_id": null,
+      "provisioning_id": 1234567468,
+      "service_key": "FUSDJFDFSDJFLK",
+      "system_status": "active",
+      "login": "migracaoenom"
+    },
+
+    {
+      "id": "customer-login-refact-02.com.br",
+      "domain_id": "customer-login-refact-02.com.br",
+      "registrar": "",
+      "reg_prov_status": null,
+      "domain_status": null,
+      "transfer_locked": false,
+      "organization_contact_id": null,
+      "organization_id": null,
+      "provisioning_id": 1234567468,
+      "service_key": "FUSDJFDFSDJFLK",
+      "system_status": "active",
+      "login": "migracaoenom"
+    },
+
+    {
+      "id": "customer-login-refact-02.org",
+      "domain_id": "customer-login-refact-02.org",
+      "registrar": "",
+      "reg_prov_status": null,
+      "domain_status": null,
+      "transfer_locked": false,
+      "organization_contact_id": null,
+      "organization_id": null,
+      "provisioning_id": 1234567468,
+      "service_key": "FUSDJFDFSDJFLK",
+      "system_status": "active",
+      "login": "migracaoenom"
+    }
+
+  ]
+
+}

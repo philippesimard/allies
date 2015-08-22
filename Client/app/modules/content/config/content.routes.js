@@ -10,7 +10,7 @@ angular.module('content').config(
       .state('film', {
       url: '/contenus/film',
       templateUrl: 'modules/content/views/film.html',
-      controller: 'ContentController'
+      controller: 'FilmController'
     })
 
     .state('livre', {

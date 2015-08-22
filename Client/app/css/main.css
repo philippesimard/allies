@@ -211,3 +211,14 @@ padding-top: 20px;
   60% {-webkit-transform: scaleX(1.15) scaleY(0.85);transform: scaleX(1.15) scaleY(0.85);}
   100% {-webkit-transform: scale(1);transform: scale(1);}
 }
+
+.box {
+
+    height: 680px;
+    background-color: #ffffff;
+  
+}
+
+.box:not([class*="hidden"]):nth-of-type(4n+1) {
+  clear: left;
+}
