@@ -8,53 +8,103 @@
     </div>
   </div>
 
-  <div class="container">
-
   
- 
-  <div class="row">
-
+<div class="container">
 
     <!-- Mise en page completement différente pour les téléphones mobiles. -->
     <div class="hide-on-med-and-down">
 
 
-    <!-- Barre de recherche sera amméliorée -->
+    <!-- Barre de recherche sera amméliorée  ng-click="filterProducts('type', 'tshirt')-->
       <div class="espace">
 
-    <input type="text" ng-model="searchFilm" placeholder="Chercher un film"><ul>
+
+<p ng-click="filterFilm('date', '2013')"></p>
+
+<!-- Dropdown Trigger -->
+  <a class='btn orange' ng-click="filterFilm()">Réinitialiser</a>
+  <span><a class='dropdown-button btn pink' href='#' data-activates='niveau'>Niveau</a></span>
+  <span><a class='dropdown-button btn pink' href='#' data-activates='genre'>Genre</a></span>
+  
+
+  <!-- Dropdown Structure -->
+  <ul id='niveau' class='dropdown-content'>
+    <li><a class="black-text" ng-click="filterFilm('niveau', 'Secondaires 3 à 5')">Primaire</a></li>
+    <li><a class="black-text" >Secondaire</a></li>
+    <li><a class="black-text" >Secondaire 3 à 5</a></li>
+    <li><a class="black-text" >Cégep</a></li>
+    <li><a class="black-text" >Adulte</a></li>
+  </ul>
+  <ul id='genre' class='dropdown-content'>
+    <li><a class="black-text" ng-click="filterFilm('niveau', 'Secondaires 3 à 5')">Primaire</a></li>
+    <li><a class="black-text" >Secondaire</a></li>
+    <li><a class="black-text" >Secondaire 3 à 5</a></li>
+    <li><a class="black-text" >Cégep</a></li>
+    <li><a class="black-text" >Adulte</a></li>
+  </ul>
+  </div>
+  </div>
+
+    
+     <!--<input type="text" ng-model="searchFilm" placeholder="Chercher un film"><ul> -->
+
+
+
+
+
     
     </div>
+
+    <div class="largecontainer">
+
+  
+ 
+  <div class="row">
 
     
 
     <!-- Carte version bureau -->
-          <div class="col m12">
-            <div class="card box z-depth-0" ng-repeat="film in filmlist | filter:searchFilm " ng-style="{'width': '25%'}" >
+          <div class="animated fadeIn">
+            <div class="card box z-depth-0" ng-repeat="film in filtered | filter:searchFilm " ng-style="{'width': '25%'}" >
               
               <div class="card-image">
-                <img class="circle" src="{{film.img}}">
+                <img src="{{film.img}}">
               </div>
 
+              
               <div class="card-content">
-                <span class="card-title activator pink-text"></span>
-                <h6 class="pink-text">{{film.name}}</h6>
-                <p>{{film.synopsis | limitTo:120}} ...</p>
-                <p><span class="card activator btn pink white-text">En savoir plus</span><p>
-              </div>
+      <span class="card-title activator grey-text text-darken-4">{{film.name | limitTo:15}}<i class="material-icons right pink-text">favorite</i></span>
+     <p> {{film.synopsis | limitTo:200}} ...</p>
+     <p><a class="activator pink-text"href="#">En savoir plus</a></p>
+    </div>
+
+              
 
     <div class="card-reveal">
+  
       <span class="card-title grey-text text-darken-4">{{film.name}}<i class="material-icons right">close</i></span>
-      <p><span class="pink-text">Date:</span> {{film.date}}  </br><span class="pink-text">Réalisation:</span> {{film.realisateur}}</br> <span class="pink-text">Durée:</span> {{film.dure}} </br> <span class="pink-text">Niveau:</span> {{film.niveau}} </br>  <span class="pink-text">Synopsis</span> {{film.synopsis}}</p>
+
+      <p><span class="pink-text">Date:</span> {{film.date}}  </br><span class="pink-text">Réalisation:</span> {{film.realisateur}} {{film.alerte}}</br> <span class="pink-text">Durée:</span> {{film.dure}} </br> <span class="pink-text">Niveau:</span> {{film.niveau}} </br>  <span class="pink-text">Synopsis</span> {{film.synopsis}}</p>
     
     </div>
 
             </div>
           </div>
-        </ul>
         </div>
-        </div>
-
       </div>
+
+  <script>
+ $('.dropdown-button').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrain_width: false, // Does not change width of dropdown to that of the activator
+      hover: true, // Activate on hover
+      gutter: 0, // Spacing from edge
+      belowOrigin: false // Displays dropdown below the button
+    }
+  );
+  </script>
+
+
 
   

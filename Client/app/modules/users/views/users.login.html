@@ -7,7 +7,7 @@
   </div>  
 </div>
 
-<div class="container espace">
+<div class="container petitespace">
   <form signin-form
         name="loginForm"
         ng-submit="signin(loginForm, loginInfo)"
@@ -26,7 +26,7 @@
                ng-focus="showInvalidEmail = false"
        		     ng-model="loginInfo.username"/>
         <div ng-messages="loginForm.email.$error" ng-if="loginForm.$submitted">
-          <div ng-message="required">Ce champs est requis.</div>
+          <div ng-message="required">Email valide requis.</div>
         </div>
         <div ng-messages="loginForm.email.$error" ng-if="showInvalidEmail">
           <div ng-message="email">Entrez un email valide.</div>
@@ -43,7 +43,7 @@
                  ng-focus="loginInfo.password = undefined"
                  ng-model="loginInfo.password"/>
         <div ng-messages="loginForm.password.$error" ng-if="loginForm.$submitted">
-          <div ng-message="required">Ce champs est requis.</div>
+          <div ng-message="required">Mot de passe valide requis.</div>
         </div>
       </div>
 
@@ -53,4 +53,15 @@
       <button type="submit" class="waves-effect waves-light btn-large right orange darken-3">Se connecter</button>
     </div>
   </form>
-</div> 
+</div>
+</div>
+
+<div class="presentation">
+  <div class="row center">
+
+<h3 class="light center">Vous n'êtes pas inscrit ?</h3>
+<h5 class="light center">Contenus, partager, découvrir.</h5>
+<a ui-sref="userForm" class="waves-effect waves-light btn-large pink"><i class="material-icons left"></i>S'inscrire</a>
+
+</div>
+</div>

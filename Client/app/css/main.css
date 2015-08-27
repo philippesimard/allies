@@ -90,6 +90,15 @@ padding-top: 40px;
   
 }
 
+.petitespace {
+
+padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  
+}
+
 .smallspace {
 
 padding-top: 20px;
@@ -216,9 +225,11 @@ padding-top: 20px;
 
     height: 680px;
     background-color: #ffffff;
+    position: relative;
   
 }
 
-.box:not([class*="hidden"]):nth-of-type(4n+1) {
-  clear: left;
-}
+.largecontainer {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 90%; }

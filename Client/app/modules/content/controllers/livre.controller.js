@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('content').controller('FilmController',
+angular.module('content').controller('LivreController',
   function ($scope)
 
   {
 
-    $scope.film = [{
+    $scope.livrelist = [{
       'name': 'Violette',
       'synopsis': 'Violette Leduc, née bâtarde au début du siècle dernier, rencontre Simone de Beauvoir dans les années d’après-guerre à St-Germain-des-Prés. Commence une relation intense entre les deux femmes qui va durer toute leur vie, relation basée sur la quête de la liberté par l’écriture pour Violette et la conviction pour Simone d’avoir entre les mains le destin d’un écrivain hors norme.',
       'realisateur': 'Martin Provost',
@@ -18,7 +18,7 @@ angular.module('content').controller('FilmController',
       'name': 'Brokeback',
       'synopsis': 'Deux jeunes cow-boys, Jack et Ennis, sont engagés pour garder ensemble un troupeau de moutons à Brokeback Mountain.Isolés au milieu d’une nature sauvage, ils voient leur complicité se transformer lentement en une attirance aussi irrésistible qu’inattendue. ',
       'realisateur': 'Ang Lee',
-      'niveau': 'Secondaires 3 à 5, Cégep',
+      'niveau': 'Secondaires 3 à 5 et Cégep',
       'date': '2005',
       'dure': '134 min',
       'img': 'img/film/brokeback.jpg',
@@ -77,29 +77,8 @@ angular.module('content').controller('FilmController',
       'dure': '85 min',
       'img': 'img/film/butam.jpg',
 
-    }, {
-      'name': 'But I’m a cheerleader',
-      'synopsis': 'Megan est pom-pom girl et a un petit ami. Seulement voilà, il se pourrait bien qu’elle soit lesbienne. Ses parents décident donc de l’envoyer en école de « réorientation sexuelle » afin qu’elle réapprenne l’hétérosexualité. Là-bas, elle rencontre la belle Graham...',
-      'realisateur': 'Jamie Babbit',
-      'niveau': 'Secondaires à Cégep',
-      'date': '1999',
-      'dure': '85 min',
-      'img': 'img/film/butam.jpg',
-
     }, ];
 
     $scope.title = 'Filmographie';
 
-    $scope.filtered = $scope.film;
-
-    $scope.filterFilm = function (prop, value) {
-      if (!prop || !value) {
-        $scope.filtered = $scope.film;
-        return;
-      }
-
-      $scope.filtered = $scope.film.filter(function (item) {
-        return item[prop] === value;
-      });
-    };
   });
