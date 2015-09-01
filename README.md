@@ -1,4 +1,4 @@
-# allies
+# Projet A comme AlliéEs
 La première plateforme web interactive regroupant un large éventail d’outils et de ressources  pour l’inclusion de la diversité sexuelle et de genre.
 
 
@@ -24,5 +24,7 @@ En nous aidant à réaliser et à promouvoir la plateforme web interactive regro
 
 <h2>Nous joindre </h2>
 
-Chargée du développement: Philippe Simard
+Vous êtes developpeur ? Pour contribuer au projet contactez-nous par courriel.
+
+Responsable du développement: Philippe Simard
 info@pswdesign.ca
