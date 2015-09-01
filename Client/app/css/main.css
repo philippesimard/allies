@@ -48,6 +48,13 @@ padding-top: 100px;
   background-color: #f57c00;
             }
 
+.propos {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-bottom: 30px;
+  background-image: url("http://pswdesign.ca/wp-content/uploads/2015/08/propos.jpg");
+            }
+
 
 .jumbotron {
   padding-top: 25px;
