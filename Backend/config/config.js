@@ -47,11 +47,11 @@ module.exports = {
 
 		signup: {
 			sendConfirmationEmail: true,
-			userCreationRoles: ['admin']
 		},
 
 		userApi: {
 			//hideUserIds: ['55eb0075b2996d900ef8879a'],
+			userCreationRoles: ['admin'],
 			permissions: {
 				admin: 'all',
 				user: ['READ-OWN', 'UPDATE-OWN']
