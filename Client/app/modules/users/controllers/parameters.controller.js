@@ -1,17 +1,13 @@
 'use strict';
 
 angular.module('users').controller('ParametersController',
-  function ($rootScope, $scope, user) {
+  function ($rootScope, $scope) {
 
-    $scope.user = user;
-
-    $scope.modifyUser = function (userForm, user) {
+    $scope.modifyUser = function (userForm) {
 
       if (userForm.$valid) {
 
-        user.update().then(function (updatedUser) {
-
-          $scope.user = updatedUser;
+        $rootScope.currentUser.save().then(function (updatedUser) {
 
           $rootScope.$broadcast('User:changeInfos:success', updatedUser);
 

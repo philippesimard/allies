@@ -11,21 +11,9 @@ angular.module('users').config(
       controller: 'UserAccountController'
     })
 
-    /*.state('userList', {
-      url: '/utilisateur',
-      resolve: {
-        users: function (User) {
-          return User.find();
-        }
-      },
-      templateUrl: 'modules/users/views/users.account.html',
-      controller: 'UsersListController'
-    })*/
-
     .state('userAccount', {
       url: '/utilisateur',
-      templateUrl: 'modules/users/views/users.account.html',
-      controller: 'UserAccountController'
+      templateUrl: 'modules/users/views/users.account.html'
     })
 
     .state('contenus', {

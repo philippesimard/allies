@@ -5,9 +5,9 @@
 <div id="index-banner" class="jumbotron">
     <div class="section no-pad-bot" >
       <div class="container">
-        <h1 class="header center light white-text">Bonjour {{ user.toString() }} </h1>
+        <h1 class="header center light white-text">Bonjour {{ currentUser.toString() }} </h1>
         <div class="row center">
-          <h5 class="header col s12 light white-text">Bienvenue dans votre espace membre {{user.name}} ! Le tableau de bord est le meilleur endroit afin de gérer vos contenus et participer au développement de la plateforme.</h5>
+          <h5 class="header col s12 light white-text">Bienvenue dans votre espace membre ! Le tableau de bord est le meilleur endroit afin de gérer vos contenus et participer au développement de la plateforme.</h5>
         </div>
         </div>
     </div>
@@ -18,7 +18,7 @@
   <div class="espace">
   <div class="row pointer">
         
-        <div class="col s12 m4" ng-click="contenus()">
+        <div class="col s12 m4" ui-sref="contenus">
           <div class="icon-block">
             <h2 class="center orange-text"><i class="material-icons">favorite</i></h2>
             <h5 class="center">Vos contenus</h5>
@@ -27,7 +27,7 @@
           </div>
         </div>
 
-        <div class="col s12 m4" ng-click="experience()">
+        <div class="col s12 m4" ui-sref="experience">
           <div class="icon-block">
             <h2 class="center orange-text"><i class="material-icons">stars</i></h2>
             <h5 class="center">Parcours</h5>
@@ -36,7 +36,7 @@
           </div>
         </div>
 
-        <div class="col s12 m4" ng-click="activite()">
+        <div class="col s12 m4" ui-sref="activite">
           <div class="icon-block">
             <h2 class="center orange-text"><i class="material-icons">dashboard</i></h2>
             <h5 class="center">Activités et expériences</h5>
@@ -45,7 +45,7 @@
           </div>
         </div>
 
-        <div class="col s12 m4" ng-click="contribution()">
+        <div class="col s12 m4" ui-sref="contribution">
           <div class="icon-block">
             <h2 class="center orange-text"><i class="material-icons">help</i></h2>
             <h5 class="center">Zone contribution</h5>
@@ -54,7 +54,7 @@
           </div>
         </div>
 
-        <div class="col s12 m4" ng-click="contact()">
+        <div class="col s12 m4" ui-sref="contact">
           <div class="icon-block">
             <h2 class="center orange-text"><i class="material-icons">email</i></h2>
             <h5 class="center">Nous joindre</h5>
@@ -63,7 +63,7 @@
           </div>
         </div>
 
-        <div class="col s12 m4" ng-click="parameters()">
+        <div class="col s12 m4" ui-sref="parameters">
           <div class="icon-block">
             <h2 class="center orange-text"><i class="material-icons">account_circle</i></h2>
             <h5 class="center">Paramètres</h5>

@@ -28,7 +28,7 @@
 
 <div class="container espace">
 
-  <form ng-submit="modifyUser(userForm, user)"
+  <form ng-submit="modifyUser(userForm)"
         name="userForm"
         novalidate
         class="row">
@@ -44,7 +44,7 @@
              name="lastname"
              class="validate"
              required
-             ng-model="user.lastname"/>
+             ng-model="currentUser.lastname"/>
       <div ng-messages="userForm.lastname.$error" ng-if="userForm.$submitted">
         <div ng-message="required" >Ce champs est requis.</div>
       </div>
@@ -57,7 +57,7 @@
              name="firstname"
              class="validate"
              required
-             ng-model="user.firstname"/>
+             ng-model="currentUser.firstname"/>
       <div ng-messages="userForm.firstname.$error" ng-if="userForm.$submitted">
         <div ng-message="required">Ce champs est requis.</div>
       </div>
@@ -71,7 +71,7 @@
              name="date"
              class="validate"
              required
-             ng-model="user.date"/>
+             ng-model="currentUser.date"/>
 
     <div ng-messages="userForm.date.$error" ng-if="showErrors">
       <div ng-message="required">Ce champs est requis.</div>
@@ -87,7 +87,7 @@
              required
              ng-blur="ShowInvalidEmail = true"
              ng-focus="ShowInvalidEmail = false"
-             ng-model="user.email"/>
+             ng-model="currentUser.email"/>
       <div ng-messages="userForm.email.$error" ng-if="userForm.$submitted">
         <div ng-message="required">Ce champs est requis.</div>
       </div>
@@ -112,7 +112,7 @@
              ng-blur="showMinlengthError = true"
              ng-focus="showMinlengthError = false"
              ng-minlength="7"
-             ng-model="user.password"/>
+             ng-model="currentUser.password"/>
       <div ng-messages="userForm.password.$error" ng-if="showMinlengthError">
         <div ng-message="minlength">Votre mot de passe doit être d'au moins 7 caractères</div>
       </div>
@@ -125,11 +125,11 @@
              placeholder="Confirmation mot de passe"
              name="passwordConfirm"
              class="validate"
-             ng-required="user.password !== undefined"
+             ng-required="currentUser.password !== undefined"
              ng-blur="showInvalidPassword = true"
              ng-focus="showInvalidPassword = false"
-             password-verify="user.password"
-             ng-model="user.confirmPassword"/>
+             password-verify="currentUser.password"
+             ng-model="currentUser.confirmPassword"/>
       <div ng-messages="userForm.passwordConfirm.$error" ng-if="userForm.$submitted">
         <div ng-message="required">Ce champs est requis.</div>
       </div>
