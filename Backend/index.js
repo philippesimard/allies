@@ -11,7 +11,11 @@ ExpressBase.init(config.expressBase, function(app) {
 
 	mongoose.connect(config.mongoose.URI);
 
-	UserAuth.init(app, require('./app/models/user'), config.expressUserAuth, nodemailer.createTransport(config.mailer));
-	console.log(chalk.green.bgBlue.bold(config.appTitle + ' serveur écoute maintenant sur le port ' + config.expressBase.port));
+	var mailer = nodemailer.createTransport(config.mailer);
 
+	ExpressBase.setMailerService(mailer);
+
+	UserAuth.init(app, require('./app/models/user'), config.expressUserAuth, mailer);
+
+	console.log(chalk.green.bgBlue.bold(config.appTitle + ' serveur écoute maintenant sur le port ' + config.expressBase.port));
 });

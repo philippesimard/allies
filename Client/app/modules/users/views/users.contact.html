@@ -20,37 +20,32 @@
 	  				<a ui-sref="help" class="btn-flat white black-text">Section aide</a>
 	  				<a ui-sref="deleteaccount" class="btn-flat red white-text">Signaler une page</a>
 	  			</div>
-
-
 	  		</div>
 	  	</div>
 
-
-
 	  <div class="container espace">
 
-	    <form class="col s12">
+	    <form class="col s12" novalidate name="contactForm" ng-submit="send(contactForm)">
 
 			<div class="section">
 	    	<h5>Informations personnelles</h5>
-    		<p>Entré ici vos informations personelles </p>
     		<div class="space"></div>
 
 	      <div class="row">
 	        <div class="input-field col s6">
-	          <input id="name" type="text" class="validate">
+	          <input id="name" type="text" ng-model="currentUser.lastname" class="validate" disabled/>
 	          <label for="first_name" data-error="Erreur" data-success="ok">Nom</label>
 	        </div>
 
 	        <div class="input-field col s6">
-	          <input id="last_name" type="text" class="validate">
+	          <input id="last_name" type="text" ng-model="currentUser.firstname" class="validate" disabled/>
 	          <label for="first_name" data-error="Erreur" data-success="ok">Prénom</label>
 	        </div>
 	      </div>
 
 	      <div class="row">
 	        <div class="input-field col s12">
-	          <input id="email" type="email" class="validate">
+	          <input id="email" type="email" ng-model="currentUser.email" class="validate" disabled/>
 	          <label for="first_name" data-error="Erreur" data-success="ok">Email</label>
 	        </div>
 	      </div>
@@ -63,21 +58,27 @@
 
 			<div class="row">
 			<div class="input-field col s12">
-	         <input id="input_text" type="text" length="10" class="validate">
-	         <label for="first_name" data-error="Erreur" data-success="ok">Titre du message</label>
+	         <input id="input_text" type="text" length="10" name="subject" ng-model="message.subject" class="validate" required/>
+	         <label for="subject" data-error="Erreur" data-success="ok">Titre du message</label>
 	        </div>
+	        <div ng-messages="contactForm.subject.$error" ng-if="contactForm.$submitted">
+        		<div ng-message="required" class="animated fadeIn red-text" >Ce champs est requis.</div>
+      		</div>
 	      </div>
 
 	      <div class="row">
 	          <div class="input-field col s12">
-	            <textarea id="textarea1" class="materialize-textarea" length="500"></textarea>
-	            <label for="first_name" >Votre message</label>
+	            <textarea id="textarea1" class="materialize-textarea" name="body" ng-model="message.body" length="500" required></textarea>
+	            <label for="body" >Votre message</label>
 	          </div>
+	          <div ng-messages="contactForm.body.$error" ng-if="contactForm.$submitted">
+        		<div ng-message="required" class="animated fadeIn red-text" >Ce champs est requis.</div>
+      		</div>
 	        </div>
 	  
 
 <div class="input-field col s12">
-<a  type="submit" class="waves-effect waves-light btn-large left orange darken-3"><i class="material-icons left">send</i>Envoyer</a>
+<button  type="submit" class="waves-effect waves-light btn-large left orange darken-3"><i class="material-icons left">send</i>Envoyer</button>
 </div>
 </form>
 	</div>

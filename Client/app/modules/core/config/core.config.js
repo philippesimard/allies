@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('core').config(
-  function ($httpProvider) {
+  function ($httpProvider, MailerProvider) {
 
     $httpProvider.interceptors.push(function () {
       return {
@@ -29,6 +29,11 @@ angular.module('core').config(
         }
       };
     });
+
+    MailerProvider.config({
+      url: 'mailer'
+    });
+
   });
 
 angular.module('core').run(

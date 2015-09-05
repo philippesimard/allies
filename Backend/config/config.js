@@ -12,6 +12,13 @@ module.exports = {
 			useAutorizations: true,
 			apiRoot: 'api/v1',
 			registerAlterations: true
+		},
+
+		mailer: {
+			url: 'api/v1/mailer',
+			addresses: {
+				'info': 'info@acommealliees.ca'
+			}
 		}
 	},
 
