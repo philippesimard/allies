@@ -11,7 +11,7 @@ angular.module('users').config(
       controller: 'UserAccountController'
     })
 
-    .state('userList', {
+    /*.state('userList', {
       url: '/utilisateur',
       resolve: {
         users: function (User) {
@@ -20,81 +20,46 @@ angular.module('users').config(
       },
       templateUrl: 'modules/users/views/users.account.html',
       controller: 'UsersListController'
-    })
+    })*/
 
     .state('userAccount', {
-      url: '/utilisateur/:userId',
-      resolve: {
-        user: function ($stateParams, User) {
-          return User.findOne($stateParams.userId);
-        }
-      },
+      url: '/utilisateur',
       templateUrl: 'modules/users/views/users.account.html',
       controller: 'UserAccountController'
     })
 
     .state('contenus', {
-      url: '/utilisateur/contenus/:userId',
-      resolve: {
-        user: function ($stateParams, User) {
-          return User.findOne($stateParams.userId);
-        }
-      },
+      url: '/utilisateur/contenus',
       templateUrl: 'modules/users/views/users.contenus.html',
       controller: 'ContenusController'
     })
 
     .state('experience', {
-      url: '/utilisateur/experience/:userId',
-      resolve: {
-        user: function ($stateParams, User) {
-          return User.findOne($stateParams.userId);
-        }
-      },
+      url: '/utilisateur/experience',
       templateUrl: 'modules/users/views/users.experience.html',
       controller: 'ExperienceController'
     })
 
     .state('activite', {
-      url: '/utilisateur/activite/:userId',
-      resolve: {
-        user: function ($stateParams, User) {
-          return User.findOne($stateParams.userId);
-        }
-      },
+      url: '/utilisateur/activite',
       templateUrl: 'modules/users/views/users.activite.html',
       controller: 'ActiviteController'
     })
 
     .state('contribution', {
-      url: '/utilisateur/contribution/:userId',
-      resolve: {
-        user: function ($stateParams, User) {
-          return User.findOne($stateParams.userId);
-        }
-      },
+      url: '/utilisateur/contribution',
       templateUrl: 'modules/users/views/users.contribution.html',
       controller: 'ContributionController'
     })
 
     .state('contact', {
-      url: '/utilisateur/contact/:userId',
-      resolve: {
-        user: function ($stateParams, User) {
-          return User.findOne($stateParams.userId);
-        }
-      },
+      url: '/utilisateur/contact',
       templateUrl: 'modules/users/views/users.contact.html',
       controller: 'ContactController'
     })
 
     .state('parameters', {
-      url: '/utilisateur/parameters/:userId',
-      resolve: {
-        user: function ($stateParams, User) {
-          return User.findOne($stateParams.userId);
-        }
-      },
+      url: '/utilisateur/parameters',
       templateUrl: 'modules/users/views/users.parameters.html',
       controller: 'ParametersController'
     });

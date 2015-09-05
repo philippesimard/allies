@@ -19,9 +19,7 @@ angular.module('users').run(
 
     $rootScope.$on('UserAuth:signin:success', function (event, user) {
       MaterializeService.toast('Bonjour ' + user.toString(), toastDelay);
-      $state.go('userAccount', {
-        userId: user._id
-      });
+      $state.go('userAccount');
     });
 
     $rootScope.$on('UserAuth:signin:fail', function (event, error) {

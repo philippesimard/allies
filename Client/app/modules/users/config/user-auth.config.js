@@ -8,34 +8,20 @@ angular.module('users').config(
 
     UserAuthProvider.config({
 
+      userSchema: 'User',
+
       sendPasswordToken: {
         urlRedirection: 'http://localhost:9000/#!/reset_password',
       },
+
       confirmEmail: {
         urlRedirection: 'http://localhost:9000/#!/confirm_email',
       },
-      apiRoot: ''
-    });
-  });
 
-angular.module('users').run(
+      apiRoot: '',
 
-  function ($rootScope, UserAuth, $state) {
-
-    var config = {
       loginStateName: 'login',
+
       authorizedRoutes: ['home', 'userForm', 'propos', 'ressources', 'parcours', 'recherche', 'aide']
-    };
-
-    $rootScope.$on('$stateChangeStart',
-      function (event, toState, toParams) {
-
-        if (!UserAuth.isAuthentified()) {
-
-          if (UserAuth.config.loginStateName && !_.contains(config.authorizedRoutes, toState.name)) {
-            event.preventDefault();
-            $state.go(config.loginStateName, toParams);
-          }
-        }
-      });
+    });
   });

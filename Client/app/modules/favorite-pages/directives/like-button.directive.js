@@ -21,7 +21,7 @@ angular.module('core').directive('likeButton',
 
         $rootScope.$on('$stateChangeSuccess',
           function () {
-            scope.hideButton = !UserAuth.isAuthentified();
+            scope.hideButton = !$rootScope.currentUser.isAuthentified();
           });
 
         scope.addToFavorites = function () {
