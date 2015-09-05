@@ -53,7 +53,6 @@
 <!-- injector:bowerjs -->
 <script src="lib/jquery/dist/jquery.js"></script>
 <script src="lib/angular/angular.js"></script>
-<script src="lib/angular-resource/angular-resource.js"></script>
 <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="lib/angular-sanitize/angular-sanitize.js"></script>
 <script src="lib/angular-touch/angular-touch.js"></script>
@@ -62,10 +61,12 @@
 <script src="lib/materialize/bin/materialize.js"></script>
 <script src="lib/angular-animate/angular-animate.js"></script>
 <script src="lib/angular-user-auth/dist/angular-user-auth.js"></script>
+<script src="lib/angular-mongoose/dist/angular-mongoose.js"></script>
 <script src="lib/elasticsearch/elasticsearch.js"></script>
 <script src="lib/elastic.js/dist/elastic.js"></script>
 <script src="lib/elasticui/dist/elasticui.min.js"></script>
 <script src="lib/angular-uuid-service/angular-uuid-service.js"></script>
+<script src="lib/angular-img-http-src/index.js"></script>
 <!-- endinjector -->
 <script src="lib/elasticsearch/elasticsearch.angular.js"></script>
 <!-- endbuild -->
@@ -79,29 +80,25 @@
 <script src="modules/favorite-pages/favorite-pages.module.js"></script>
 <script src="modules/help/help.module.js"></script>
 <script src="modules/navigation/navigation.module.js"></script>
-<script src="modules/ressources/ressources.module.js"></script>
 <script src="modules/users/users.module.js"></script>
 <script src="modules/content/config/content.routes.js"></script>
 <script src="modules/core/config/core.config.js"></script>
 <script src="modules/core/config/core.routes.js"></script>
 <script src="modules/help/config/help.routes.js"></script>
-<script src="modules/ressources/config/ressource.config.js"></script>
 <script src="modules/users/config/events.config.js"></script>
 <script src="modules/users/config/user-auth.config.js"></script>
 <script src="modules/users/config/user-auth.routes.js"></script>
 <script src="modules/users/config/users.routes.js"></script>
+<script src="modules/content/services/film.factory.js"></script>
+<script src="modules/content/services/niveau.factory.js"></script>
 <script src="modules/core/services/elasticsearch.service.js"></script>
+<script src="modules/core/services/mailer.provider.js"></script>
 <script src="modules/core/services/materialize.service.js"></script>
 <script src="modules/favorite-pages/services/favorite-pages.js"></script>
-<script src="modules/ressources/services/cache-factory.factory.js"></script>
-<script src="modules/ressources/services/pre-post.provider.js"></script>
-<script src="modules/ressources/services/remote-store-factory.factory.js"></script>
-<script src="modules/ressources/services/ressource.provider.js"></script>
 <script src="modules/users/services/users.factory.js"></script>
 <script src="modules/core/directives/modal-trigger.directive.js"></script>
 <script src="modules/favorite-pages/directives/like-button.directive.js"></script>
 <script src="modules/navigation/directives/header.directive.js"></script>
-<script src="modules/users/directives/password-verify.directive.js"></script>
 <script src="modules/content/controllers/content.controller.js"></script>
 <script src="modules/content/controllers/film.controller.js"></script>
 <script src="modules/content/controllers/livre.controller.js"></script>
@@ -118,7 +115,6 @@
 <script src="modules/users/controllers/contribution.controller.js"></script>
 <script src="modules/users/controllers/experience.controller.js"></script>
 <script src="modules/users/controllers/parameters.controller.js"></script>
-<script src="modules/users/controllers/user-account.controller.js"></script>
 <script src="modules/users/controllers/users-list.controller.js"></script>
 <!-- endinjector -->
 <!-- endbuild -->

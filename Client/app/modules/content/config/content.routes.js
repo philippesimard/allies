@@ -9,6 +9,14 @@ angular.module('content').config(
 
       .state('film', {
       url: '/contenus/film',
+      resolve: {
+        films: function (Film) {
+          return Film.find();
+        },
+        niveaux: function (Niveau) {
+          return Niveau.find();
+        }
+      },
       templateUrl: 'modules/content/views/film.html',
       controller: 'FilmController'
     })

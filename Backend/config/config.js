@@ -4,14 +4,15 @@ module.exports = {
 
 	appTitle: 'Alliés',
 
+	apiRoot: 'api/v1',
+
 	expressBase: {
 
 		port: process.env.PORT || 9001,
 
 		dynamicRouter: {
 			useAutorizations: true,
-			apiRoot: 'api/v1',
-			registerAlterations: true
+			apiRoot: 'api/v1'
 		},
 
 		mailer: {
@@ -36,7 +37,7 @@ module.exports = {
 				subject: 'Réinitialisation de votre mot de passe'
 			}
 		},
-		
+
 		confirmEmail: {
 			mailOptions: {
 				from: 'Gris Québec ✔ <nepasrepondre@grisquebec.org>',
@@ -45,11 +46,16 @@ module.exports = {
 		},
 
 		signup: {
-			sendConfirmationEmail: true
+			sendConfirmationEmail: true,
+			userCreationRoles: ['admin']
 		},
 
-		findUser: {
-			hideUserIds: ['55b8ebd7579eabc807ed4866']
+		userApi: {
+			//hideUserIds: ['55eb0075b2996d900ef8879a'],
+			permissions: {
+				admin: 'all',
+				user: ['READ-OWN', 'UPDATE-OWN']
+			},
 		},
 
 		token: {
@@ -59,13 +65,13 @@ module.exports = {
 			},
 			secret: '7279BEE6EBCC80400E2CED8D12D0591D34EA5C5F3B3D557A1773F1680F217780',
 		},
-		apiRoot: 'api/v1'
-			//unprotectedRoutes: []
+		apiRoot: 'api/v1',
+		unprotectedRoutes: ['api/v1/images/film/*']
 	},
 
 	mailer: {
 		host: '127.0.0.1',
-    port: 1025,
-    ignoreTLS: true
+		port: 1025,
+		ignoreTLS: true
 	}
 };

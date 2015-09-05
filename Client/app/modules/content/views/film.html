@@ -7,46 +7,42 @@
        </div>
     </div>
   </div>
-
-  
 <div class="container">
 
-    <!-- Mise en page completement différente pour les téléphones mobiles. -->
-    <div class="hide-on-med-and-down">
-
+  <!-- Mise en page completement différente pour les téléphones mobiles. -->
+  <div class="hide-on-med-and-down">
 
     <!-- Barre de recherche sera amméliorée  ng-click="filterProducts('type', 'tshirt')-->
-      <div class="espace">
+    <div class="espace">
+
+      <p ng-click="filterFilm('date', '2013')"></p>
+
+        <button class='btn orange' ng-click="filterFilm()">Réinitialiser</button>
+    
+        <!-- Dropdown Trigger -->
+        <span><button class='dropdown-button btn pink' href='#' data-activates='niveau'>Niveau</button></span>
+
+        <!-- Dropdown Structure -->
+        <ul id='niveau' class='dropdown-content'>
+          <li ng-repeat="niveau in niveaux | orderBy:'poids'">
+            <a class="black-text" ng-click="filterFilm('niveau', niveau)">{{ niveau.toString() }}</a>
+          </li>
+        </ul>
 
 
-<p ng-click="filterFilm('date', '2013')"></p>
-
-<!-- Dropdown Trigger -->
-  <a class='btn orange' ng-click="filterFilm()">Réinitialiser</a>
-  <span><a class='dropdown-button btn pink' href='#' data-activates='niveau'>Niveau</a></span>
-  <span><a class='dropdown-button btn pink' href='#' data-activates='genre'>Genre</a></span>
-  
-
-  <!-- Dropdown Structure -->
-  <ul id='niveau' class='dropdown-content'>
-    <li><a class="black-text" ng-click="filterFilm('niveau', 'Secondaires 3 à 5')">Primaire</a></li>
-    <li><a class="black-text" >Secondaire</a></li>
-    <li><a class="black-text" >Secondaire 3 à 5</a></li>
-    <li><a class="black-text" >Cégep</a></li>
-    <li><a class="black-text" >Adulte</a></li>
-  </ul>
-  <ul id='genre' class='dropdown-content'>
-    <li><a class="black-text" ng-click="filterFilm('niveau', 'Secondaires 3 à 5')">Primaire</a></li>
-    <li><a class="black-text" >Secondaire</a></li>
-    <li><a class="black-text" >Secondaire 3 à 5</a></li>
-    <li><a class="black-text" >Cégep</a></li>
-    <li><a class="black-text" >Adulte</a></li>
-  </ul>
-  </div>
-  </div>
+        <span><a class='dropdown-button btn pink' href='#' data-activates='genre'>Genre</a></span>
+        <ul id='genre' class='dropdown-content'>
+          <li><a class="black-text" ng-click="filterFilm('niveau', 'Secondaires 3 à 5')">Primaire</a></li>
+          <li><a class="black-text" >Secondaire</a></li>
+          <li><a class="black-text" >Secondaire 3 à 5</a></li>
+          <li><a class="black-text" >Cégep</a></li>
+          <li><a class="black-text" >Adulte</a></li>
+        </ul>
+        </div>
+        </div>
 
     
-     <!--<input type="text" ng-model="searchFilm" placeholder="Chercher un film"><ul> -->
+     <input type="text" ng-model="searchFilm.name" placeholder="Chercher un film"><ul>
 
 
 
@@ -65,10 +61,10 @@
 
     <!-- Carte version bureau -->
           <div class="animated fadeIn">
-            <div class="card box z-depth-0" ng-repeat="film in filtered | filter:searchFilm " ng-style="{'width': '25%'}" >
+            <div class="card box z-depth-0" ng-repeat="film in films | filter:searchFilm " ng-style="{'width': '25%'}" >
               
               <div class="card-image">
-                <img src="{{film.img}}">
+                <img http-src="{{ film.imgUrl }}"/>
               </div>
 
               

@@ -49,7 +49,7 @@ module.exports = function(grunt) {
     maildev: {
       run: {
         keepAlive: true,
-        open: true
+       // open: true
       }
     },
 

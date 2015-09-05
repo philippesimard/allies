@@ -28,7 +28,6 @@ var UserSchema = UserAuth.getSecureUserSchema().extend({
 	}
 });
 
-
 UserAuth.getSecureUserSchema().pre('save', function(next) {
 
 	if (this.isModified('email')) {
