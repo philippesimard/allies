@@ -5,6 +5,15 @@ angular.module('users').factory('Film',
 
     var Film = new Schema('film');
 
+    /* Creer nouveau film
+    Film.create({
+      nom: 'nom',
+      synopsis: 'synopsis'
+      niveau: '343fkf3049244jf'
+    });
+  
+    */
+    
     Film.post('find', function (next) {
       this.imgUrl = 'images/' + this.img;
       next();
