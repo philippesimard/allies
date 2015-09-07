@@ -13,7 +13,7 @@ angular.module('users').factory('Film',
     });
   
     */
-    
+
     Film.post('find', function (next) {
       this.imgUrl = 'images/' + this.img;
       next();

@@ -46,6 +46,7 @@ padding-top: 100px;
   margin-bottom: 30px;
   color: inherit;
   background-color: #f57c00;
+
             }
 
 .propos {
@@ -103,6 +104,12 @@ padding-top: 15px;
   padding-bottom: 15px;
   margin-bottom: 15px;
   margin-top: 15px;
+  
+}
+
+.parcours {
+
+padding-top: 15px;
   
 }
 

@@ -31,6 +31,32 @@ angular.module('core').config(
       controller: 'HomeController'
     })
 
+    // Parcours ici
+
+    .state('boite', {
+      url: '/parcours/boite',
+      templateUrl: 'modules/core/views/boite.html',
+      controller: 'ParcoursController'
+    })
+
+    .state('sante', {
+      url: '/parcours/sante',
+      templateUrl: 'modules/core/views/sante.html',
+      controller: 'ParcoursController'
+    })
+
+    .state('communautaire', {
+      url: '/parcours/communautaire',
+      templateUrl: 'modules/core/views/communautaire.html',
+      controller: 'ParcoursController'
+    })
+
+    .state('scolaire', {
+      url: '/parcours/scolaire',
+      templateUrl: 'modules/core/views/scolaire.html',
+      controller: 'ParcoursController'
+    })
+
     .state('propos', {
       url: '/propos',
       templateUrl: 'modules/core/views/propos.html',
