@@ -50,16 +50,44 @@ padding-top: 100px;
             }
 
 .propos {
-  padding-top: 80px;
-  padding-bottom: 80px;
-  margin-bottom: 30px;
-  background-image: url("http://pswdesign.ca/wp-content/uploads/2015/08/propos.jpg");
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: inherit;
+  background-image: url("http://pswdesign.ca/wp-content/uploads/2015/09/PDSB.jpg");
+            }
+
+  .sante {
+  padding-top: 10px;
+  padding-bottom: 40px;
+  color: inherit;
+  background-image: url("https://hjdwgg.bn1301.livefilestore.com/y2pJ2pg_QW56QcTfW6hohPMTRHzVq1hySrhSI7vC9D-7Cia1ke8h6LoHw3Ff49_yoriqXg6UVteu8KgW1TUqV4WDOB6I6V_gWZoCw1kEVFFokc/moss.jpg?psid=1");
+            }
+
+  .scolaire {
+  padding-top: 10px;
+  padding-bottom: 40px;
+  color: inherit;
+  background-image: url("https://sqch7a.bn1.livefilestore.com/y2mQhke0z4fwS4BxUZt4w_OoDdcabx4BYzyuFREy9bR4xTf5NwThEAY90CZZ4cuo58gycqIcuPcjA9ERhA0WFt240pkNZz0eCOgWB4KjNs0AwXadZtbt0KkNhlASknEZdWZ/left.jpg?psid=1");
+            }
+
+ .communautaire {
+  padding-top: 10px;
+  padding-bottom: 40px;
+  color: inherit;
+  background-image: url("https://sqa8yq.bn1.livefilestore.com/y2mA8-vRT35CvSuqiegWAJNYkClrGFZqH1ZQKSyFwK4eFNmXxPcqNn9shSQWmFXUc0kaFZZizodiFtNME4tr1i2bPUqAHB46EOAAiviYvGCEbDJ1UI5y_aOwInkk5CjMMKg/fresh.jpg?psid=1");
+            }
+
+  .outils {
+  padding-top: 10px;
+  padding-bottom: 40px;
+  color: inherit;
+  background-image: url("https://v478pa.bn1.livefilestore.com/y2m2yJeC7UfWJ9AiIG8Lm4_K5BiN1yRU84tMlBtxQ-7Llr9oV4XYEYyr8l0j8eXPbFroKrD1f9KKjY_jURbKC5lA_rS6h6mOBZVgCeZknD6I9VAl126yEzdzPTXk0KX_Tdd/air.jpg?psid=1");
             }
 
 
 .jumbotron {
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   color: inherit;
   background-color: #ff9800;
             }
