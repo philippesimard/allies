@@ -4,7 +4,7 @@ var config = require('./config/config'),
 	chalk = require('chalk'),
 	express = require('express'),
 	expressBase = require('express-base'),
-	UserAuth = require('express-user-auth'),
+	userAuth = require('express-user-auth'),
 	mongoose = require('mongoose'),
 	path = require('path'),
 	nodemailer = require('nodemailer');
@@ -15,7 +15,7 @@ expressBase.init(config.expressBase, function(app) {
 
 	var mailer = nodemailer.createTransport(config.mailer);
 
-	UserAuth.init(app, require('./app/models/user'), config.expressUserAuth, mailer);
+	userAuth.init(app, require('./app/models/user'), config.expressUserAuth, mailer);
 
 	expressBase.setMailerService(mailer);
 
