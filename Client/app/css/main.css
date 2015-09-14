@@ -43,14 +43,28 @@ margin-bottom: 30px;
   padding-top: 10px;
   padding-bottom: 40px;
   color: inherit;
-  background-image: url("http://pswdesign.ca/wp-content/uploads/2015/09/film.jpg");
+  background-image: url("http://acommealliees.ca/data/img/parcours/film.jpg");
+            }
+
+ .doc {
+  padding-top: 10px;
+  padding-bottom: 40px;
+  color: inherit;
+  background-image: url("http://acommealliees.ca/data/img/parcours/document.jpg");
+            }
+
+ .bd {
+  padding-top: 10px;
+  padding-bottom: 40px;
+  color: inherit;
+  background-image: url("http://acommealliees.ca/data/img/parcours/bd.jpg");
             }
 
  .livre {
   padding-top: 10px;
   padding-bottom: 40px;
   color: inherit;
-  background-image: url("http://pswdesign.ca/wp-content/uploads/2015/09/6955137D24-2.jpg");
+  background-image: url("http://acommealliees.ca/data/img/parcours/book.jpg");
             }
 
 
