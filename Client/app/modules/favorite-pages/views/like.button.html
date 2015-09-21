@@ -1,27 +1,27 @@
 <div class="fixed-action-btn" ng-hide="hideButton">
-  <a class="btn-floating btn-large waves-effect waves-light red animation pulsation z-depth-0" ng-click="addToFavorites()">
+  <a tooltip-side="left" tooltips tooltip-content="Ajouter favoris" class="btn-floating btn-large waves-effect waves-light red animation pulsation z-depth-0" ng-click="addToFavorites()">
     <i class="large material-icons ">favorite</i>
   </a>
   <ul>
     <li>
-        <a class="btn-floating btn waves-effect waves-light pink z-depth-0" ui-sref="aide">
+        <a tooltip-side="left" tooltips tooltip-content="Accéder à l'aide" class="btn-floating btn waves-effect waves-light pink z-depth-0" ui-sref="aide">
             <i class="material-icons">help</i>
         </a>
     </li>
 
 
     <li>
-    	<a class="btn-floating btn waves-effect waves-light orange z-depth-0" ng-click="signaler()">
+    	<a tooltip-side="left" tooltips tooltip-content="Signaler une page" class="btn-floating btn waves-effect waves-light orange z-depth-0" ng-click="signaler()">
     		<i class="material-icons">error</i>
     	</a>
     </li>
     <li>
-    	<a class="btn-floating btn waves-effect waves-light green z-depth-0" ui-sref="contenus">
+    	<a tooltip-side="left" tooltips tooltip-content="Voir mon profil" class="btn-floating btn waves-effect waves-light green z-depth-0" ui-sref="contenus">
     		<i class="material-icons">dashboard</i>
     	</a>
     </li>
     <li>
-    	<a class="btn-floating btn waves-effect waves-light blue z-depth-0" ng-click="likepage()">
+    	<a tooltip-side="left" tooltips tooltip-content="Partager" class="btn-floating btn waves-effect waves-light blue z-depth-0" ng-click="likepage()">
     		<i  class="material-icons">share</i>
     	</a>
     </li>

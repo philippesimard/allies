@@ -39,6 +39,13 @@ margin-bottom: 30px;
 
 }
 
+.email {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  color: inherit;
+  background-image: url("http://acommealliees.ca/data/img/555.jpg");
+            }
+
 .film {
   padding-top: 10px;
   padding-bottom: 40px;
@@ -132,6 +139,15 @@ margin-bottom: 30px;
   padding-bottom: 30px;
   color: inherit;
   background-color: #f57c00;
+            }
+
+
+  .piste {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: inherit;
+  background-position: center; 
+  background-image: url("http://acommealliees.ca/data/img/moss.jpg");
             }
 
 .contenus {
@@ -317,4 +333,3 @@ padding-top: 20px;
   margin: 0 auto;
   max-width: 1280px;
   width: 90%; }
-
