@@ -1,1 +1,5 @@
-ngrok
+node_modules
+www
+.tmp
+.sass-cache
+app/lib
