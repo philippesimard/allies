@@ -12,50 +12,34 @@
   <div class="row">
 
 
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <img src="img/aide/cheminement.png">
-              <span class="card-title">Parcours et cheminement</span>
-            </div>
-            <div class="card-content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis feugiat ex. Ut ornare commodo molestie.</p>
-            </div>
-            <div class="card-action">
-              <a class="black-text" ui-sref="aidecheminement">Voir aide parcours</a>
-            </div>
-          </div>
-        </div>
+        <div class="row">
 
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <img src="img/aide/utilisateur.png">
-              <span class="card-title">Utilisateur et compte</span>
-            </div>
-            <div class="card-content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis feugiat ex. Ut ornare commodo molestie.</p>
-            </div>
-            <div class="card-action">
-              <a class="black-text" ui-sref="aideutilisateur">Voir aide utilisateur</a>
-            </div>
-          </div>
-        </div>
+          <div class="center espace">
+          <h2>Questions fréquentes</h2>
+          <div>
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><a href="#test1" class="active" >Parcours et cheminement</a></li>
+        <li class="tab col s3"><a href="#test2">Utilisateur et compte</a></li>
+        <li class="tab col s3"><a href="#test3">Conditions d'utilisation</a></li>
+        <li class="tab col s3"><a href="#test4">Autres</a></li>
+      </ul>
+    </div>
+    <div id="test1" class="col s12">Test 1</div>
+    <div id="test2" class="col s12">Test 2</div>
+    <div id="test3" class="col s12">Test 3</div>
+    <div id="test4" class="col s12">Test 4</div>
+  </div>
 
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <img src="img/aide/condition.png">
-              <span class="card-title">Conditions d'utilisation</span>
-            </div>
-            <div class="card-content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis feugiat ex. Ut ornare commodo molestie.</p>
-            </div>
-            <div class="card-action">
-              <a class="black-text" ui-sref="aidecondition">Voir aide condition</a>
-            </div>
-          </div>
-        </div>
+  <script>
+
+$(document).ready(function(){
+    $('ul.tabs').tabs();
+  });
+
+
+
+  </script>
 
 
       </div>

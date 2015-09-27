@@ -13,6 +13,12 @@ angular.module('core').config(
       controller: 'HomeController'
     })
 
+    .state('homecontact', {
+      url: '/contact',
+      templateUrl: 'modules/core/views/contact.html',
+      controller: 'ContactController'
+    })
+
     .state('recherche', {
       url: '/recherche',
       templateUrl: 'modules/core/views/recherche.html',

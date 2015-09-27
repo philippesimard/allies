@@ -22,6 +22,6 @@ angular.module('users').config(
 
       loginStateName: 'login',
 
-      authorizedRoutes: ['home', 'userForm', 'propos', 'ressources', 'parcours', 'recherche', 'aide', 'scolaire', 'sante', 'communautaire', 'boite']
+      authorizedRoutes: ['home', 'userForm', 'propos', 'ressources', 'parcours', 'recherche', 'aide', 'scolaire', 'sante', 'communautaire', 'boite', 'homesante', 'homescolaire', 'homecommunautaire', 'livre', 'document', 'film', 'bd', 'roman', 'confirm_email', 'homecontact']
     });
   });
