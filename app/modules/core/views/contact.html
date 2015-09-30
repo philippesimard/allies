@@ -10,51 +10,18 @@
 <div class="container espace">
 
 
-  <div class="row">
-      <form class="col s12">
-
-      	<div class="row">
-          <div class="input-field col s12">
-            <input id="input_text" type="text" length="10" >
-            <label for="input_text">Nom</label>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="input_text" type="text" length="10">
-            <label for="input_text">Prénom</label>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="input_text" type="text" length="10" email>
-            <label for="input_text">Email</label>
-          </div>
-        </div>
+<div input-field>
+    <input type="text" ng-model="dummyInputs.inputFieldInput" length="1530">
+    <label>Input label</label>
+</div>
+<div input-field>
+    <textarea ng-model="dummyInputs.textAreaInput" class="materialize-textarea"></textarea>
+    <label>Textarea</label>
+</div>
 
 
-        <div class="row">
-          <div class="input-field col s6">
-            <input id="input_text" type="text" length="10">
-            <label for="input_text">Sujet de votre message</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <textarea id="textarea1" class="materialize-textarea" length="500"></textarea>
-            <label for="textarea1">Votre message</label>
-          </div>
-        </div>
-      </form>
-    </div>
-
+<select class="" ng-model="select.value1" material-select watch>
+    <option ng-repeat="value in select.choices">{{value}}</option>
+</select>
 
   </div>
-
-  <script>
-$(document).ready(function() {
-    $('input#input_text, textarea#textarea1').characterCounter();
-  });
-</script>
