@@ -242,6 +242,14 @@ padding-top: 20px;
   overflow: hidden;
 }
 
+.boxhome {
+  width: 160px;
+  height: 320px;
+  float: left;
+  border: 1px solid #fff;
+  overflow: hidden;
+}
+
 .text {
   text-align: center;
   margin-top: 56px;
@@ -297,7 +305,7 @@ padding-top: 20px;
 
 .box {
 
-    height: 680px;
+    height: 500px;
     background-color: #ffffff;
     position: relative;
   

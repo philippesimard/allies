@@ -52,7 +52,7 @@ angular.module('content').config(
     .state('livre', {
       url: '/contenus/livre',
       templateUrl: 'modules/content/views/livre.html',
-      controller: 'ContentController'
+      controller: 'LivreController'
     })
 
     .state('bd', {
