@@ -1,53 +1,15 @@
 'use strict';
 
 angular.module('content').config(
-  function ($stateProvider, $urlRouterProvider) {
-
-    $urlRouterProvider.otherwise('/');
+  function ($stateProvider) {
 
     $stateProvider
 
-      .state('film', {
-      url: '/contenus/film',
-      resolve: {
-        films: function (Film) {
-          return Film.find();
-        },
-        niveaux: function (Niveau) {
-          return Niveau.find();
-        }
-      },
-      templateUrl: 'modules/content/views/film.html',
-      controller: 'FilmController'
-    })
-
-    .state('boiteagir', {
+      .state('boiteagir', {
       url: '/parcours/boite/agirquotidien',
       templateUrl: 'modules/content/parcours/boite/agirquotidien.html',
       controller: 'ContentController'
     })
-
-    //Page d'accueil des différentes catégories de parcours
-
-    .state('homesante', {
-      url: '/parcours/sante',
-      templateUrl: 'modules/content/parcours/sante/home.html',
-      controller: 'ContentController'
-    })
-
-    .state('homescolaire', {
-      url: '/parcours/scolaire',
-      templateUrl: 'modules/content/parcours/scolaire/home.html',
-      controller: 'ContentController'
-    })
-
-    .state('homecommunautaire', {
-      url: '/parcours/communautaire',
-      templateUrl: 'modules/content/parcours/communautaire/home.html',
-      controller: 'ContentController'
-    })
-
-    // Fin 
 
     .state('livre', {
       url: '/contenus/livre',

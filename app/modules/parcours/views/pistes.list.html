@@ -1,0 +1,10 @@
+<ul class="collection with-header">
+  <li class="collection-header"><h4>Pistes disponibles</h4></li>
+  <li class="collection-item" ng-repeat="piste in pistes | orderBy:'piste.toString()'">
+    <div>{{ piste.toString() }}
+      <a ng-click="toToPiste(piste)" class="secondary-content">
+        <i class="material-icons {{ parcours.pageColor }}-text">forward</i>
+      </a>
+    </div>
+  </li>
+</div>

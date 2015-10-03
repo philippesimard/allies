@@ -26,6 +26,6 @@
   "moduleName": "clientApp",
   "resolutions": {
     "lodash": "~3.10.0",
-    "angular": "1.4.5"
+    "angular": "~1.4.5"
   }
 }

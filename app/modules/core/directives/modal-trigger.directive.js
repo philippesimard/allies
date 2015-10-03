@@ -1,35 +1,33 @@
 'use strict';
 
 angular.module('core').directive('modalTrigger',
-  function ($http, rfc4122) {
+  function ($q, $http, $compile, rfc4122) {
+
+    var templatePromise;
+
     return {
-      // name: '',
-      // priority: 1,
-      // terminal: true,
-      // scope: {}, // {} = isolate, true = child, false/undefined = no change
-      // require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
-      // restrict: 'A', // E = Element, A = Attribute, C = Class, M = Comment
-      // template: '',
-      // templateUrl: '',
-      // replace: true,
-      // transclude: true,
       compile: function (tElement, tAttrs) {
 
-          $http.get(tAttrs.modalTrigger).then(function (response) {
+        templatePromise = $http.get(tAttrs.modalTrigger).then(function (response) {
 
-            var modalId = rfc4122.v4(),
-              template = angular.element(response.data).attr('id', modalId);
-            tElement.parent().append(template);
+          var modalId = rfc4122.v4(),
+            template = angular.element(response.data).attr('id', modalId);
+          tElement.parent().append(template);
 
-            tElement.addClass('modal-trigger');
+          tElement.addClass('modal-trigger');
 
-            tElement.attr('href', '#' + modalId);
+          tElement.attr('href', '#' + modalId);
 
-            $('.modal-trigger').leanModal();
+          $('.modal-trigger').leanModal();
+
+          return template;
+        });
+
+        return function link(scope) {
+          templatePromise.then(function (template) {
+            $compile(template)(scope);
           });
-
-          // return function linking(scope, elm, attrs) {}
-        }
-        // link: function (scope, element, attrs, ctrl) {}
+        };
+      }
     };
   });

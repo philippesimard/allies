@@ -17,6 +17,10 @@ body {
         -ms-flex: 1 0 auto;
             flex: 1 0 auto;
   }
+  
+[ng-click] {
+  cursor: pointer;
+}
 
 like-button {
   position: absolute;
@@ -46,34 +50,6 @@ margin-bottom: 30px;
   background-image: url("http://acommealliees.ca/data/img/555.jpg");
             }
 
-.film {
-  padding-top: 10px;
-  padding-bottom: 40px;
-  color: inherit;
-  background-image: url("http://acommealliees.ca/data/img/parcours/film.jpg");
-            }
-
- .doc {
-  padding-top: 10px;
-  padding-bottom: 40px;
-  color: inherit;
-  background-image: url("http://acommealliees.ca/data/img/parcours/document.jpg");
-            }
-
- .bd {
-  padding-top: 10px;
-  padding-bottom: 40px;
-  color: inherit;
-  background-image: url("http://acommealliees.ca/data/img/parcours/bd.jpg");
-            }
-
- .livre {
-  padding-top: 10px;
-  padding-bottom: 40px;
-  color: inherit;
-  background-image: url("http://acommealliees.ca/data/img/parcours/book.jpg");
-            }
-
 
 .home {
   padding-top: 120px;
@@ -91,19 +67,13 @@ margin-bottom: 30px;
   background-image: url("http://pswdesign.ca/wp-content/uploads/2015/09/PDSB.jpg");
             }
 
-  .sante {
-  padding-top: 10px;
-  padding-bottom: 40px;
-  color: inherit;
-  background-image: url("http://acommealliees.ca/data/img/parcours/sante.jpg");
-            }
 
-  .scolaire {
+parcours-preview div, media-section-preview div {
   padding-top: 10px;
   padding-bottom: 40px;
   color: inherit;
-  background-image: url("http://acommealliees.ca/data/img/parcours/education.jpg");
-            }
+}
+
 
   .communautaire {
   padding-top: 10px;
@@ -112,27 +82,12 @@ margin-bottom: 30px;
   background-image: url("http://static.tumblr.com/c3939627617e9a749c711cf66a0bf8ca/mrchwbg/gHenj1yky/tumblr_static_4cmi0bq75xc0gkggko0s8440g.jpg");
             }
 
-  .commu {
-  padding-top: 10px;
-  padding-bottom: 40px;
-  color: inherit;
-  background-image: url("http://acommealliees.ca/data/img/parcours/gens.jpg");
-            }
-
  .user {
   padding-top: 10px;
   padding-bottom: 40px;
   color: inherit;
   background-image: url("http://static.tumblr.com/c3939627617e9a749c711cf66a0bf8ca/mrchwbg/gHenj1yky/tumblr_static_4cmi0bq75xc0gkggko0s8440g.jpg");
             }
-
-  .outils {
-  padding-top: 10px;
-  padding-bottom: 40px;
-  color: inherit;
-  background-image: url("http://acommealliees.ca/data/img/parcours/outils.jpg");
-            }
-
 
 .jumbotron {
   padding-top: 30px;
