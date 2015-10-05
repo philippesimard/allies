@@ -1,39 +1,70 @@
-    <div class="">
-    <nav>
-      <div class="nav-wrapper grey white z-depth-0">
-        <div class="container">
-          
-            <!-- Menu droite normal--> 
-            <ul id="nav" class="right hide-on-med-and-down">
-              <li ng-hide="isConnected || $state.current.name === 'login'" ui-sref="login"><i class="material-icons left black-text">lock_outline</i></a></li>
-            <!-- Menu droite utilisateur-->
-              <li class="menu" ng-show="isConnected" ng-click="monCompte()"><i class="material-icons left black-text">account_circle</i></a></li>
-              <li class="menu" ng-show="isConnected" ng-click="deconnect()"><i class="material-icons left black-text">exit_to_app</i></a></li>
-            </ul>
-            <!-- Menu gauche-->       
-            
-          
-          <ul id="nav" class="left hide-on-med-and-down">
-            
-            
-            <li><a ui-sref="home" class="black-text">Accueil</a></li>
-            <li><a ui-sref="propos" class="black-text">À propos</a></li>
-            <li><a ui-sref="ressources" class="black-text">Médiagraphie</a></li>
-            <li><a class='dropdown-button btn-white black-text' data-beloworigin="true" ui-sref="parcours" data-activates='parcours'>Parcours</a></li>
-            <li><a ui-sref="recherche" class="black-text">Recherche</a></li>
-            <li><a ui-sref="homecontact" class="black-text">Contact</a></li>
-          </ul>
+<div>
+  <nav>
+    <div class="nav-wrapper grey white z-depth-0">
+      <div class="container">
+        
+        <!-- Menu gauche-->
+        <ul id="nav" class="left hide-on-med-and-down">
+          <li><a ui-sref="home" class="black-text">Accueil</a></li>
+          <li><a ui-sref="propos" class="black-text">À propos</a></li>
+          <li>
+            <a class="dropdown-button btn-white black-text" data-beloworigin="true"
+               ui-sref="ressources"
+               data-activates="ressources">
+              Médiagraphie
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-button btn-white black-text"
+               data-beloworigin="true"
+               ui-sref="parcours"
+               data-activates="parcours">
+              Parcours
+            </a>
+          </li>
+          <li><a ui-sref="recherche" class="black-text">Recherche</a></li>
+          <li><a ui-sref="homecontact" class="black-text">Contact</a></li>
+        </ul>
 
 
-          <!-- Contenus -->
-          <ul id='parcours' class='dropdown-content'>
-            <li><a class="pink-text" ui-sref="sante">Santé</a></li>
-            <li><a class="green-text" ui-sref="scolaire">Scolaire</a></li>
-            <li><a class="red-text" ui-sref="communautaire">Communautaire</a></li>
-            <li><a class="blue-text" ui-sref="boite">Outils de base</a></li>
-          </ul>
+        <!-- Contenus -->
+        <ul id="ressources" class="dropdown-content">
+          <li ng-repeat="mediaSection in mediaSections | orderBy:'position' ">
+            <a ng-click="goToMediaSection(mediaSection)">
+              {{ mediaSection.toString() }}
+            </a>
+          </li>
+        </ul>
+        <ul id="parcours" class="dropdown-content">
+          <li ng-repeat="parcours in allParcours | orderBy:'position' ">
+            <a class="{{ parcours.pageColor }}-text" ng-click="goToParcours(parcours)">
+              {{ parcours.toString() }}
+            </a>
+          </li>
+        </ul>
+        
+        <!-- Menu droite normal--> 
+        <ul id="nav"
+            class="right hide-on-med-and-down">
+          <li ng-hide="isConnected || $state.current.name === 'login'"
+              ui-sref="login">
+            <i class="material-icons left black-text">lock_outline</i>
+          </li>
+        <!-- Menu droite utilisateur-->
+          <li class="menu"
+              ng-show="isConnected"
+              ng-click="monCompte()">
+            <i class="material-icons left black-text">account_circle</i>
+          </li>
+          <li class="menu"
+              ng-show="isConnected"
+              ng-click="deconnect()">
+            <i class="material-icons left black-text">exit_to_app</i>
+          </li>
+        </ul>
+        
 
-          <script>
+        <script>
 $('.dropdown-button').dropdown({
       inDuration: 300,
       outDuration: 225,
@@ -52,7 +83,7 @@ $('.dropdown-button').dropdown({
 
 
 
-           <!-- Menu mobile--> 
+           <!-- Menu mobile
            
 
           <ul id="slide-out" class="side-nav">
@@ -72,7 +103,7 @@ $('.dropdown-button').dropdown({
     $(".button-collapse").sideNav();
       // Initialize collapsible (uncomment the line below if you use the dropdown variation)
       //$('.collapsible').collapsible();
-
+--> 
       </script>
       <div>
       </div>
