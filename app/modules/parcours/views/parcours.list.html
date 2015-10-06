@@ -1,0 +1,10 @@
+<ul class="collection with-header">
+  <li class="collection-header"><h4>Parcours disponibles</h4></li>
+  <li class="collection-item" ng-repeat="parcours in allParcours | orderBy:'toString()'">
+    <div>{{ parcours.toString() }}
+      <a ng-click="toToParcours(parcours)" class="secondary-content">
+        <i class="material-icons orange-text">send</i>
+      </a>
+    </div>
+  </li>
+</div>

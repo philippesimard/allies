@@ -16,7 +16,6 @@ angular.module('core').directive('header',
           scope.mediaSections = mediaSections;
         });
 
-
         scope.goToParcours = function (parcours) {
           $state.go('parcours-page', {
             parcoursName: parcours.shortName
@@ -25,7 +24,7 @@ angular.module('core').directive('header',
 
         scope.goToMediaSection = function (mediaSection) {
           $state.go('media-section', {
-            mediaSectionName: section.shortName
+            mediaSectionName: mediaSection.shortName
           });
         };
 

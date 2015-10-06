@@ -18,8 +18,12 @@ angular.module('users').factory('Film',
     });
 */
 
+    Film.prototype.toString = function () {
+      return this.name;
+    };
+
     Film.post('find', function (next) {
-      this.imgUrl = 'images/' + this.img;
+      this.img = 'img/' + this.img;
       next();
     });
 
