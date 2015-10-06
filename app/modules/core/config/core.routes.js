@@ -9,8 +9,7 @@ angular.module('core').config(
 
       .state('home', {
       url: '/',
-      templateUrl: 'modules/core/views/home.html',
-      controller: 'HomeController'
+      templateUrl: 'modules/core/views/home.html'
     })
 
     .state('homecontact', {

@@ -9,57 +9,6 @@
 </div>
 
 <media-filters></media-filters>
-
-    <div class="largecontainer">
-
-  
- 
-  <div class="row">
-
-    
-
-    <!-- Carte version bureau -->
-          <div class="animated fadeIn">
-            <div class="card box z-depth-0" ng-repeat="film in films | filter:searchFilm " ng-style="{'width': '25%'}" >
-              
-              <div class="card-image">
-                <img http-src="{{ film.imgUrl }}"/>
-              </div>
-
-              
-              <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">{{film.name | limitTo:15}}<i class="material-icons right pink-text">add</i></span>
-     <p> {{film.synopsis | limitTo:200}} ...</p>
-     <i class="material-icons right pink-text">favorite</i></span>
-    </div>
-
-              
-
-    <div class="card-reveal">
-  
-      <span class="card-title grey-text text-darken-4">{{film.name}}<i class="material-icons right">close</i></span>
-
-      <p><span class="pink-text">Date:</span> {{film.annee}}  </br><span class="pink-text">Réalisation:</span> {{film.realisateur}} {{film.alerte}}</br> <span class="pink-text">Durée:</span> {{film.dureeMins}} </br> <span class="pink-text">Niveau:</span> {{film.niveau}} </br>  <span class="pink-text">Synopsis</span> {{film.synopsis}}</p>
-    
-    </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-  <script>
- $('.dropdown-button').dropdown({
-      inDuration: 300,
-      outDuration: 225,
-      constrain_width: false, // Does not change width of dropdown to that of the activator
-      hover: true, // Activate on hover
-      gutter: 0, // Spacing from edge
-      belowOrigin: false // Displays dropdown below the button
-    }
-  );
-  </script>
-
-
-
-  
+<medias-galerie media-type="film"
+                medias-per-row="4">
+</medias-galerie>

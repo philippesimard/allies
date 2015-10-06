@@ -1,18 +1,19 @@
 'use strict';
 
 angular.module('medias').directive('mediasGalerie',
-  function (MediaFactory) {
+  function ($compile, MediaFactory) {
     return {
       restrict: 'E',
       scope: {
-        mode: '@',
         mediaType: '@',
-        orderBy: '@',
         mediasPerRow: '@',
         maxRows: '@'
       },
-      templateUrl: 'modules/medias/views/medias.galerie.html',
+      templateUrl: function (element, attrs) {
+        return attrs.mode === 'static' ? 'modules/medias/views/medias.static-galerie.html' : 'modules/medias/views/medias.galerie.html';
+      },
       link: function (scope) {
+
         MediaFactory.getMedias({
           mediaType: scope.mediaType
         }).then(function (medias) {
@@ -25,6 +26,25 @@ angular.module('medias').directive('mediasGalerie',
           scope.cardLength = 100 / scope.mediasPerRow + '%';
           scope.medias = medias;
         });
+
+        /*
+    $scope.films = films;
+    $scope.niveaux = niveaux;
+
+    $scope.filterFilm = function (prop, value) {
+      if (!prop || !value) {
+        $scope.films = films;
+        return;
+      }
+
+      $scope.films = _.filter(films, function (film) {
+        return film[prop] === value._id;
+      });
+    };*/
+
+        /*scope.random = function () {
+          return 0.5 - Math.random();
+        };*/
       }
     };
   });

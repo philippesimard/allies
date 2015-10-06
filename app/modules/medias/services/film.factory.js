@@ -22,6 +22,10 @@ angular.module('users').factory('Film',
       return this.name;
     };
 
+    Film.prototype.description = function () {
+      return this.synopsis;
+    };
+
     Film.post('find', function (next) {
       this.img = 'img/' + this.img;
       next();
