@@ -1,19 +1,31 @@
 'use strict';
 
-angular.module('medias').factory('MediaFactory',
-  function ($injector) {
+angular.module('medias').factory('Media',
+  function (Schema, MediaSection) {
 
-    return {
+    var Media = new Schema('media');
 
-      getMedias: function (query) {
-
-        var factory;
-
-        switch (query.mediaType) {
-          default: factory = $injector.get('Film');
-        }
-
-        return factory.find();
-      }
+    Media.prototype.toString = function () {
+      return this.name;
     };
+
+    Media.findBySectionShortName = function (sectionShortName) {
+      return MediaSection.find({
+        shortName: sectionShortName
+      }).then(function (mediaSection) {
+        return Media.find({
+          sectionId: mediaSection._id
+        });
+      });
+    };
+
+    Media.post('find', function (next) {
+      if (!_.startsWith(this.img, 'http')) {
+        this.img = 'img/' + this.img;
+      }
+      next();
+    });
+
+    return Media;
+
   });

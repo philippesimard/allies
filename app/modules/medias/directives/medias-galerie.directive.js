@@ -1,11 +1,12 @@
 'use strict';
 
 angular.module('medias').directive('mediasGalerie',
-  function ($compile, MediaFactory) {
+  function ($q, MediaSection, Media) {
     return {
       restrict: 'E',
       scope: {
         mediaType: '@',
+        mediaSectionId: '@',
         mediasPerRow: '@',
         maxRows: '@'
       },
@@ -14,9 +15,16 @@ angular.module('medias').directive('mediasGalerie',
       },
       link: function (scope) {
 
-        MediaFactory.getMedias({
-          mediaType: scope.mediaType
-        }).then(function (medias) {
+        var deffered;
+        if (scope.mediaType) {
+          deffered = Media.findBySectionShortName(scope.mediaType);
+        } else if (scope.mediaSectionId) {
+          deffered = Media.find({
+            sectionId: scope.mediaSectionId
+          });
+        }
+
+        deffered.then(function (medias) {
 
           if (scope.maxRows) {
             var nbMedia = scope.mediasPerRow * scope.maxRows;

@@ -28,11 +28,8 @@ angular.module('medias').config(
         }
       },
       templateUrl: 'modules/medias/views/media.section.html',
-      controller: function ($scope, sections, Film) {
+      controller: function ($scope, sections) {
         $scope.section = sections[0];
-        Film.find().then(function (films) {
-          $scope.films = films;
-        });
       }
     });
   });
