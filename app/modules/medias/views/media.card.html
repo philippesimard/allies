@@ -1,0 +1,23 @@
+<div class="card box z-depth-0">
+  <div class="card-image">
+    <img ng-src="{{ media.img }}"/>
+  </div>
+  <div class="card-content">
+		<span class="card-title activator grey-text text-darken-4">
+			{{ media.toString() }}
+			<i class="material-icons right pink-text">add</i>
+		</span>
+			<p>{{ media.annee }}</p>
+			<i class="material-icons right pink-text" ng-click="addToFavorite()">favorite</i>
+	</div>
+  <div class="card-reveal">
+    <span class="card-title grey-text text-darken-4">
+    	{{ media.toString() }}
+    	<i class="material-icons right">close</i>
+    </span>
+    <p ng-repeat="(key, value) in media.infos">
+    	<span class="pink-text">{{ key }} : </span>
+      <span>{{ value }}</span>
+    </p>
+  </div>
+</div>
