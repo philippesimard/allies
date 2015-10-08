@@ -1,15 +1,24 @@
-<div class="fixed-action-btn" ng-hide="hideButton">
-  <a tooltip-side="left" tooltips tooltip-content="Ajouter favoris" class="btn-floating btn-large waves-effect waves-light red animation pulsation z-depth-0" ng-click="addToFavorites()">
+<div class="fixed-action-btn" ng-if="grosBoutton">
+  <a ng-show="grosBoutton.hasFavoriteFunction" 
+     tooltip-side="left"
+     tooltips
+     tooltip-content="Ajouter favoris"
+     class="btn-floating btn-large waves-effect waves-light red animation pulsation z-depth-2"
+     ng-click="grosBoutton.addToFavorites()">
     <i class="large material-icons ">favorite</i>
+  </a>
+  <a ng-hide="grosBoutton.hasFavoriteFunction" 
+     tooltip-side="left"
+     tooltips
+     class="btn-floating btn-large z-depth-2">
+    <i class="large material-icons"></i>
   </a>
   <ul>
     <li>
-        <a tooltip-side="left" tooltips tooltip-content="Accéder à l'aide" class="btn-floating btn waves-effect waves-light pink z-depth-0" ui-sref="aide">
-            <i class="material-icons">help</i>
-        </a>
+      <a tooltip-side="left" tooltips tooltip-content="Accéder à l'aide" class="btn-floating btn waves-effect waves-light pink z-depth-0" ui-sref="aide">
+        <i class="material-icons">help</i>
+      </a>
     </li>
-
-
     <li>
     	<a tooltip-side="left" tooltips tooltip-content="Signaler une page" class="btn-floating btn waves-effect waves-light orange z-depth-0" ng-click="signaler()">
     		<i class="material-icons">error</i>
@@ -25,6 +34,5 @@
     		<i  class="material-icons">share</i>
     	</a>
     </li>
-
   </ul>
 </div>

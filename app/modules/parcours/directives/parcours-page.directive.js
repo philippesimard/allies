@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('parcours').directive('parcoursPage',
-  function (Secteur, Piste) {
+  function ($rootScope, Secteur, Piste, GrosBoutton) {
     return {
       restrict: 'E',
       scope: {
@@ -24,6 +24,7 @@ angular.module('parcours').directive('parcoursPage',
           });
         }
 
+        $rootScope.$broadcast('grosButton:show', new GrosBoutton());
       }
     };
   });
