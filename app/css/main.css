@@ -1,0 +1,272 @@
+body {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  main {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 auto;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+  }
+  
+[ng-click] {
+  cursor: pointer;
+}
+
+like-button {
+  position: absolute;
+  bottom: 100px;
+  right: 35px;
+}
+
+.menu {
+    
+  margin-left: 15px;
+
+              }
+
+.espacement {
+
+margin-left: 15px;
+padding-top: 100px;
+padding-bottom: 100px;
+margin-bottom: 30px;
+
+}
+
+.email {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  color: inherit;
+  background-image: url("http://acommealliees.ca/data/img/555.jpg");
+            }
+
+
+.home {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  margin-bottom: 30px;
+  color: inherit;
+  background-image: url("http://acommealliees.ca/data/img/555.jpg");
+
+            }
+
+.propos {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: inherit;
+  background-image: url("http://pswdesign.ca/wp-content/uploads/2015/09/PDSB.jpg");
+            }
+
+
+parcours-preview div, media-section-preview div {
+  padding-top: 10px;
+  padding-bottom: 40px;
+  color: inherit;
+}
+
+
+  .communautaire {
+  padding-top: 10px;
+  padding-bottom: 40px;
+  color: inherit;
+  background-image: url("http://static.tumblr.com/c3939627617e9a749c711cf66a0bf8ca/mrchwbg/gHenj1yky/tumblr_static_4cmi0bq75xc0gkggko0s8440g.jpg");
+            }
+
+ .user {
+  padding-top: 10px;
+  padding-bottom: 40px;
+  color: inherit;
+  background-image: url("http://static.tumblr.com/c3939627617e9a749c711cf66a0bf8ca/mrchwbg/gHenj1yky/tumblr_static_4cmi0bq75xc0gkggko0s8440g.jpg");
+            }
+
+.jumbotron {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: inherit;
+  background-color: #F04F2B;
+            }
+
+
+  .piste {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: inherit;
+  background-position: center; 
+  background-image: url("http://acommealliees.ca/data/img/moss.jpg");
+            }
+
+.contenus {
+  padding-top: 10px;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  width: 230px;
+            }
+
+.presentation {
+
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #f5f5f5;
+
+
+}
+
+.mediagraphie {
+
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+
+
+}
+
+.espace {
+
+padding-top: 40px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  
+}
+
+.petitespace {
+
+padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  
+}
+
+.parcours {
+
+padding-top: 15px;
+  
+}
+
+.smallspace {
+
+padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  
+}
+
+.gris {
+  background-color: #83A7C0 !important; }
+
+.spacer
+{
+    font-size: 0; 
+    height: 10px;
+    line-height: 0;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+
+
+   body {
+  margin: 0px;
+  width: 100%;
+}
+.wrap {
+  margin: 0px auto;
+  width: 486px;
+}
+
+.box {
+  width: 160px;
+  height: 120px;
+  float: left;
+  background: #347fc3;
+  border: 1px solid #fff;
+  overflow: hidden;
+}
+
+.boxhome {
+  width: 160px;
+  height: 320px;
+  float: left;
+  border: 1px solid #fff;
+  overflow: hidden;
+}
+
+.text {
+  text-align: center;
+  margin-top: 56px;
+  color: #fff;
+  font-size: 1.0em;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+
+.animation {
+  -webkit-animation-duration: 2.5s;
+          animation-duration: 2.5s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);transform: translateY(0);}
+  40% {-webkit-transform: translateY(-30px);transform: translateY(-30px);}
+  60% {-webkit-transform: translateY(-15px);transform: translateY(-15px);}
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);transform: translateY(0);}
+  40% {-webkit-transform: translateY(-30px);transform: translateY(-30px);}
+  60% {-webkit-transform: translateY(-15px);transform: translateY(-15px);}
+}
+
+.pulsation {
+  -webkit-animation-name: pulse;
+          animation-name: pulse;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+@-webkit-keyframes rubberBand {
+  0% {-webkit-transform: scale(1);transform: scale(1);}
+  30% {-webkit-transform: scaleX(1.25) scaleY(0.75);transform: scaleX(1.25) scaleY(0.75);}
+  40% {-webkit-transform: scaleX(0.75) scaleY(1.25);transform: scaleX(0.75) scaleY(1.25);}
+  60% {-webkit-transform: scaleX(1.15) scaleY(0.85);transform: scaleX(1.15) scaleY(0.85);}
+  100% {-webkit-transform: scale(1);transform: scale(1);}
+}
+
+@keyframes rubberBand {
+  0% {-webkit-transform: scale(1);transform: scale(1);}
+  30% {-webkit-transform: scaleX(1.25) scaleY(0.75);transform: scaleX(1.25) scaleY(0.75);}
+  40% {-webkit-transform: scaleX(0.75) scaleY(1.25);transform: scaleX(0.75) scaleY(1.25);}
+  60% {-webkit-transform: scaleX(1.15) scaleY(0.85);transform: scaleX(1.15) scaleY(0.85);}
+  100% {-webkit-transform: scale(1);transform: scale(1);}
+}
+
+.box {
+
+    height: 500px;
+    background-color: #ffffff;
+    position: relative;
+  
+}
+
+.largecontainer {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 90%; }

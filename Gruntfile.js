@@ -115,7 +115,7 @@ module.exports = function (grunt) {
       postDist: {
         files: [{
           dot: true,
-          src: ['<%= yeoman.app %>/css', '<%= yeoman.temp %>']
+          src: ['<%= yeoman.temp %>']
         }]
       }
     },
