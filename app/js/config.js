@@ -4,7 +4,7 @@
 var ApplicationConfiguration = (function () {
   // Init module configuration options
   var applicationModuleName = 'angularjsapp';
-  var applicationModuleVendorDependencies = ['ngTouch', 'ngSanitize', 'ui.router', 'ngMessages', 'uuid', 'elasticui', 'leseulsteve.angular-user-auth', 'leseulsteve.angular-mongoose', 'angular.img', '720kb.tooltips', 'ui.materialize'];
+  var applicationModuleVendorDependencies = ['ngTouch', 'ngSanitize', 'ui.router', 'ngMessages', 'uuid', 'elasticui', 'leseulsteve.angular-user-auth', 'leseulsteve.angular-mongoose', 'angular.img', '720kb.tooltips', 'ui.materialize', 'ngMorph'];
 
   // Add a new vertical module
   var registerModule = function (moduleName, dependencies) {

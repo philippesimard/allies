@@ -2,9 +2,35 @@
   <nav>
     <div class="nav-wrapper grey white z-depth-0">
       <div class="container">
+         <a href="#" class="brand-logo black-text"><img width="23%"  src="img/logo2.png"></a>
+
+
+
+
+          <!-- Menu droite normal--> 
+        <ul id="nav"
+            class="right hide-on-med-and-down">
+          <li ng-hide="isConnected || $state.current.name === 'login'"
+              ui-sref="login">
+            <i class="material-icons left black-text">lock_outline</i>
+          </li>
+        <!-- Menu droite utilisateur-->
+          <li class="menu"
+              ng-show="isConnected"
+              ng-click="monCompte()">
+            <i class="material-icons left black-text">account_circle</i>
+          </li>
+          <li class="menu"
+              ng-show="isConnected"
+              ng-click="deconnect()">
+            <i class="material-icons left black-text">exit_to_app</i>
+          </li>
+        </ul>
+
+
         
         <!-- Menu gauche-->
-        <ul id="nav" class="left hide-on-med-and-down">
+        <ul id="nav" class="right hide-on-med-and-down">
           <li><a ui-sref="home" class="black-text">Accueil</a></li>
           <li><a ui-sref="propos" class="black-text">À propos</a></li>
           <li>
@@ -42,26 +68,7 @@
             </a>
           </li>
         </ul>
-        
-        <!-- Menu droite normal--> 
-        <ul id="nav"
-            class="right hide-on-med-and-down">
-          <li ng-hide="isConnected || $state.current.name === 'login'"
-              ui-sref="login">
-            <i class="material-icons left black-text">lock_outline</i>
-          </li>
-        <!-- Menu droite utilisateur-->
-          <li class="menu"
-              ng-show="isConnected"
-              ng-click="monCompte()">
-            <i class="material-icons left black-text">account_circle</i>
-          </li>
-          <li class="menu"
-              ng-show="isConnected"
-              ng-click="deconnect()">
-            <i class="material-icons left black-text">exit_to_app</i>
-          </li>
-        </ul>
+      
         
 
         <script>

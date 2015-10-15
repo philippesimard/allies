@@ -16,5 +16,6 @@ angular.module('core').controller('ContactController',
           MaterializeService.toast('Le message à été envoyé!');
         });
       }
+
     };
   });
