@@ -10,10 +10,11 @@ angular.module('users').controller('ContactController',
         $scope.message.from = $rootScope.currentUser.firstname + ' ' + $rootScope.currentUser.lastname + ' <' + $rootScope.currentUser.email + '>';
         $scope.message.to = 'info';
 
-        Mailer.send($scope.message).then(function () {
+        Mailer.send($scope.message, $scope.mail).then(function () {
           $scope.message = {};
+          $scope.mail = {};
           contactForm.$setPristine();
-          MaterializeService.toast('Le message à été envoyé!');
+          MaterializeService.toast('Le message à été envoyé. Merci!');
         });
       }
     };

@@ -2,6 +2,7 @@
 
 angular.module('parcours').directive('pisteList',
   function ($state) {
+
     return {
       restrict: 'E',
       templateUrl: 'modules/parcours/views/pistes.list.html',
@@ -13,5 +14,7 @@ angular.module('parcours').directive('pisteList',
           });
         };
       }
+
     };
+
   });

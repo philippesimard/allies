@@ -1,9 +1,25 @@
-<ul class="collection with-header">
+	<div id="index-banner" class="jumbotron">
+	    <div class="section no-pad-bot" >
+	      <div class="container">
+	        <h1 class="header light white-text">Pistes {{ secteur.toString() }} </h1>
+	          <h5 class="header light white-text"></h5>
+	       </div>
+	    </div>
+	  </div>
+
+
+	  <div class="center petitespace">
+	  <button back="back" tooltips class="btn-floating btn-large red waves-effect waves-light z-depth-0" tooltip-content="Retour page">
+    <i class="material-icons">reply</i>
+  </button>
+  </div>
+
+<ul class="collection with-header container petit espace">
   <li class="collection-header"><h4>Pistes disponibles</h4></li>
   <li class="collection-item" ng-repeat="piste in pistes | orderBy:'piste.toString()'">
     <div>{{ piste.toString() }}
       <a ng-click="toToPiste(piste)" class="secondary-content">
-        <i class="material-icons {{ parcours.pageColor }}-text">forward</i>
+        <i class="material-icons red-text">forward</i>
       </a>
     </div>
   </li>
