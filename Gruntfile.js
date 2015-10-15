@@ -2,14 +2,20 @@
 
 module.exports = function (grunt) {
 
-  require('load-grunt-tasks')(grunt);
+  require('jit-grunt')(grunt, {
+    ngconstant: 'grunt-ng-constant',
+    ngtemplates: 'grunt-angular-templates',
+    useminPrepare: 'grunt-usemin',
+    comments: 'grunt-stripcomments'
+  });
   require('time-grunt')(grunt);
 
   var gruntConfig = {
 
     yeoman: {
       app: 'app',
-      dist: 'www'
+      dist: 'dist',
+      temp: '.tmp'
     },
 
     watch: {
@@ -102,8 +108,7 @@ module.exports = function (grunt) {
           dot: true,
           src: [
             '<%= yeoman.temp %>',
-            '<%= yeoman.dist %>/*',
-            '!<%= yeoman.dist %>/.git*'
+            '<%= yeoman.dist %>'
           ]
         }]
       },
@@ -233,6 +238,25 @@ module.exports = function (grunt) {
       }
     },
 
+    ngconstant: {
+      options: {
+        name: 'config',
+        wrap: '\'use strict\';\n\n{%= __ngModule %}',
+        space: '  ',
+        dest: '<%= yeoman.app %>/js/constants.js'
+      },
+      dev: {
+        constants: {
+          BACKEND: 'http://localhost:9001'
+        }
+      },
+      dist: {
+        constants: {
+          BACKEND: 'http://vps54578.vps.ovh.ca'
+        }
+      }
+    },
+
     ngAnnotate: {
       options: {
         singleQuotes: true
@@ -307,9 +331,11 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       dev: [
+        'ngconstant:dev',
         'newer:jsbeautifier:all'
       ],
       dist: [
+        'ngconstant:dist',
         'imagemin',
         'svgmin',
         'ngtemplates'
@@ -333,6 +359,7 @@ module.exports = function (grunt) {
           'app/index.html': [
             'app/js/config.js',
             'app/js/application.js',
+            'app/js/constants.js',
             'app/modules/*/*.js',
             'app/modules/*/config/*.js',
             'app/modules/*/services/*.js',
@@ -362,6 +389,7 @@ module.exports = function (grunt) {
           'app/index.html': [
             'app/js/config.js',
             'app/js/application.js',
+            'app/js/constants.js',
             'app/modules/*/*.js',
             'app/modules/*/config/*.js',
             'app/modules/*/services/*.js',
@@ -419,7 +447,7 @@ module.exports = function (grunt) {
     'copy:dist',
     'cssmin',
     'uglify',
-    'rev',
+    'rev:dist',
     'usemin',
     'htmlmin',
     'comments:dist',

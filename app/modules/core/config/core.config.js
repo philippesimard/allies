@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('core').config(
-  function ($httpProvider, MailerProvider) {
+  function ($httpProvider, MailerProvider, BACKEND) {
 
     $httpProvider.interceptors.push(function () {
       return {
@@ -12,8 +12,7 @@ angular.module('core').config(
               urlPrefix = '';
 
             if (_.contains(['localhost', '127.0.0.1'], host)) {
-              urlPrefix = 'http://localhost:9001';
-              //urlPrefix = 'http://vps54578.vps.ovh.ca';
+              urlPrefix = BACKEND;
             } else if (typeof cordova !== 'undefined' || typeof phonegap !== 'undefined') {} else {
               urlPrefix = 'http://' + host;
             }
