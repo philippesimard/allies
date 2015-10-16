@@ -291,6 +291,19 @@ module.exports = function (grunt) {
             'index.html'
           ]
         }]
+      },
+      fonts: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= yeoman.app %>/lib/materialize',
+          dest: '<%= yeoman.dist %>',
+          src: 'font/roboto/*'
+        }]
+      },
+      materializeCss: {
+        dest: '<%= yeoman.dist %>/lib/materialize/templates/starter-template/css/style.css',
+        src: '<%= yeoman.app %>/lib/materialize/templates/starter-template/css/style.css'
       }
     },
 
@@ -445,6 +458,7 @@ module.exports = function (grunt) {
     'ngAnnotate:dist',
     'concurrent:dist2',
     'copy:dist',
+    'copy:fonts',
     'cssmin',
     'uglify',
     'rev:dist',
