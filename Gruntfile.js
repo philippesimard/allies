@@ -459,6 +459,7 @@ module.exports = function (grunt) {
     'concurrent:dist2',
     'copy:dist',
     'copy:fonts',
+    'copy:materializeCss',
     'cssmin',
     'uglify',
     'rev:dist',
