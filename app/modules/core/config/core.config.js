@@ -6,8 +6,7 @@ angular.module('core').config(
     $httpProvider.interceptors.push(function () {
       return {
         'request': function (config) {
-
-          if (!_.endsWith(config.url, '.html')) {
+          if (!_.endsWith(config.url, '.html') &&  !_.startsWith(config.url, 'http')) {
             var host = window.location.hostname,
               urlPrefix = '';
 
