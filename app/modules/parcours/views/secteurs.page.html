@@ -1,1 +1,18 @@
+<div id="index-banner" class="jumbotron">
+	    <div class="section no-pad-bot" >
+	      <div class="container">
+	        <h1 class="header light white-text">Pistes: {{ secteur.toString() }} </h1>
+	          <h5 class="header light white-text"></h5>
+	       </div>
+	    </div>
+	  </div>
+
+<div ncy-breadcrumb></div>
+
+	  <div class="center petitespace">
+	  <button back="back" tooltips class="btn-floating btn-large red waves-effect waves-light z-depth-0" tooltip-content="Retour page">
+    <i class="material-icons">reply</i>
+  </button>
+  </div>
+
 <piste-list ng-if="pistes" pistes="pistes"></piste-list>
