@@ -5,6 +5,7 @@ angular.module('medias').directive('mediasGalerie',
     return {
       restrict: 'E',
       scope: {
+        mediasIds: '=',
         mediaType: '@',
         mediaSectionId: '@',
         mediasPerRow: '@',
@@ -21,6 +22,19 @@ angular.module('medias').directive('mediasGalerie',
         } else if (scope.mediaSectionId) {
           deffered = Media.find({
             sectionId: scope.mediaSectionId
+          });
+        } else if (scope.mediasIds) {
+          var promises = [],
+            medias = [];
+
+          _.forEach(scope.mediasIds, function (mediasId) {
+            promises.push(Media.findById(mediasId).then(function (media) {
+              medias.push(media);
+            }));
+          });
+
+          deffered = $q.when(promises).then(function () {
+            return medias;
           });
         }
 
