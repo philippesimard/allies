@@ -7,16 +7,8 @@ angular.module('core').config(
       return {
         'request': function (config) {
           if (!_.endsWith(config.url, '.html') &&  !_.startsWith(config.url, 'http')) {
-            var host = window.location.hostname,
-              urlPrefix = '';
-
-            if (_.contains(['localhost', '127.0.0.1'], host)) {
-              urlPrefix = BACKEND;
-            } else if (typeof cordova !== 'undefined' || typeof phonegap !== 'undefined') {} else {
-              urlPrefix = 'http://' + host;
-            }
-
-            var route = config.url.split('/')[config.url.split('/').length - 2];
+            var urlPrefix = BACKEND,
+              route = config.url.split('/')[config.url.split('/').length - 2];
 
             if (!_.contains(['img', 'icons', '/'], route)) {
               urlPrefix += '/api/v1';
