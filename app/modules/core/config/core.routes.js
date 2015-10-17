@@ -9,7 +9,20 @@ angular.module('core').config(
 
       .state('home', {
       url: '/',
-      templateUrl: 'modules/core/views/home.html'
+      templateUrl: 'modules/core/views/home.html',
+      resolve: {
+        allParcours: function (Parcours) {
+          return Parcours.find();
+        }
+      },
+      controller: function ($scope, $state, allParcours) {
+        $scope.allParcours = allParcours;
+        $scope.goToParcours = function (parcours) {
+          $state.go('parcours-page', {
+            parcoursName: parcours.shortName
+          });
+        };
+      }
     })
 
     .state('homecontact', {
