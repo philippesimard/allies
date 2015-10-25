@@ -63,5 +63,9 @@ angular.module('users').factory('User',
       return this.save();
     };
 
+    User.prototype.getBadgeIds = function () {
+      return this.badges;
+    };
+
     return User;
   });

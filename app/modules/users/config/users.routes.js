@@ -28,10 +28,10 @@ angular.module('users').config(
       controller: 'ExperienceController'
     })
 
-    .state('activite', {
-      url: '/utilisateur/activite',
-      templateUrl: 'modules/users/views/users.activite.html',
-      controller: 'ActiviteController'
+    .state('badges', {
+      url: '/utilisateur/badges',
+      templateUrl: 'modules/users/views/users.badges.html',
+      controller: 'BadgeController'
     })
 
     .state('contribution', {
