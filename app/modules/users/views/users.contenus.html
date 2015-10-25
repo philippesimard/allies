@@ -51,7 +51,7 @@
                         medias-ids="medias"
                         medias-per-row="4">
         </medias-galerie>
-        <ul ng-if="pistes">
+        <ul ng-if="pistes.length > 0">
           <li ng-repeat="parcours in allParcours">
             {{ parcours.toString() }}
             <ul style="margin-left:20px;">
@@ -59,7 +59,8 @@
                 {{ secteur.toString() }}
                 <piste-list style="margin-left:40px;"
                             pistes="secteur.pistes"
-                            no-header="true">
+                            no-header="true"
+                            show-remove-icon="true">
                 </piste-list>
               </li>
             </ul>

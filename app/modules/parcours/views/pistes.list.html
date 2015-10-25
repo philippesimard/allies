@@ -9,10 +9,11 @@
   </li>
 </ul>
 
-<ul class="collection with-header" ng-show="noHeader">
+<ul class="collection" ng-show="noHeader">
   <li class="collection-item" ng-repeat="piste in pistes | orderBy:'toString()'">
     <div>{{ piste.toString() }}
       <a ng-click="toToPiste(piste)" class="secondary-content">
+        <i class="material-icons" ng-show="showRemoveIcon" ng-click="removeFromFavorite(piste)">delete</i>
         <i class="material-icons">forward</i>
       </a>
     </div>
