@@ -21,6 +21,15 @@ angular.module('parcours').directive('pistePage',
         });
 
         $rootScope.$broadcast('grosButton:show', grosBoutton);
+
+        scope.addBadge = function () {
+          if (scope.piste.canAddBadge) {
+            $rootScope.currentUser.addBadge(scope.piste.badge).then(function () {
+              scope.piste.canAddBadge = false;
+              console.log('badge Ajoutée!');
+            });
+          }
+        };
       }
     };
   });
