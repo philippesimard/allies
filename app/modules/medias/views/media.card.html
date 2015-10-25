@@ -5,10 +5,19 @@
   <div class="card-content">
 		<span class="card-title activator grey-text text-darken-4">
 			{{ media.toString() }}
-			<i class="material-icons right pink-text">add</i>
+			<i class="material-icons right pink-text">info</i>
 		</span>
 			<p>{{ media.annee }}</p>
-			<i class="material-icons right pink-text" ng-click="addToFavorite()">favorite</i>
+			<i class="material-icons right pink-text"
+         ng-hide="media.isFavorited"
+         ng-click="addToFavorite()">
+        favorite
+      </i>
+      <i class="material-icons right pink-text"
+         ng-show="media.isFavorited"
+         ng-click="removeFromFavorite()">
+        delete
+      </i>
 	</div>
   <div class="card-reveal">
     <span class="card-title grey-text text-darken-4">

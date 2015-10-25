@@ -10,7 +10,7 @@ angular.module('users').factory('User',
     };
 
     function addPisteToFavorite(user, piste) {
-      if (_.contains(user.favorites.piste, piste._id)) {
+      if (user.hasFavorite('piste', piste)) {
         var deffered = $q.defer();
         deffered.resolve('Déjà dans vos favoris');
         return deffered.promise;
@@ -24,7 +24,7 @@ angular.module('users').factory('User',
 
     function addMediaToFavorite(user, media) {
 
-      if (_.contains(user.favorites.media, media._id)) {
+      if (user.hasFavorite('media', media)) {
         var deffered = $q.defer();
         deffered.resolve('Déjà dans vos favoris');
         return deffered.promise;
@@ -35,6 +35,10 @@ angular.module('users').factory('User',
         return 'Le media ' + media.toString() + ' a été ajoutée à vos favoris.';
       });
     }
+
+    User.prototype.hasFavorite = function (type, element) {
+      return !_.isUndefined(this.favorites[type]) && _.contains(this.favorites[type], element._id);
+    };
 
     User.prototype.addFavorite = function (type, element) {
 
@@ -52,6 +56,13 @@ angular.module('users').factory('User',
       case 'media':
         return addMediaToFavorite(this, element);
       }
+    };
+
+    User.prototype.removeFavorite = function (type, element) {
+      _.pull(this.favorites[type], element._id);
+      return this.save().then(function () {
+        return element.toString() + ' a été retiré de vos favoris.';
+      });
     };
 
     User.prototype.hasBadge = function (badgeId) {
