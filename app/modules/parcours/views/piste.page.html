@@ -16,6 +16,13 @@
           </div>
         </div>
 
+        <ng-include src="piste.templateUrl"></ng-include>
+
+
+        <button ng-disabled="!piste.canAddBadge" ng-click="addBadge()">AJOUT BADGE</button>
+
+        <badge badge-id="piste.badge"></badge>
+
 <div ncy-breadcrumb></div>
 
       </div>

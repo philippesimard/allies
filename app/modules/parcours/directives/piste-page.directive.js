@@ -10,6 +10,10 @@ angular.module('parcours').directive('pistePage',
       templateUrl: 'modules/parcours/views/piste.page.html',
       link: function (scope) {
 
+        scope.piste.templateUrl = 'modules/pistes/views/' + scope.piste.templateUrl;
+
+        scope.piste.canAddBadge = !_.isUndefined(scope.piste.badge) && !$rootScope.currentUser.hasBadge(scope.piste.badge);
+
         var grosBoutton = new GrosBoutton();
 
         grosBoutton.on('addToFavorites', function () {

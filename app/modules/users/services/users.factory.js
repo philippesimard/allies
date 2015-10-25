@@ -54,5 +54,14 @@ angular.module('users').factory('User',
       }
     };
 
+    User.prototype.hasBadge = function (badgeId) {
+      return _.contains(this.badges, badgeId);
+    };
+
+    User.prototype.addBadge = function (badgeId) {
+      this.badges.push(badgeId);
+      return this.save();
+    };
+
     return User;
   });
