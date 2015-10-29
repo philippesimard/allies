@@ -7,7 +7,11 @@
 
 
         <div class="col s12 m6 center espace z-depth-0">
-        	<a ui-sref="boite" class="waves-effect waves-light btn white black-text"><i class="material-icons left">home</i>Retour intentions</a>
+        	<div class="center">
+    <button onclick="goBack()" tooltips class="btn-floating btn-large red waves-effect waves-light z-depth-0" tooltip-content="Retour pistes">
+    <i class="material-icons">reply</i>
+  </button>
+  </div>
           <div class="center card white darken-1">
             <div class="card-content black-text">
               <span class="card-title black-text">{{piste.info.title}}</span>
@@ -31,3 +35,9 @@
 
 
 </div>
+
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>

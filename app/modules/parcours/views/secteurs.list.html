@@ -1,5 +1,5 @@
 <ul class="collection with-header">
-  <li class="collection-header"><h4>Secteurs disponibles</h4></li>
+  <li class="collection-header"><h4>Parcours disponibles</h4></li>
   <li class="collection-item" ng-repeat="secteur in secteurs | orderBy:'secteur.toString()'">
     <div>{{ secteur.toString() }}
       <a ng-click="toToSecteur(secteur)" class="secondary-content">

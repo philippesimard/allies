@@ -7,12 +7,17 @@
 	    </div>
 	  </div>
 
-<div ncy-breadcrumb></div>
 
 	  <div class="center petitespace">
-	  <button back="back" tooltips class="btn-floating btn-large red waves-effect waves-light z-depth-0" tooltip-content="Retour page">
+	  <button onclick="goBack()" tooltips class="btn-floating btn-large red waves-effect waves-light z-depth-0" tooltip-content="Retour parcours">
     <i class="material-icons">reply</i>
   </button>
   </div>
 
 <piste-list ng-if="pistes" pistes="pistes"></piste-list>
+
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>

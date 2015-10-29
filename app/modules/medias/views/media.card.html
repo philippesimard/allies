@@ -4,16 +4,16 @@
   </div>
   <div class="card-content">
 		<span class="card-title activator grey-text text-darken-4">
-			{{ media.toString() }}
-			<i class="material-icons right pink-text">info</i>
+		<h6>{{ media.toString() }}</h6>
+			<i class="material-icons right orange-text">info</i>
 		</span>
-			<p>{{ media.annee }}</p>
-			<i class="material-icons right pink-text"
+			
+			<i class="material-icons right orange-text"
          ng-hide="media.isFavorited"
          ng-click="addToFavorite()">
         favorite
       </i>
-      <i class="material-icons right pink-text"
+      <i class="material-icons right orange-text"
          ng-show="media.isFavorited"
          ng-click="removeFromFavorite()">
         delete
@@ -25,7 +25,7 @@
     	<i class="material-icons right">close</i>
     </span>
     <p ng-repeat="(key, value) in media.infos">
-    	<span class="pink-text">{{ key }} : </span>
+    	<span class="orange-text">{{ key }} : </span>
       <span>{{ value }}</span>
     </p>
   </div>
