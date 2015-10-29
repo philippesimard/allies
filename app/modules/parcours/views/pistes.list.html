@@ -1,8 +1,9 @@
-<ul class="collection with-header" ng-hide="noHeader">
+<ul class="collection with-header container" ng-hide="noHeader">
   <li class="collection-header"><h4>Pistes disponibles</h4></li>
   <li class="collection-item" ng-repeat="piste in pistes | orderBy:'toString()'">
     <div>{{ piste.toString() }}
       <a ng-click="toToPiste(piste)" class="secondary-content">
+<<<<<<< Updated upstream
         <i class="material-icons">forward</i>
       </a>
     </div>
@@ -15,6 +16,9 @@
       <a ng-click="toToPiste(piste)" class="secondary-content">
         <i class="material-icons" ng-show="showRemoveIcon" ng-click="removeFromFavorite(piste)">delete</i>
         <i class="material-icons">forward</i>
+=======
+        <i class="material-icons red-text">forward</i>
+>>>>>>> Stashed changes
       </a>
     </div>
   </li>

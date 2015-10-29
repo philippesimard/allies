@@ -10,13 +10,19 @@
         	<a ui-sref="boite" class="waves-effect waves-light btn white black-text"><i class="material-icons left">home</i>Retour intentions</a>
           <div class="center card white darken-1">
             <div class="card-content black-text">
-              <span class="card-title black-text">Être un.e Allié.e visible</span>
-              <p>Les jeunes lesbiennes, gais, bisexuel.le.s, en questionnement ou non conformes aux stéréotypes de genre se sentent souvent isolé.e.s et craignent le rejet. Être visible comme alliéE s’avère donc primordial, afin que ces jeunes sachent qu’ils et elles peuvent compter sur vous.</p>
-            </div>
+              <span class="card-title black-text">{{piste.info.title}}</span>
+              <p>{{piste.info.description}}</div>
           </div>
         </div>
 
-        <ng-include src="piste.templateUrl"></ng-include>
+         </div>
+
+          </div>
+  </div>
+
+
+<div class="container">
+       <ng-include src="piste.templateUrl"></ng-include>
 
 
         <button ng-disabled="!piste.canAddBadge" ng-click="addBadge()">AJOUT BADGE</button>
@@ -24,6 +30,4 @@
         <badge ng-if="piste.badge" badge-id="piste.badge"></badge>
 
 
-      </div>
-	</div>
-  </div>
+</div>
