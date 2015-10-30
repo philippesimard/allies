@@ -1,16 +1,15 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="../lib/materialize/templates/starter-template/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-
 
 <div id="index-banner" class="user">
     <div class="section no-pad-bot" >
       <div class="container">
         <div class="center">
-        <img width="90" height="90" src="img/logonewa.png" alt="" class="circle responsive-img">
         </div>
-        <h1 class="header center light white-text">Bonjour {{ currentUser.toString() }} </h1>
+        <h1 class="header center light white-text animated fadeIn">Bonjour {{ currentUser.toString() }} </h1>
         <div class="row center">
           <h5 class="header col s12 light white-text">Bienvenue dans votre espace membre ! Le tableau de bord est le meilleur endroit afin de gérer vos contenus et participer au développement de la plateforme.</h5>
+        </div>
+        <div class="center">
+        <a class="btn flat orange z-depth-0" ui-sref="parcours" >Voir nos parcours</a>
         </div>
         </div>
     </div>
@@ -19,10 +18,10 @@
 
   <div class="container">
   <div class="espace">
-  <div class="row pointer">
+  <div class="row animated fadeIn pointer">
         
-        <div class="col s12 m4" ui-sref="contenus">
-          <div class="icon-block">
+        <div class="col s12 m4" ui-sref="contenus" tooltipped data-position="bottom" data-delay="50" data-tooltip="Voir mes contenus" >
+          <div class="icon-block" >
             <h2 class="center orange-text"><i class="material-icons">favorite</i></h2>
             <h5 class="center">Vos contenus</h5>
 
@@ -30,7 +29,7 @@
           </div>
         </div>
 
-        <div class="col s12 m4" ui-sref="experience">
+        <div class="col s12 m4" ui-sref="experience" tooltipped data-position="bottom" data-delay="50" data-tooltip="Voir mes parcours et activités">
           <div class="icon-block">
             <h2 class="center orange-text"><i class="material-icons">stars</i></h2>
             <h5 class="center">Parcours et activités</h5>
@@ -39,7 +38,7 @@
           </div>
         </div>
 
-        <div class="col s12 m4" ui-sref="badges">
+        <div class="col s12 m4" ui-sref="badges" tooltipped data-position="bottom" data-delay="50" data-tooltip="Voir mes badges">
           <div class="icon-block">
             <h2 class="center orange-text"><i class="material-icons">security</i></h2>
             <h5 class="center">Badges</h5>
@@ -48,16 +47,15 @@
           </div>
         </div>
 
-        <div class="col s12 m4" ui-sref="contribution">
+        <div class="col s12 m4" ui-sref="contribution" tooltipped data-position="bottom" data-delay="50" data-tooltip="Voir la zone contribution">
           <div class="icon-block">
             <h2 class="center orange-text"><i class="material-icons">help</i></h2>
             <h5 class="center">Zone contribution</h5>
-
             <p class="center light">Contribuer ici au developpement de la plateforme.</p>
           </div>
         </div>
 
-        <div class="col s12 m4" ui-sref="contact">
+        <div class="col s12 m4" ui-sref="contact" tooltipped data-position="bottom" data-delay="50" data-tooltip="Joindre l'équipe">
           <div class="icon-block">
             <h2 class="center orange-text"><i class="material-icons">email</i></h2>
             <h5 class="center">Nous joindre</h5>
@@ -66,7 +64,7 @@
           </div>
         </div>
 
-        <div class="col s12 m4" ui-sref="parameters">
+        <div class="col s12 m4" ui-sref="parameters" tooltipped data-position="bottom" data-delay="50" data-tooltip="Voir mes paramètres personnelles">
           <div class="icon-block">
             <h2 class="center orange-text"><i class="material-icons">account_circle</i></h2>
             <h5 class="center">Paramètres</h5>
@@ -80,6 +78,17 @@
     </div>
 
     </div>
+
+      <div class="presentation">
+    <h2 class="light center"> Découvrir les services du GRIS Québec </h2>
+    
+    <div class="center">
+        <p>Vous aimez la plateforme? Découvrez les services du Gris-Québec </p>
+
+        <a class="btn flat orange z-depth-0" > En savoir plus</a>
+    </div>
+
+  </div>
 
 
 
