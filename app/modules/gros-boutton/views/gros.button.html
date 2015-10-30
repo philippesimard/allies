@@ -1,38 +1,36 @@
 <div class="fixed-action-btn" ng-if="grosBoutton">
   <a ng-show="grosBoutton.hasFavoriteFunction" 
-     tooltip-side="left"
-     tooltips
-     tooltip-content="Ajouter favoris"
+     tooltipped  data-position="left"  data-tooltip="Ajouter a mes favoris"
      class="btn-floating btn-large waves-effect waves-light red animation pulsation z-depth-0"
      ng-click="grosBoutton.addToFavorites()">
     <i class="large material-icons ">favorite_border</i>
   </a>
   <a ng-hide="grosBoutton.hasFavoriteFunction" 
-     tooltip-side="left"
-     tooltips
+     tooltipped  data-position="left"  data-tooltip="Menu fonctions"
      class="btn-floating btn-large waves-effect waves-light red animation pulsation z-depth-0">
     <i class="large material-icons white-text">loupe</i>
   </a>
   <ul>
     <li>
-      <a tooltip-side="left" tooltips tooltip-content="Accéder à l'aide" class="btn-floating btn waves-effect waves-light pink z-depth-0" ui-sref="aide">
+      <a tooltipped  data-position="left"  data-tooltip="Accéder à l'aide" class="btn-floating btn waves-effect waves-light pink z-depth-0" ui-sref="aide">
         <i class="material-icons">help</i>
       </a>
     </li>
     <li>
-    	<a tooltip-side="left" tooltips tooltip-content="Signaler une page" class="btn-floating btn waves-effect waves-light orange z-depth-0" ng-click="signaler()">
+    	<a tooltipped  data-position="left"  data-tooltip="Signaler une page" class="btn-floating btn waves-effect waves-light orange z-depth-0" ng-click="signaler()">
     		<i class="material-icons">error</i>
     	</a>
     </li>
     <li>
-    	<a tooltip-side="left" tooltips tooltip-content="Voir mon profil" class="btn-floating btn waves-effect waves-light green z-depth-0" ui-sref="contenus">
+    	<a tooltipped  data-position="left"  data-tooltip="Voir mon profil" class="btn-floating btn waves-effect waves-light green z-depth-0" ui-sref="contenus">
     		<i class="material-icons">dashboard</i>
     	</a>
     </li>
     <li>
-    	<a tooltip-side="left" tooltips tooltip-content="Partager" class="btn-floating btn waves-effect waves-light blue z-depth-0" ng-click="likepage()">
+    	<a tooltipped  data-position="left"  data-tooltip="Partager" class="btn-floating btn waves-effect waves-light blue z-depth-0" ng-click="likepage()">
     		<i  class="material-icons">share</i>
     	</a>
     </li>
   </ul>
 </div>
+
