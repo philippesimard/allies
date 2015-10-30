@@ -288,3 +288,9 @@ padding-top: 20px;
     width: 100%;
     height: 100%;
 }
+
+.badge{
+  
+    height: 50px;
+    width: 50px;
+}
