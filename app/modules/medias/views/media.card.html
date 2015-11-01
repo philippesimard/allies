@@ -5,15 +5,15 @@
   <div class="card-content">
 		<span class="card-title activator grey-text text-darken-4">
 		<h6>{{ media.toString() }}</h6>
-			<i class="material-icons right orange-text">info</i>
+			<i class="material-icons right red-text">info</i>
 		</span>
 			
-			<i class="material-icons right orange-text"
+			<i class="material-icons right red-text"
          ng-hide="media.isFavorited"
          ng-click="addToFavorite()">
         favorite
       </i>
-      <i class="material-icons right orange-text"
+      <i class="material-icons right red-text"
          ng-show="media.isFavorited"
          ng-click="removeFromFavorite()">
         delete
@@ -25,7 +25,7 @@
     	<i class="material-icons right">close</i>
     </span>
     <p ng-repeat="(key, value) in media.infos">
-    	<span class="orange-text">{{ key }} : </span>
+    	<span class="red-text">{{ key }} : </span>
       <span>{{ value }}</span>
     </p>
   </div>

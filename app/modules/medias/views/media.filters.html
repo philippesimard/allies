@@ -1,40 +1,46 @@
 <div class="container">
 
-<!-- Mise en page completement différente pour les téléphones mobiles. -->
-<div class="hide-on-med-and-down">
+<div class="center">
 
-    <!-- Barre de recherche sera amméliorée  ng-click="filterProducts('type', 'tshirt')-->
+    
     <div class="espace">
+
+      
 
       <p ng-click="filterFilm('date', '2013')"></p>
 
-        <button class='btn orange' ng-click="filterFilm()">Réinitialiser</button>
+        <button class="btn orange z-depth-0" ng-click="filterFilm() ">Réinitialiser</button>
     
         <!-- Dropdown Trigger -->
-        <span><button class='dropdown-button btn pink' href='#' data-activates='niveau'>Niveau</button></span>
+        <span><button class="dropdown-button btn red z-depth-0" href="#" data-activates="niveau">Niveau</button></span>
 
         <!-- Dropdown Structure -->
-        <ul id='niveau' class='dropdown-content'>
+        <ul id="niveau" class="dropdown-content">
           <li ng-repeat="niveau in niveaux | orderBy:'poids'">
             <a class="black-text" ng-click="filterFilm('niveau', niveau)">{{ niveau.toString() }}</a>
           </li>
         </ul>
 
 
-        <span><a class='dropdown-button btn pink' href='#' data-activates='genre'>Genre</a></span>
-        <ul id='genre' class='dropdown-content'>
-          <li><a class="black-text" ng-click="filterFilm('niveau', 'Secondaires 3 à 5')">Primaire</a></li>
-          <li><a class="black-text" >Secondaire</a></li>
-          <li><a class="black-text" >Secondaire 3 à 5</a></li>
-          <li><a class="black-text" >Cégep</a></li>
-          <li><a class="black-text" >Adulte</a></li>
+        <span>
+          <a class="dropdown-button btn red z-depth-0" href="#" data-activates="genre">Genre</a></span>
+        
+        <ul id="genre" class="dropdown-content">
+          <li><a class="black-text">Drame</a></li>
+          <li><a class="black-text" >Comédie</a></li>
+          <li><a class="black-text" >Action</a></li>
+          <li><a class="black-text" >Film de répertoire</a></li>
+          <li><a class="black-text" >Cours métrage</a></li>
         </ul>
-        </div>
-        </div>
-
     
-     <input type="text" ng-model="searchFilm.name" placeholder="Chercher un film"><ul>
+      
+       </div>
 
+         </div>
+        
+    
+     
+</div>
 
 
 

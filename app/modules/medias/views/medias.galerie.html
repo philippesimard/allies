@@ -1,10 +1,13 @@
 <div class="largecontainer">
 	<div class="row">
 	
-	<!-- Carte version bureau -->
+	<table>
+       
+
+<!-- Carte version bureau -->
   	<div class="animated fadeIn">
       <media-card media="media"
-                  ng-repeat="media in medias | filter:searchFilm"
+                  ng-repeat="media in medias | orderBy:'name' | filter:searchFilm"
                   ng-style="{'width': cardLength }">
       </media-card>
 		</div>

@@ -306,3 +306,9 @@ padding-top: 20px;
     width: 100%;
     height: 100%;
 }
+
+.fadeIn {
+  -vendor-animation-duration: 3s;
+  -vendor-animation-delay: 2s;
+  -vendor-animation-iteration-count: infinite;
+}
