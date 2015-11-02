@@ -5,20 +5,33 @@
   <div class="card-content">
 		<span class="card-title activator grey-text text-darken-4">
 		<h6>{{ media.toString() }}</h6>
+    <i class="material-icons right red-text" tooltipped  data-position="bottom" data-delay="50" data-tooltip="Voir la fiche complète" ng-click="toToMedia(media)">trending_flat</i>
 			<i class="material-icons right red-text">info</i>
 		</span>
 			
-			<i class="material-icons right red-text"
-         ng-hide="media.isFavorited"
-         ng-click="addToFavorite()">
+			<i 
+
+      tooltipped 
+      data-position="bottom" 
+      data-delay="50" 
+      data-tooltip="Ajouter à mes favoris"
+      class="material-icons right red-text"
+      ng-hide="media.isFavorited"
+      ng-click="addToFavorite()">
         favorite
       </i>
-      <i class="material-icons right red-text"
+      <i 
+      tooltipped 
+      data-position="bottom" 
+      data-delay="50" 
+      data-tooltip="Retirer de  mes favoris"
+      class="material-icons right red-text"
          ng-show="media.isFavorited"
          ng-click="removeFromFavorite()">
         delete
       </i>
 	</div>
+
   <div class="card-reveal">
     <span class="card-title grey-text text-darken-4">
     	{{ media.toString() }}

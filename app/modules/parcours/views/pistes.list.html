@@ -3,18 +3,7 @@
   <li class="collection-item" ng-repeat="piste in pistes | orderBy:'toString()'">
     <div>{{ piste.toString() }}
       <a ng-click="toToPiste(piste)" class="secondary-content">
-        <i class="material-icons red-text">forward</i>
-      </a>
-    </div>
-  </li>
-</ul>
-
-<ul class="collection" ng-show="noHeader">
-  <li class="collection-item" ng-repeat="piste in pistes | orderBy:'toString()'">
-    <div>{{ piste.toString() }}
-      <a ng-click="toToPiste(piste)" class="secondary-content">
-        <i class="material-icons" ng-show="showRemoveIcon" ng-click="removeFromFavorite(piste)">delete</i>
-        <i class="material-icons red-text">forward</i>
+        <i class="material-icons red-text" class="secondary-content" tooltipped  data-position="bottom" data-delay="50" data-tooltip="Accéder à: {{ piste.toString() }}">forward</i>
       </a>
     </div>
   </li>
