@@ -28,9 +28,6 @@ angular.module('medias').config(
           });
         }
       },
-      controller: function ($scope, secteurs) {
-        $scope.secteur = secteurs[0];
-      }
     })
 
     .state('media-section', {
