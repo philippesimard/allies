@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('medias').directive('mediaCard',
-  function ($rootScope, MaterializeService) {
+  function ($rootScope, $state, MaterializeService) {
     return {
       restrict: 'E',
       replace: true,
@@ -24,6 +24,12 @@ angular.module('medias').directive('mediaCard',
           $rootScope.currentUser.removeFavorite('media', scope.media).then(function (message) {
             scope.media.isFavorited = false;
             MaterializeService.toast('<i class="material-icons red-text">favorite</i>&nbsp;&nbsp;' + message, 3000);
+          });
+        };
+
+        scope.goToMedia = function (media) {
+          $state.go('media-fiche', {
+            mediaId: media._id
           });
         };
       }
