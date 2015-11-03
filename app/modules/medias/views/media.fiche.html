@@ -17,14 +17,16 @@ body {
 
  <div class="espace row">
 
-<img class="left position" width="300" src="{{ media.img }}">
+<img class="left position" width="350" src="{{ media.img }}">
 
  
- <ul class="collection with-header" width="300">
+ <ul class="collection with-header" width="350">
         <li class="collection-header center"><h3>{{ media.name }}<h3></li>
         <li class="collection-item"><span class="bold">Nom du film:</span> {{ media.name }}</li>
         <li class="collection-item"><span class="bold">Réalisé par:</span> {{ media.infos.realisateur }}</li>
+        <li class="collection-item"><span class="bold">Durée:</span> {{ media.infos.duree }} min</li>
         <li class="collection-item"><span class="bold">Genre:</span> {{ media.infos.genre }}</li>
+        <li class="collection-item"><span class="bold">Nationalité:</span> {{ media.infos.nationalite }}</li>
         <li class="collection-item"><span class="bold">Principaux acteur:</span> {{ media.infos.acteurs }}</li>
         <li class="collection-item"><span class="bold">Synopsis:</span> {{ media.infos.synopsis }}</li>
         <li class="collection-item">
@@ -35,7 +37,7 @@ body {
       data-position="bottom" 
       data-delay="50" 
       onclick="goBack()"
-      data-tooltip="Retour au film"><i class="material-icons">reply</i></a>
+      data-tooltip="Retour aux films"><i class="material-icons">reply</i></a>
 <a class="btn-floating btn waves-effect waves-light red z-depth-0" 
 	 tooltipped 
       data-position="bottom" 
@@ -53,6 +55,10 @@ body {
 
 
   </div>
+    </div>
+     </div>
+
+
 
 
 

@@ -39,13 +39,20 @@
 	</div>
 
   <div class="card-reveal">
-    <span class="card-title grey-text text-darken-4">
-    	{{ media.toString() }}
+    <span class="card-title red-text">
+    	{{ media.name }}
     	<i class="material-icons right">close</i>
     </span>
-    <p ng-repeat="(key, value) in media.infos">
-    	<span class="red-text">{{ key }} : </span>
-      <span>{{ value }}</span>
+    <p>
+      <p>Public: </p>
+      <p>Nom: {{ media.name }}</p>
+      <p>Genre: {{ media.infos.genre }}</p>
+      <p>Années: {{ media.annee }}</p>
+      <p>Synopsis: {{ media.infos.synopsis }}</p>
+      
+      <div class="center">
+      <a class="waves-effect waves-light flat btn red z-depth-0" ng-click="goToMedia(media)">En savoir plus</a>
+    </div>
     </p>
   </div>
 </div>
