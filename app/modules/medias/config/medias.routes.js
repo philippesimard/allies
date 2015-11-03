@@ -18,21 +18,6 @@ angular.module('medias').config(
       }
     })
 
-    .state('media-page', {
-      url: '/mediagraphie/film/:filmName',
-      template: '<madia-page media="media"></media-page>',
-      resolve: {
-        secteur: function (Media, $stateParams) {
-          return Media.findOne({
-            shortName: $stateParams.media
-          });
-        }
-      },
-      controller: function ($scope, secteur) {
-        $scope.secteur = secteur;
-      }
-    })
-
     .state('media-section', {
       url: '/mediagraphie/:mediaSectionName',
       resolve: {

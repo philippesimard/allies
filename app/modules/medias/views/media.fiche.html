@@ -1,1 +1,67 @@
-{{ media }}
+<style>
+body {
+    background-color: #181818;
+}
+
+.position {
+    
+    margin: auto;
+    border: 8px solid #181818;
+}
+
+</style>
+
+<div class="container animated fadeIn">
+ 
+
+
+ <div class="espace row">
+
+<img class="left position" width="300" src="{{ media.img }}">
+
+ 
+ <ul class="collection with-header" width="300">
+        <li class="collection-header center"><h3>{{ media.name }}<h3></li>
+        <li class="collection-item"><span class="bold">Nom du film:</span> {{ media.name }}</li>
+        <li class="collection-item"><span class="bold">Réalisé par:</span> {{ media.infos.realisateur }}</li>
+        <li class="collection-item"><span class="bold">Genre:</span> {{ media.infos.genre }}</li>
+        <li class="collection-item"><span class="bold">Principaux acteur:</span> {{ media.infos.acteurs }}</li>
+        <li class="collection-item"><span class="bold">Synopsis:</span> {{ media.infos.synopsis }}</li>
+        <li class="collection-item">
+
+<div class="center">
+<a class="btn-floating btn waves-effect waves-light red z-depth-0" 
+	  tooltipped 
+      data-position="bottom" 
+      data-delay="50" 
+      onclick="goBack()"
+      data-tooltip="Retour au film"><i class="material-icons">reply</i></a>
+<a class="btn-floating btn waves-effect waves-light red z-depth-0" 
+	 tooltipped 
+      data-position="bottom" 
+      data-delay="50" 
+      data-tooltip="Voir la bande annonce"><i class="material-icons">movie</i></a>
+<a class="btn-floating btn waves-effect waves-light red z-depth-0" 
+	  tooltipped 
+      data-position="bottom" 
+      data-delay="50" 
+      data-tooltip="Ajouter à mes favoris"><i class="material-icons">favorite</i></a>
+</div>
+        </li>
+      </ul>
+
+
+
+  </div>
+
+
+
+<script>
+function goBack() {
+    window.history.back();
+}
+
+  $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
+ </script>
