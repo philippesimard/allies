@@ -318,3 +318,8 @@ padding-top: 20px;
 .bold {
     font-weight: bold;
 }
+
+.justify {
+    text-align: justify;
+    text-justify: inter-word;
+}
