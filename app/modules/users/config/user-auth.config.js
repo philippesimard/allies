@@ -48,7 +48,8 @@ angular.module('users').config(
         'bd',
         'roman',
         'confirm_email',
-        'homecontact'
+        'homecontact',
+        'reset_password'
       ]
     });
   });
