@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('medias').directive('mediasGalerie',
-  function ($q, MediaSection, Media) {
+  function($q, MediaSection, Media) {
     return {
       restrict: 'E',
       scope: {
@@ -9,12 +9,13 @@ angular.module('medias').directive('mediasGalerie',
         mediaType: '@',
         mediaSectionId: '@',
         mediasPerRow: '@',
-        maxRows: '@'
+        maxRows: '@',
+        showFilters: '='
       },
-      templateUrl: function (element, attrs) {
+      templateUrl: function(element, attrs) {
         return attrs.mode === 'static' ? 'modules/medias/views/medias.static-galerie.html' : 'modules/medias/views/medias.galerie.html';
       },
-      link: function (scope) {
+      link: function(scope) {
 
         var deffered;
         if (scope.mediaType) {
@@ -27,18 +28,18 @@ angular.module('medias').directive('mediasGalerie',
           var promises = [],
             medias = [];
 
-          _.forEach(scope.mediasIds, function (mediasId) {
-            promises.push(Media.findById(mediasId).then(function (media) {
+          _.forEach(scope.mediasIds, function(mediasId) {
+            promises.push(Media.findById(mediasId).then(function(media) {
               medias.push(media);
             }));
           });
 
-          deffered = $q.when(promises).then(function () {
+          deffered = $q.when(promises).then(function() {
             return medias;
           });
         }
 
-        deffered.then(function (medias) {
+        deffered.then(function(medias) {
 
           if (scope.maxRows) {
             var nbMedia = scope.mediasPerRow * scope.maxRows;
@@ -47,26 +48,14 @@ angular.module('medias').directive('mediasGalerie',
 
           scope.cardLength = 100 / scope.mediasPerRow + '%';
           scope.medias = medias;
+
         });
+      },
+      controller: function($scope) {
 
-        /*
-    $scope.films = films;
-    $scope.niveaux = niveaux;
-
-    $scope.filterFilm = function (prop, value) {
-      if (!prop || !value) {
-        $scope.films = films;
-        return;
-      }
-
-      $scope.films = _.filter(films, function (film) {
-        return film[prop] === value._id;
-      });
-    };*/
-
-        /*scope.random = function () {
-          return 0.5 - Math.random();
-        };*/
+        this.setMedias = function(medias) {
+          $scope.medias = medias;
+        }
       }
     };
   });

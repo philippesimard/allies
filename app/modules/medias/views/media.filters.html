@@ -1,14 +1,14 @@
 <div class="container">
-
-<div class="center">
-
-    
+  <div class="center">
     <div class="espace">
-
       
-
-      <p ng-click="filterFilm('date', '2013')"></p>
-
+      <div class="input-field">
+        <i class="material-icons prefix">search</i>
+        <label for="email">Recherche par titre</label>
+        <input type="text" 
+               ng-model="query"/>
+      </div>
+      
         <button class="btn orange z-depth-0" ng-click="filterFilm() ">Réinitialiser</button>
     
         <!-- Dropdown Trigger -->
