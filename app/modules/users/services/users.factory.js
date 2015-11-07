@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('users').factory('User',
-  function(Schema, $q) {
+  function (Schema, $q) {
 
     var User = new Schema('user');
 
-    User.prototype.toString = function() {
+    User.prototype.toString = function () {
       return this.firstname + ' ' + this.lastname;
     };
 
@@ -17,7 +17,7 @@ angular.module('users').factory('User',
       }
 
       user.favorites.piste.push(piste._id);
-      return user.save().then(function() {
+      return user.save().then(function () {
         return 'La piste ' + piste.toString() + ' a été ajoutée à vos favoris.';
       });
     }
@@ -31,12 +31,12 @@ angular.module('users').factory('User',
       }
 
       user.favorites.media.push(media._id);
-      return user.save().then(function() {
+      return user.save().then(function () {
         return 'Le media ' + media.toString() + ' a été ajoutée à vos favoris.';
       });
     }
 
-    User.prototype.hasFavorite = function(type, element) {
+    User.prototype.hasFavorite = function (type, element) {
       if (_.isUndefined(this.favorites)) {
         return false;
       } else {
@@ -44,7 +44,7 @@ angular.module('users').factory('User',
       }
     };
 
-    User.prototype.addFavorite = function(type, element) {
+    User.prototype.addFavorite = function (type, element) {
 
       if (_.isUndefined(this.favorites)) {
         this.favorites = {};
@@ -55,30 +55,30 @@ angular.module('users').factory('User',
       }
 
       switch (type) {
-        case 'piste':
-          return addPisteToFavorite(this, element);
-        case 'media':
-          return addMediaToFavorite(this, element);
+      case 'piste':
+        return addPisteToFavorite(this, element);
+      case 'media':
+        return addMediaToFavorite(this, element);
       }
     };
 
-    User.prototype.removeFavorite = function(type, element) {
+    User.prototype.removeFavorite = function (type, element) {
       _.pull(this.favorites[type], element._id);
-      return this.save().then(function() {
+      return this.save().then(function () {
         return element.toString() + ' a été retiré de vos favoris.';
       });
     };
 
-    User.prototype.hasBadge = function(badgeId) {
+    User.prototype.hasBadge = function (badgeId) {
       return _.contains(this.badges, badgeId);
     };
 
-    User.prototype.addBadge = function(badgeId) {
+    User.prototype.addBadge = function (badgeId) {
       this.badges.push(badgeId);
       return this.save();
     };
 
-    User.prototype.getBadgeIds = function() {
+    User.prototype.getBadgeIds = function () {
       return this.badges;
     };
 

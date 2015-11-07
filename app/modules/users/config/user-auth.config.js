@@ -4,7 +4,7 @@
 
 angular.module('users').config(
 
-  function(UserAuthProvider) {
+  function (UserAuthProvider) {
 
     UserAuthProvider.config({
 

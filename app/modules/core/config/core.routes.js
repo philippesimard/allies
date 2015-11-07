@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('core').config(
-  function($stateProvider, $urlRouterProvider) {
+  function ($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
 
@@ -10,10 +10,10 @@ angular.module('core').config(
       .state('home', {
       url: '/',
       templateUrl: 'modules/core/views/home.html',
-      controller: function($scope, $state, Parcours) {
-        Parcours.find().then(function(allParcours) {
+      controller: function ($scope, $state, Parcours) {
+        Parcours.find().then(function (allParcours) {
           $scope.allParcours = allParcours;
-          $scope.goToParcours = function(parcours) {
+          $scope.goToParcours = function (parcours) {
             $state.go('parcours-page', {
               parcoursName: parcours.shortName
             });
