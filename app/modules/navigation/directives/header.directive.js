@@ -8,15 +8,13 @@ angular.module('core').directive('header',
       templateUrl: 'modules/navigation/views/header.html',
       link: function(scope) {
 
-        if ($rootScope.currentUser.isAuthentified()) {
-          Parcours.find().then(function(parcours) {
-            scope.allParcours = parcours;
-          });
+        Parcours.find().then(function(parcours) {
+          scope.allParcours = parcours;
+        });
 
-          MediaSection.find().then(function(mediaSections) {
-            scope.mediaSections = mediaSections;
-          });
-        }
+        MediaSection.find().then(function(mediaSections) {
+          scope.mediaSections = mediaSections;
+        });
 
         scope.goToParcours = function(parcours) {
           $state.go('parcours-page', {

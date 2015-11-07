@@ -15,7 +15,7 @@
     </i>
 			<i class="material-icons right red-text">info</i>
 		</span>
-			<i 
+			<i ng-if="currentUser.isAuthentified()"
 
       tooltipped 
       data-position="bottom" 
@@ -26,7 +26,7 @@
       ng-click="addToFavorite()">
         favorite
       </i>
-      <i 
+      <i ng-if="currentUser.isAuthentified()"
       tooltipped 
       data-position="bottom" 
       data-delay="50" 
