@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('medias').directive('mediasGalerie',
-  function($q, MediaSection, Media) {
+  function ($q, MediaSection, Media) {
     return {
       restrict: 'E',
       scope: {
@@ -12,10 +12,10 @@ angular.module('medias').directive('mediasGalerie',
         maxRows: '@',
         showFilters: '='
       },
-      templateUrl: function(element, attrs) {
+      templateUrl: function (element, attrs) {
         return attrs.mode === 'static' ? 'modules/medias/views/medias.static-galerie.html' : 'modules/medias/views/medias.galerie.html';
       },
-      link: function(scope) {
+      link: function (scope) {
 
         var deffered;
         if (scope.mediaType) {
@@ -28,18 +28,18 @@ angular.module('medias').directive('mediasGalerie',
           var promises = [],
             medias = [];
 
-          _.forEach(scope.mediasIds, function(mediasId) {
-            promises.push(Media.findById(mediasId).then(function(media) {
+          _.forEach(scope.mediasIds, function (mediasId) {
+            promises.push(Media.findById(mediasId).then(function (media) {
               medias.push(media);
             }));
           });
 
-          deffered = $q.when(promises).then(function() {
+          deffered = $q.when(promises).then(function () {
             return medias;
           });
         }
 
-        deffered.then(function(medias) {
+        deffered.then(function (medias) {
 
           if (scope.maxRows) {
             var nbMedia = scope.mediasPerRow * scope.maxRows;
@@ -51,9 +51,9 @@ angular.module('medias').directive('mediasGalerie',
 
         });
       },
-      controller: function($scope) {
+      controller: function ($scope) {
 
-        this.setMedias = function(medias) {
+        this.setMedias = function (medias) {
           $scope.medias = medias;
         }
       }
