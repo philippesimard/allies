@@ -38,16 +38,14 @@ body {
       data-delay="50" 
       onclick="goBack()"
       data-tooltip="Retour aux films"><i class="material-icons">reply</i></a>
-<a class="btn-floating btn waves-effect waves-light red z-depth-0" 
+<a class="btn-floating btn waves-effect waves-light red z-depth-0" ng-if="media.bandeAnnonceUrl"
 	 tooltipped 
+   target="_blank"
+   ng-href="{{ media.bandeAnnonceUrl }}"
       data-position="bottom" 
       data-delay="50" 
       data-tooltip="Voir la bande annonce"><i class="material-icons">movie</i></a>
-<a class="btn-floating btn waves-effect waves-light red z-depth-0" 
-	  tooltipped 
-      data-position="bottom" 
-      data-delay="50" 
-      data-tooltip="Ajouter à mes favoris"><i class="material-icons">favorite</i></a>
+<media-favoriter media="media"></media-favoriter>
 </div>
         </li>
       </ul>

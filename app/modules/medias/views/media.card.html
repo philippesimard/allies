@@ -15,27 +15,7 @@
     </i>
 			<i class="material-icons right red-text">info</i>
 		</span>
-			<i ng-if="currentUser.isAuthentified()"
-
-      tooltipped 
-      data-position="bottom" 
-      data-delay="50" 
-      data-tooltip="Ajouter à mes favoris"
-      class="material-icons right red-text"
-      ng-hide="media.isFavorited"
-      ng-click="addToFavorite()">
-        favorite
-      </i>
-      <i ng-if="currentUser.isAuthentified()"
-      tooltipped 
-      data-position="bottom" 
-      data-delay="50" 
-      data-tooltip="Retirer de  mes favoris"
-      class="material-icons right red-text"
-         ng-show="media.isFavorited"
-         ng-click="removeFromFavorite()">
-        delete
-      </i>
+		<media-favoriter media="media"></media-favoriter>
 	</div>
 
   <div class="card-reveal">
