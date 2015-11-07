@@ -3,10 +3,6 @@
     <div class="nav-wrapper white">
       <div class="container">
         
-
-
-
-
           <!-- Menu droite normal--> 
         <ul id="nav"
             class="right hide-on-med-and-down">
@@ -27,30 +23,26 @@
           </li>
         </ul>
 
-
-        
         <!-- Menu gauche-->
         <ul id="nav" class="left hide-on-med-and-down">
-          <li><a ui-sref="home" class="black-text">Accueil</a></li>
-          <li><a ui-sref="propos" class="black-text">À propos</a></li>
-          <li>
+          <li ng-class="{ active : isActive('home')}"><a ui-sref="home" class="black-text">Accueil</a></li>
+          <li ng-class="{ active : isActive('propos')}"><a ui-sref="propos" class="black-text">À propos</a></li>
+          <li ng-if="currentUser.isAuthentified()" ng-class="{ active : isActive('ressources')}">
             <a class="dropdown-button btn-white black-text" 
                data-beloworigin="true"
-               ui-sref="ressources"
-               data-activates="ressources">
+               ui-sref="ressources">
               Médiagraphie
             </a>
           </li>
-          <li>
+          <li ng-if="currentUser.isAuthentified()" ng-class="{ active : isActive('parcours')}">
             <a class="dropdown-button btn-white black-text"
                data-beloworigin="true"
-               ui-sref="parcours"
-               data-activates="parcours">
+               ui-sref="parcours">
               Parcours
             </a>
           </li>
-          <li><a ui-sref="recherche" class="black-text">Blog</a></li>
-          <li><a ui-sref="homecontact" class="black-text">Contact</a></li>
+          <li ng-class="{ active : isActive('recherche')}"><a ui-sref="recherche" class="black-text">Blog</a></li>
+          <li ng-class="{ active : isActive('homecontact')}"><a ui-sref="homecontact" class="black-text">Contact</a></li>
         </ul>
 
 
