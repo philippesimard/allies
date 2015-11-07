@@ -14,7 +14,7 @@ angular.module('users').controller('ContactController',
           $scope.message = {};
           $scope.mail = {};
           contactForm.$setPristine();
-          MaterializeService.toast('Le message à été envoyé. Merci!');
+          MaterializeService.toast('Le message à été envoyé. Merci!', 3000);
         });
       }
     };

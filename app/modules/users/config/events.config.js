@@ -10,7 +10,7 @@ angular.module('users').run(
 
     $rootScope.$on('UserAuth:signup:success', function () {
       $state.go('home');
-      MaterializeService.toast('Un courriel de confirmation vous a été envoyé');
+      MaterializeService.toast('Un courriel de confirmation vous a été envoyé', toastDelay);
     });
 
     /*$rootScope.$on('UserAuth:signup:fail', function($event, reason) {
