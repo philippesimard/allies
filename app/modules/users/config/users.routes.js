@@ -40,6 +40,12 @@ angular.module('users').config(
       controller: 'ContributionController'
     })
 
+    .state('achat', {
+      url: '/utilisateur/contribution/achat',
+      templateUrl: 'modules/users/views/users.achat.html',
+      controller: 'ContributionController'
+    })
+
     .state('contact', {
       url: '/utilisateur/contact',
       templateUrl: 'modules/users/views/users.contact.html',
