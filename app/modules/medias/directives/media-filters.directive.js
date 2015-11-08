@@ -16,7 +16,7 @@ angular.module('medias').directive('mediaFilters',
             scope.$watch('query', function (newQuery, oldQuery) {
               if (!_.isUndefined(newQuery)) {
 
-                newQuery = _.deburr(newQuery).toLowerCase()
+                newQuery = _.deburr(newQuery).toLowerCase();
 
                 // Tris.
                 if (_.isUndefined(oldQuery) || newQuery.length > oldQuery.length) {

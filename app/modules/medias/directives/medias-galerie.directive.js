@@ -55,7 +55,7 @@ angular.module('medias').directive('mediasGalerie',
 
         this.setMedias = function (medias) {
           $scope.medias = medias;
-        }
+        };
       }
     };
   });
