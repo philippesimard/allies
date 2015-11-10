@@ -42,7 +42,14 @@ angular.module('medias').config(
           });
         }
       },
-      templateUrl: 'modules/medias/views/media.fiche.html',
+      templateProvider: function ($http, media, MediaSection) {
+        return MediaSection.getFicheTemplateUrl(media.sectionId).then(function (templateUrl) {
+          return $http.get(templateUrl).then(function (response) {
+            return response.data;
+          });
+        });
+
+      },
       controller: function ($scope, media) {
         $scope.media = media;
       }

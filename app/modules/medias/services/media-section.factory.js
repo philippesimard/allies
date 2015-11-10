@@ -16,6 +16,12 @@ angular.module('medias').factory('MediaSection',
       return this.name;
     };
 
+    MediaSection.getFicheTemplateUrl = function (mediaSectionId) {
+      return MediaSection.findById(mediaSectionId).then(function (mediaSection) {
+        return 'modules/medias/views/' + mediaSection.shortName + '.fiche.html';
+      });
+    };
+
     return MediaSection;
 
   });
