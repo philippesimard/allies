@@ -1,1 +1,71 @@
-FICHE LIVRE
+<style>
+body {
+    background-color: #181818;
+}
+
+.position {
+    
+    margin: auto;
+    border: 8px solid #181818;
+}
+
+</style>
+
+<div class="container animated fadeIn">
+ 
+
+
+ <div class="espace row">
+
+<img class="left position" width="350" src="{{ media.img }}">
+
+ 
+ <ul class="collection with-header" width="350">
+        <li class="collection-header center"><h3>{{ media.name }}<h3></li>
+        <li class="collection-item"><span class="bold">Nom du livre:</span> {{ media.name }}</li>
+        <li class="collection-item"><span class="bold">Auteur:</span> {{ media.infos.auteur }}</li>
+        <li class="collection-item"><span class="bold">Type:</span> {{ media.infos.type }}</li>
+        <li class="collection-item"><span class="bold">Nationalité:</span> {{ media.infos.nationalite }}</li>
+        <li class="collection-item"><span class="bold">Synopsis:</span> {{ media.infos.synopsis }}</li>
+        <li class="collection-item">
+
+<div class="center">
+<a class="btn-floating btn waves-effect waves-light red z-depth-0" 
+	  tooltipped 
+      data-position="bottom"
+      data-delay="50" 
+      onclick="goBack()"
+      data-tooltip="Retour aux films"><i class="material-icons">reply</i></a>
+
+<a class="btn-floating btn waves-effect waves-light red z-depth-0" ng-if="media.bandeAnnonceUrl"
+	 tooltipped 
+   target="_blank"
+   ng-href="{{ media.bandeAnnonceUrl }}"
+      data-position="bottom" 
+      data-delay="50" 
+      data-tooltip="Voir la bande annonce"><i class="material-icons">movie</i></a>
+
+<!--<media-favoriter media="media"></media-favoriter>--> 
+</div>
+        </li>
+      </ul>
+
+
+  </div>
+    </div>
+
+  <div class="center"> <a class="waves-effect waves-light red btn">Signalier une erreur pour ce livre</a></div>
+      
+     </div>
+
+
+
+<script>
+function goBack() {
+    window.history.back();
+}
+
+  $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
+ </script>
