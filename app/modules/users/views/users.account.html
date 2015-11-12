@@ -4,7 +4,7 @@
       <div class="container">
         <div class="center">
         </div>
-        <h1 class="header center light white-text animated fadeIn">Bonjour {{ currentUser.firstname }} </h1>
+        <h1 class="header center light white-text animated fadeIn"><span id="bonjour">Bonjour</span>  {{ currentUser.firstname }} </h1>
         <div class="row center">
           <h5 class="header col s12 light white-text">Bienvenue dans votre espace membre ! Le tableau de bord est le meilleur endroit afin de gérer vos contenus et participer au développement de la plateforme.</h5>
         </div>
@@ -20,10 +20,7 @@
 <ul id="demoDropdown" class="dropdown-content">
     <li><a href="javascript:void(0);" class="center black-text" ui-sref="parcours">Nos parcours</a></li>
     <li><a href="javascript:void(0);" class="center black-text" ui-sref="ressources">La médiagraphie</a></li>
-    <li><a href="javascript:void(0);" class="center black-text" ui-sref="recherche">Le blog</a></li>
-    <li class="divider"></li>
-    <li><a href="javascript:void(0);" class="center red-text">Un contenu aléatoire</a></li>
-
+    
 </ul>
 
 <!-- fin -->
@@ -115,6 +112,19 @@
     </div>
 
   </div>
+
+
+<script type="text/javascript"> 
+today=new Date() 
+if(today.getHours() >= 0 && today.getHours() < 18) 
+{      
+document.getElementById('bonjour').innerHTML='Bonjour'; 
+} 
+else 
+{      
+document.getElementById('bonjour').innerHTML='Bonsoir'; 
+} 
+</script> 
 
 
 

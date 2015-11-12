@@ -4,7 +4,7 @@
   </div>
   <div class="card-content">
 		<span class="card-title activator grey-text text-darken-4">
-		<h6>{{ media.toString() }}</h6>
+		<h6>{{ media.toString() | limitTo : 40 }} </h6>
     <i class="material-icons right red-text"
        tooltipped
        data-position="bottom"
@@ -24,10 +24,7 @@
     	<i class="material-icons right">close</i>
     </span>
     <p>
-      <p>Public: </p>
       <p>Nom: {{ media.name }}</p>
-      <p>Genre: {{ media.infos.genre }}</p>
-      <p>Années: {{ media.annee }}</p>
       <p>Synopsis: {{ media.infos.synopsis }}</p>
       
       <div class="center">

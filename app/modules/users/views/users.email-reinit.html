@@ -1,3 +1,15 @@
+<div id="index-banner" class="user">
+    <div class="section no-pad-bot" >
+      <div class="container">
+        
+        <h1 class="header light white-text animated fadeIn"><span id="bonjour">Réinitialiser votre mot de passe</h1>
+        
+        </div>
+    </div>
+    
+    </div>
+
+<div class="container">
 <form ng-show="!passwordChanged"
 				ng-submit="changePassword(passwordForm, password)"
         name="passwordForm"
@@ -5,7 +17,7 @@
         class="row">
    <div class="section">
         <h5>Mot de passe</h5>
-        <p>Remplir les deux champs pour changer votre mot de passe</p>
+        <p>Veuillez remplir les deux champs pour changer votre mot de passe. Votre mot de passe doit contenir plus de 7 caractères.</p>
         <div class="space"></div>
 
     <div class="row">
@@ -19,7 +31,7 @@
              ng-minlength="7"
              ng-model="password"/>
       <div ng-messages="passwordForm.password.$error" ng-if="showMinlengthError">
-        <div ng-message="minlength">Votre mot de passe doit être d'au moins 7 caractères</div>
+        <div ng-message="minlength" class="animated fadeIn">Votre mot de passe doit être d'au moins 7 caractères</div>
       </div>
     </div>
     </div>
@@ -36,22 +48,28 @@
              password-verify="password"
              ng-model="confirmPassword"/>
       <div ng-messages="passwordForm.passwordConfirm.$error" ng-if="passwordForm.$submitted">
-        <div ng-message="required">Ce champs est requis.</div>
+        <div ng-message="required" class="animated fadeIn">Ce champs est requis.</div>
       </div>
       <div ng-messages="passwordForm.passwordConfirm.$error" ng-if="showInvalidPassword">
-        <div ng-message="passwordVerify">Les mots de passe ne correspondent pas</div>
+        <div ng-message="passwordVerify" class="animated fadeIn">Les mots de passe ne correspondent pas</div>
       </div>
     </div>
     </div>
     </div>
 
      <div>
-      <button type="submit" class="waves-effect waves-light btn-large left orange darken-3">Modifier mot de passe</button>
+      <button type="submit" class="waves-effect waves-light btn-large left red z-depth-0">Modifier mot de passe</button>
       </br>
     </div>
   </form>
 
+</div> 
+
 
 <div ng-show="passwordChanged">
-	Mot de passe changé blablab... veuillez vous connecter!
+
+<div class="center container espace">
+	<h4>Merci, votre mot de passe a été changé avec succès. La prochaine fois essayez de ne pas l'oublier. Veuillez vous connecter à nouveau.</h4> 
+<div class="center"><button  class="waves-effect waves-light btn-large red z-depth-0" ui-sref="login">Accéder au login</button></div>
+</div>
 </div>

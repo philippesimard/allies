@@ -48,12 +48,13 @@
         <div ng-messages="loginForm.password.$error" ng-if="loginForm.$submitted">
           <div ng-message="required">Mot de passe valide requis.</div>
         </div>
+
+        <p type="button" ng-click="sendPasswordToken(loginInfo.username)" tooltipped data-position="bottom" data-delay="50" data-tooltip="Pour réinitialiser votre mot de passe veuillez remplir le champ email">Mot de passe oublié ?</p>
       </div>
 
       </br>
     
 	  <div>
-      <button type="button" ng-click="sendPasswordToken(loginInfo.username)" class="waves-effect waves-light btn-large right red  z-depth-0">Réinitialiser le mot de passe</button>
       <button type="submit" class="waves-effect waves-light btn-large right red  z-depth-0">Se connecter</button>
     </div>
   </form>
