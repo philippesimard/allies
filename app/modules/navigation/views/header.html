@@ -41,7 +41,8 @@
               Parcours
             </a>
           </li>
-          <li ng-class="{ active : isActive('recherche')}"><a ui-sref="recherche" class="black-text">Blog</a></li>
+          <li ng-class="{ active : isActive('activite')}"><a ui-sref="activite" class="black-text">Activités</a></li>
+          <li ng-class="{ active : isActive('partenaire')}"><a ui-sref="partenaire" class="black-text">Partenaires</a></li>
           <li ng-class="{ active : isActive('homecontact')}"><a ui-sref="homecontact" class="black-text">Contact</a></li>
         </ul>
 
@@ -80,20 +81,31 @@ $('.dropdown-button').dropdown({
 
           </script>
 
-
-
-
-           <!-- Menu mobile
            
 
           <ul id="slide-out" class="side-nav">
 
-            <h4 class="black-text center" >Menu</h4>
-            <li><a ui-sref="home" class="center" >Accueil</a></li>
-            <li><a ui-sref="propos" class="center">À propos</a></li>
-            <li><a ui-sref="parcours" class="center">Parcours</a></li>
-            <li><a ui-sref="ressources" class="center">Ressources</a></li>
-            
+            <div class="center petitespace"><img height="80px" src="img/logo.png"></div>
+     
+            <li ng-class="{ active : isActive('home')}"><a ui-sref="home" class="center" >Accueil</a></li>
+            <li ng-class="{ active : isActive('propos')}"><a ui-sref="propos" class="center">À propos</a></li>
+            <li ng-class="{ active : isActive('ressources')}"><a ui-sref="ressources" class="center">Médiagraphie</a></li>
+            <li ng-class="{ active : isActive('parcours')}"><a ui-sref="parcours" class="center">Parcours</a></li>
+            <li ng-class="{ active : isActive('activite')}"><a ui-sref="activite" class="center">Activités</a></li>
+            <li ng-class="{ active : isActive('partenaire')}"><a ui-sref="partenaire" class="center">Partenaires</a></li>
+            <li ng-class="{ active : isActive('homecontact')}"><a ui-sref="homecontact" class="center">Contact</a></li>
+             <li 
+              class="red"
+              ng-show="isConnected"
+              ng-click="monCompte()">
+            <a class="center white-text">Espace membre</a>
+          </li>
+          <li 
+              class="red"
+              ng-show="isConnected"
+              ng-click="deconnect()">
+            <a class="center white-text">Se déconnecter</a>
+          </li>
             </ul>
           <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu black-text"></i></a>
 

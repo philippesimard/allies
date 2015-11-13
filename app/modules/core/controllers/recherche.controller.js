@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('core').controller('RechercheController',
+angular.module('core').controller('ActiviteController',
   function () {
 
   });

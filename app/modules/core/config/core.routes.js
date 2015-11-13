@@ -28,10 +28,16 @@ angular.module('core').config(
       controller: 'ContactController'
     })
 
-    .state('recherche', {
-      url: '/recherche',
-      templateUrl: 'modules/core/views/recherche.html',
-      controller: 'RechercheController'
+    .state('activite', {
+      url: '/activite',
+      templateUrl: 'modules/core/views/activite.html',
+      controller: 'ActiviteController'
+    })
+
+    .state('partenaire', {
+      url: '/partenaire',
+      templateUrl: 'modules/core/views/partenaire.html',
+      controller: 'ProposController'
     })
 
     .state('propos', {

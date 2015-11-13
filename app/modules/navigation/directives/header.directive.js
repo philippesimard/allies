@@ -50,7 +50,7 @@ angular.module('core').directive('header',
         scope.deconnect = function () {
           UserAuth.signout().then(function () {
             $state.go('home');
-            MaterializeService.toast('À bientôt!', 3000);
+            MaterializeService.toast('À très bientôt!', 3000);
           });
         };
 

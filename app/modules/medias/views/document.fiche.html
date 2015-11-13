@@ -1,12 +1,12 @@
 <style>
 body {
-    background-color: #181818;
+    background-color: #ffffff;
 }
 
 .position {
     
     margin: auto;
-    border: 8px solid #181818;
+    border: 8px solid #ffffff;
 }
 
 </style>
@@ -22,11 +22,9 @@ body {
  
  <ul class="collection with-header" width="350">
         <li class="collection-header center"><h3>{{ media.name }}<h3></li>
-        <li class="collection-item"><span class="bold">Nom du document:</span> {{ media.name }}</li>
-        <li class="collection-item"><span class="bold">Auteur:</span> {{ media.infos.realisateur }}</li>
-        <li class="collection-item"><span class="bold">Genre:</span> {{ media.infos.genre }}</li>
-        <li class="collection-item"><span class="bold">Nationalité:</span> {{ media.infos.nationalite }}</li>
-        <li class="collection-item"><span class="bold">Synopsis:</span> {{ media.infos.synopsis }}</li>
+        <li class="collection-item"><span class="bold">Type:</span> {{ media.type }}</li>
+        <li class="collection-item"><span class="bold">Voir le document:</span> <a href="{{ media.infos.telechargerlink }}">Télécharger le documents</a></li>
+        <li class="collection-item"><span class="bold">Commander ce document:</span> <a href="{{ media.infos.commandelink }}">Commander</a></li>
         <li class="collection-item">
 
 <div class="center">
@@ -50,12 +48,11 @@ body {
         </li>
       </ul>
 
-{{media.infos.accessible}}
 
   </div>
     </div>
 
-  <div class="center"> <a class="waves-effect waves-light red btn">Signalier une erreur pour ce film</a></div>
+  <div class="center"> <a class="waves-effect waves-light red btn">Signalier une erreur pour ce document</a></div>
       
      </div>
 

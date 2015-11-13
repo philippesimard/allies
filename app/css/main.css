@@ -121,6 +121,24 @@ parcours-preview div, media-section-preview div {
 
 }
 
+.grispresentation {
+
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #f5f5f5;
+
+
+}
+
+.propos {
+
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-image: url("http://acommealliees.ca/cdn/media/propos.jpg")
+
+
+}
+
 .mediagraphie {
 
   padding-top: 40px;
