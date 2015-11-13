@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="lib/angular-tooltips/dist/angular-tooltips.min.css">
   <link rel="stylesheet" href="lib/angular-user-auth/dist/angular-user-auth.css">
   <link rel="stylesheet" href="lib/materialize/bin/materialize.css">
+  <link rel="stylesheet" href="lib/social-share-kit/dist/css/social-share-kit.css">
   <!-- endinjector -->
   <!-- endbuild -->
 
@@ -39,16 +40,37 @@
 
 <body>
   
+
+<!-- Left & centered positioning -->
+<div class="ssk-sticky ssk-left ssk-center ssk-lg animated fadeIn" data-text="Découvrez notre super plateforme web pour l'inclusition de la diversité sexuelle et de genre">
+    <a href="" class="ssk ssk-facebook" tooltipped data-position="right" data-delay="50" data-tooltip="Partager sur Facebook"></a>
+    <a href="" class="ssk ssk-twitter" tooltipped data-position="right" data-delay="50" data-tooltip="Partager sur Twitter"></a>
+    <a href="" class="ssk ssk-google-plus" tooltipped data-position="right" data-delay="50" data-tooltip="Partager sur Google Plus"></a>
+    <a href="" class="ssk ssk-pinterest" tooltipped data-position="right" data-delay="50" data-tooltip="Partager sur Pinterest"></a>
+    <a href="" class="ssk ssk-tumblr" tooltipped data-position="right" data-delay="50" data-tooltip="Partager sur Tumblr"></a>
+    <a href="" class="ssk ssk-email" tooltipped data-position="right" data-delay="50" data-tooltip="Partager sur Email" ></a>
+</div>
+
+<script type="text/javascript" src="js/social-share-kit.js"></script>
+<script type="text/javascript">
+SocialShareKit.init();
+</script>
+
+<!-- Left & custom positioning -->
+<style>.ssk-sticky .ssk-left { top: 20%; } </style>
+<div class="ssk-sticky ssk-left ssk-lg">...</div>
+
+
+  
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="../lib/materialize/templates/starter-template/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-
 
 
 <header></header>
 
   <section ui-view></section>
   <gros-button></gros-button>
-
+  <share></share>
 
 <footer class="page-footer grey darken-4">         
   <div class="footer-copyright">
@@ -84,6 +106,7 @@
 <script src="lib/ngMorph/dist/angular-morph.min.js"></script>
 <script src="lib/angular-breadcrumb/release/angular-breadcrumb.js"></script>
 <script src="lib/ngCart/dist/ngCart.js"></script>
+<script src="lib/social-share-kit/dist/js/social-share-kit.min.js"></script>
 <!-- endinjector -->
 <script src="lib/elasticsearch/elasticsearch.angular.js"></script>
 <!-- endbuild -->
