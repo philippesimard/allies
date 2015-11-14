@@ -1,10 +1,10 @@
-<div class="slider" slider  slider height='500'>
+<div class="slider" slider  slider height='500' interval="5000">
   <ul class="slides">
     <li>
-      <img src="http://acommealliees.ca/data/img/555.jpg"> <!-- random image -->
+      <img src="img/interface/home1.jpg"> <!-- random image -->
       <div class="caption left-align">
-        <h3>AcommeAlliéEs</h3>
-        <h5 class="light grey-text text-lighten-3">
+        <h3 class="white-text">#AcommeAlliéEs</h3>
+        <h4 class="light white-text text-lighten-3">
           La plateforme A comme AlliéEs regroupe un large éventail d’outils et de ressources pour l’inclusion de la diversité sexuelle et de genre.
         </h5>
         <div class="col s12 m6 petitespace">
@@ -15,21 +15,31 @@
       </div>
     </li>
     <li>
-      <img src="http://acommealliees.ca/data/img/mediagraphie.jpg"> <!-- random image -->
+      <img src="img/interface/home2.jpg"> <!-- random image -->
       <div class="caption left-align">
         <h3>Découvrez notre médiagraphie</h3>
-        <h5 class="light grey-text text-lighten-3">
+        <h4 class="light white-text text-lighten-3">
           Nous vous proposons une médiagraphie personnalisé afin de vous aider à inclure la diversité sexuelle et de genre dans votre milieux.
-        </h5>
+        </h4>
+        <div class="col s12 m6 petitespace">
+          <a class="waves-light white btn-large black-text" ui-sref="ressources">
+            <i class="material-icons left">create</i>Voir la médiagraphie
+          </a>
+        </div>
       </div>
     </li>
     <li>
-      <img src="http://acommealliees.ca/data/img/parcours.jpg"> <!-- random image -->
+      <img src="img/interface/home3.jpg"> <!-- random image -->
       <div class="caption left-align">
         <h3>Parcours</h3>
-        <h5 class="light grey-text text-lighten-3">
+        <h4 class="light white-text text-lighten-3">
           Les parcours vous donnent accès à plusieurs ressources en considérant votre champs profesionelle.
-        </h5>
+        </h4>
+        <div class="col s12 m6 petitespace">
+          <a class="waves-light white btn-large black-text" ui-sref="parcours">
+            <i class="material-icons left">create</i>Parcours
+          </a>
+        </div>
       </div>
     </li>
   </ul>
@@ -42,7 +52,7 @@
       <h5 class="center"></h5>
       <div class="col s12 m3">
         <div class="icon-block">
-          <h2 class="center orange-text"><i class="material-icons">accessibility</i></h2>
+          <h2 class="center red-text"><i class="material-icons">accessibility</i></h2>
           <h5 class="center">Proaction</h5>
           <p class="light center">
             Si réagir aux insultes et propos homophobes est essentiel, il importe de créer un environnement inclusif qui reflète la diversité sexuelle et de genre. Dans le même esprit, les outils et ressources de cette plateforme web engagent à s’attaquer aux racines de l’homophobie, à savoir le sexisme et l’hétéronormativité.
@@ -51,7 +61,7 @@
       </div>
       <div class="col s12 m3">
         <div class="icon-block">
-          <h2 class="center orange-text"><i class="material-icons">track_changes</i></h2>
+          <h2 class="center red-text"><i class="material-icons">track_changes</i></h2>
           <h5 class="center">Contenus</h5>
           <p class="light center">
             Pour l’ensemble des pistes d’actions suggérées, la plateforme vous présentera des informations, outils et ressources essentiels afin d’accélérer l’accès au contenu. Il vous sera toujours proposé d’accéder à un nombre plus important de contenus si vous le souhaitez.
@@ -60,7 +70,7 @@
       </div>
       <div class="col s12 m3">
         <div class="icon-block">
-          <h2 class="center orange-text"><i class="material-icons">insert_emoticon</i></h2>
+          <h2 class="center red-text"><i class="material-icons">insert_emoticon</i></h2>
           <h5 class="center">Ludification</h5>
           <p class="light center">
             Inclure la diversité sexuelle et de genre, cela devrait être agréable et stimulant ! Des badges vous sont attribués à chaque fois que vous accomplissez une action, ce qui vous montre le chemin parcouru. De plus, des contenus sont présentés sous forme de jeux et incitent à l’interaction.
@@ -69,7 +79,7 @@
       </div>
       <div class="col s12 m3">
         <div class="icon-block">
-          <h2 class="center orange-text"><i class="material-icons">settings</i></h2>
+          <h2 class="center red-text"><i class="material-icons">settings</i></h2>
           <h5 class="center">Personnalisation</h5>
           <p class="light center">
             La plateforme présente le contenu sous forme de parcours correspondant à votre profil personnel ou professionnel. De plus, en vous inscrivant, vous accédez à un espace membre personnalisé, où vous pouvez garder des traces de votre progression et des contenus les plus pertinents pour vous.
@@ -78,17 +88,22 @@
       </div>
      </div>
 </div>
- 
+
+<div class="presentation">
+  <h4 class="center">Découvrir nos parcours</h4>
+<div class="divider container"></div>
+<div class="container">
+<div class="row">
+
 <div class="petitespace">
-  <h4 class="center">Visitez nos parcours</h4>
-  <div class="divider container"></div>
-  <div class="center petitespace">
-    <button class="waves-effect waves-light btn-large z-depth-0 {{ parcours.pageColor }}"
-            ng-repeat="parcours in allParcours | orderBy:'position'"
-            ng-click="goToParcours(parcours)">
-      {{ parcours.toString() }}
-    </button>
-  </div>
+<div class="col s3 m3"><div class="center"><img height="60px" width="80px" src="img/icons/boite.svg"><h5 class="center">Boite à outils</h5></div></div>
+<div class="col s3 m3"><div class="center"><img height="60px" width="80px" src="img/icons/communautaire.svg"><h5 class="center">Communauraire</h5></div></div>
+<div class="col s3 m3"><div class="center"><img height="60px" width="80px" src="img/icons/parcours.svg"><h5 class="center">Scolaire</h5></div></div>
+<div class="col s3 m3"><div class="center"><img height="60px" width="80px" src="img/icons/contenus.svg"><h5 class="center">Santé</h5></div></div>
 </div>
+
+</div>  
+</div>
+ 
 
 

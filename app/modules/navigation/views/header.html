@@ -1,6 +1,7 @@
 <div>
-  <nav class="z-depth-0">
-    <div class="nav-wrapper white">
+  <div class="navbar-fixed">
+  <nav class="z-depth-0 ">
+    <div class="nav-wrapper white ">
       <div class="container">
         
           <!-- Menu droite normal--> 
@@ -25,6 +26,7 @@
 
         <!-- Menu gauche-->
         <ul id="nav" class="left hide-on-med-and-down">
+
           <li ng-class="{ active : isActive('home')}"><a ui-sref="home" class="black-text">Accueil</a></li>
           <li ng-class="{ active : isActive('propos')}"><a ui-sref="propos" class="black-text">À propos</a></li>
           <li ng-class="{ active : isActive('ressources')}">
@@ -87,6 +89,7 @@ $('.dropdown-button').dropdown({
 
             <div class="center petitespace"><img height="80px" src="img/logo.png"></div>
      
+           
             <li ng-class="{ active : isActive('home')}"><a ui-sref="home" class="center" >Accueil</a></li>
             <li ng-class="{ active : isActive('propos')}"><a ui-sref="propos" class="center">À propos</a></li>
             <li ng-class="{ active : isActive('ressources')}"><a ui-sref="ressources" class="center">Médiagraphie</a></li>
@@ -121,6 +124,7 @@ $('.dropdown-button').dropdown({
       </div>
     </div>
   </nav>
+    </div>
     </div>
 
 
