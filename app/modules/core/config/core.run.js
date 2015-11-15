@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('core').config(
+angular.module('core').run(
 	function($rootScope) {
 
 		$rootScope.$on('$stateChangeSuccess', function() {
