@@ -1,0 +1,29 @@
+<!--<media-filters ng-if="showFilters" medias="activites"></media-filters>-->
+
+<div class="largecontainer">
+	<div class="row">
+<!-- Carte version bureau -->
+  	<div class="animated fadeIn">
+      <activite-card activite="activite"
+                     ng-repeat="activite in activites | orderBy:'name' | filter:searchFilm"
+                     ng-style="{'width': cardLength }">
+      </activite-card>
+		</div>
+	</div>
+</div>
+
+<script>
+ $('.dropdown-button').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrain_width: false, // Does not change width of dropdown to that of the activator
+      hover: true, // Activate on hover
+      gutter: 0, // Spacing from edge
+      belowOrigin: false // Displays dropdown below the button
+    }
+  );
+</script>
+
+
+
+  

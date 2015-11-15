@@ -1,0 +1,33 @@
+<div class="card box z-depth-0">
+  <div class="card-image">
+    <img ng-src="{{ activite.img }}"/>
+  </div>
+  <div class="card-content">
+		<span class="card-title activator grey-text text-darken-4">
+		<h6>{{ activite.toString() | limitTo : 40 }} </h6>
+    <i class="material-icons right red-text"
+       tooltipped
+       data-position="bottom"
+       data-delay="50"
+       data-tooltip="Voir la fiche complète"
+       ng-click="goToActivite(activite)">
+      trending_flat
+    </i>
+			<i class="material-icons right red-text">info</i>
+		</span>
+	</div>
+
+  <div class="card-reveal">
+    <span class="card-title red-text">
+    	{{ activite.name }}
+    	<i class="material-icons right">close</i>
+    </span>
+    <p>
+      <p>Nom: {{ activite.name }}</p>
+      
+      <div class="center">
+      <a class="waves-effect waves-light flat btn red z-depth-0" ng-click="goToActivite(activite)">En savoir plus</a>
+    </div>
+    </p>
+  </div>
+</div>

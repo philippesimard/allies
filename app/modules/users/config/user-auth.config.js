@@ -49,7 +49,9 @@ angular.module('users').config(
         'roman',
         'confirm_email',
         'homecontact',
-        'reset_password'
+        'reset_password',
+        'activite',
+        'activite-fiche'
       ]
     });
   });
