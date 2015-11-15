@@ -31,7 +31,7 @@ angular.module('core').config(
     .state('activite', {
       url: '/activite',
       templateUrl: 'modules/core/views/activite.html',
-      controller: 'ActiviteController'
+      controller: 'ProposController'
     })
 
     .state('partenaire', {
