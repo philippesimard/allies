@@ -41,25 +41,6 @@
 <body>
   
 
-<!-- Left & centered positioning -->
-<div class="ssk-sticky ssk-left ssk-center ssk-lg animated fadeIn" data-text="Découvrez notre super plateforme web pour l'inclusition de la diversité sexuelle et de genre">
-    <a href="" class="ssk ssk-facebook" tooltipped data-position="right" data-delay="50" data-tooltip="Partager sur Facebook"></a>
-    <a href="" class="ssk ssk-twitter" tooltipped data-position="right" data-delay="50" data-tooltip="Partager sur Twitter"></a>
-    <a href="" class="ssk ssk-google-plus" tooltipped data-position="right" data-delay="50" data-tooltip="Partager sur Google Plus"></a>
-    <a href="" class="ssk ssk-pinterest" tooltipped data-position="right" data-delay="50" data-tooltip="Partager sur Pinterest"></a>
-    <a href="" class="ssk ssk-tumblr" tooltipped data-position="right" data-delay="50" data-tooltip="Partager sur Tumblr"></a>
-    <a href="" class="ssk ssk-email" tooltipped data-position="right" data-delay="50" data-tooltip="Partager sur Email" ></a>
-</div>
-
-<script type="text/javascript" src="js/social-share-kit.js"></script>
-<script type="text/javascript">
-SocialShareKit.init();
-</script>
-
-<!-- Left & custom positioning -->
-<style>.ssk-sticky .ssk-left { top: 20%; } </style>
-<div class="ssk-sticky ssk-left ssk-lg">...</div>
-
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><link href="../lib/materialize/templates/starter-template/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
 
@@ -67,32 +48,8 @@ SocialShareKit.init();
 <section ui-view></section>
 <gros-button></gros-button>
 <share></share>
-
-<footer class="page-footer grey darken-3">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">#AcommeAlliéEs</h5>
-                <p class="grey-text text-lighten-4">#AcommeAlliéEs est un projet financé et créé par le GRIS-Québec.</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Découvrir</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" ui-sref="parcours">Parcours</a></li>
-                  <li><a class="grey-text text-lighten-3" ui-sref="activite">Activitées</a></li>
-                  <li><a class="grey-text text-lighten-3" ui-sref="ressources">Médiagraphie</a></li>
-                  <li><a class="grey-text text-lighten-3" ui-sref="homecontact">Contact</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright grey darken-4">
-            <div class="container">
-            © 2016 Copyright PSWDesign - BETA 1.0 - Un projet du Gris-Québec
-            <a class="grey-text text-lighten-4 right" ui-sref="aide">Support</a>
-            </div>
-          </div>
-        </footer>
+<partager></partager>
+<ft></ft>
 
 
 <!-- build:js scripts/vendor.js -->
@@ -170,7 +127,9 @@ SocialShareKit.init();
 <script src="modules/medias/directives/media-filters.directive.js"></script>
 <script src="modules/medias/directives/media-section-preview.directive.js"></script>
 <script src="modules/medias/directives/medias-galerie.directive.js"></script>
+<script src="modules/navigation/directives/footer.directive.js"></script>
 <script src="modules/navigation/directives/header.directive.js"></script>
+<script src="modules/navigation/directives/share.directive.js"></script>
 <script src="modules/parcours/directives/parcours-list.directive.js"></script>
 <script src="modules/parcours/directives/parcours-page.directive.js"></script>
 <script src="modules/parcours/directives/parcours-preview.directive.js"></script>
