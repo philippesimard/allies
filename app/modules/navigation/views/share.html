@@ -1,5 +1,6 @@
 <!-- Left & centered positioning -->
-<div class="ssk-sticky ssk-left ssk-center ssk-lg animated fadeIn" data-text="Découvrez notre super plateforme web pour l'inclusition de la diversité sexuelle et de genre">
+<div ng-show="showSocialKit"
+		 class="ssk-sticky ssk-left ssk-center ssk-lg animated fadeIn" data-text="Découvrez notre super plateforme web pour l'inclusition de la diversité sexuelle et de genre">
     <a href="" class="ssk ssk-facebook" tooltipped data-position="right" data-delay="50" data-tooltip="Partager sur Facebook"></a>
     <a href="" class="ssk ssk-twitter" tooltipped data-position="right" data-delay="50" data-tooltip="Partager sur Twitter"></a>
     <a href="" class="ssk ssk-google-plus" tooltipped data-position="right" data-delay="50" data-tooltip="Partager sur Google Plus"></a>
@@ -7,11 +8,6 @@
     <a href="" class="ssk ssk-tumblr" tooltipped data-position="right" data-delay="50" data-tooltip="Partager sur Tumblr"></a>
     <a href="" class="ssk ssk-email" tooltipped data-position="right" data-delay="50" data-tooltip="Partager sur Email" ></a>
 </div>
-
-<script type="text/javascript" src="js/social-share-kit.js"></script>
-<script type="text/javascript">
-SocialShareKit.init();
-</script>
 
 <!-- Left & custom positioning -->
 <style>.ssk-sticky .ssk-left { top: 20%; } </style>

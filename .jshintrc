@@ -22,6 +22,7 @@
     "$": false,
     "ApplicationConfiguration": false,
     "_": false,
-    "Materialize": false
+    "Materialize": false,
+    "SocialShareKit": false
   }
 }
