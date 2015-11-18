@@ -27,18 +27,26 @@
         <!-- Menu gauche-->
         <ul id="nav" class="left hide-on-med-and-down">
 
-          <li ng-class="{ active : isActive('home')}"><a ui-sref="home" class="black-text">Accueil</a></li>
-          <li ng-class="{ active : isActive('propos')}"><a ui-sref="propos" class="black-text">À propos</a></li>
+          <li ng-class="{ active : isActive('home')}">
+            <a ui-sref="home" class="black-text">
+              Accueil
+            </a>
+          </li>
+          <li ng-class="{ active : isActive('propos')}">
+            <a ui-sref="propos" class="black-text">
+              À propos
+            </a>
+          </li>
           <li ng-class="{ active : isActive('ressources')}">
-            <a class="dropdown-button btn-white black-text" 
-               data-beloworigin="true"
+            <a class="dropdown-button btn-white black-text"
+               data-activates="ressources"
                ui-sref="ressources">
               Médiagraphie
             </a>
           </li>
           <li ng-class="{ active : isActive('parcours')}">
             <a class="dropdown-button btn-white black-text"
-               data-beloworigin="true"
+               data-activates="parcours"
                ui-sref="parcours">
               Parcours
             </a>

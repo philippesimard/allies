@@ -57,6 +57,15 @@ angular.module('core').directive('header',
         scope.monCompte = function () {
           $state.go('userAccount');
         };
+
+        $('.dropdown-button').dropdown({
+          inDuration: 300,
+          outDuration: 225,
+          constrain_width: false, // jshint ignore:line
+          hover: true, // Activate on hover
+          gutter: 0, // Spacing from edge
+          belowOrigin: true // Displays dropdown below the button
+        });
       }
     };
   });
