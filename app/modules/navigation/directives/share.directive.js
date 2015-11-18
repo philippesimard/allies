@@ -10,9 +10,9 @@ angular.module('navigation-module').directive('partager',
         SocialShareKitService.init();
 
         // Timeout pour rêgler un glicth lors de l'initialization
-        $timeout(function() {
-        	scope.showSocialKit = true;
-        })
+        $timeout(function () {
+          scope.showSocialKit = true;
+        });
       }
     };
 
