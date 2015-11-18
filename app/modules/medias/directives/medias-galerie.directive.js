@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('medias').directive('mediasGalerie',
-  function ($q, MediaSection, Media) {
+  function ($q, MediaSection, Media, Niveau) {
     return {
       restrict: 'E',
       scope: {
@@ -18,6 +18,7 @@ angular.module('medias').directive('mediasGalerie',
       link: function (scope) {
 
         var deffered;
+
         if (scope.mediaType) {
           deffered = Media.findBySectionShortName(scope.mediaType);
         } else if (scope.mediaSectionId) {
@@ -47,15 +48,72 @@ angular.module('medias').directive('mediasGalerie',
           }
 
           scope.cardLength = 100 / scope.mediasPerRow + '%';
-          scope.medias = medias;
+          scope.galerie = {
+            medias: medias
+          };
 
+          // Filtres
+
+          var originalList = angular.copy(scope.galerie.medias);
+
+          scope.niveaux = [];
+
+          var newNiveauxIds = [];
+          _.forEach(scope.galerie.medias, function (media) {
+            newNiveauxIds = _.difference(media.niveau, _.pluck(scope.niveaux, '_id'));
+          });
+
+          _.forEach(newNiveauxIds, function (newNiveauxId) {
+            Niveau.findById(newNiveauxId).then(function (niveau) {
+              scope.niveaux.push(niveau);
+            });
+          });
+
+          var allNiveaux = new Niveau({
+            _id: 0,
+            poids: 0,
+            description: 'Tous les niveaux'
+          });
+          scope.niveaux.unshift(allNiveaux);
+          scope.selectedNiveau = allNiveaux;
+
+          var currentQuery;
+
+          function filter(query, niveau) {
+            var medias;
+
+            if (niveau._id === 0) {
+              medias = originalList;
+            } else {
+              medias = _.filter(originalList, function (media) {
+                return _.contains(media.niveau, niveau._id);
+              });
+            }
+
+            return _.filter(medias, function (media) {
+              return _.deburr(media.toString().toLowerCase()).indexOf(query) > -1;
+            });
+          }
+
+          scope.$watch('query', function (newQuery) {
+            if (newQuery) {
+              currentQuery = _.deburr(newQuery).toLowerCase();
+              scope.galerie.medias = filter(currentQuery, scope.selectedNiveau);
+            }
+          });
+
+          scope.filterByNiveau = function (niveau) {
+            scope.selectedNiveau = niveau;
+            scope.galerie.medias = filter(currentQuery, niveau);
+          };
+
+          scope.reinitialize = function () {
+            scope.query = '';
+            currentQuery = scope.query;
+            scope.selectedNiveau = allNiveaux;
+            scope.galerie.medias = filter(scope.query, scope.selectedNiveau);
+          };
         });
-      },
-      controller: function ($scope) {
-
-        this.setMedias = function (medias) {
-          $scope.medias = medias;
-        };
       }
     };
   });
