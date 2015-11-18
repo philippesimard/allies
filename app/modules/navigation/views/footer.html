@@ -17,10 +17,11 @@
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Parcours disponibles</h5>
                 <ul>
-                  <li><a class="blue-text" ui-sref="boite">Boites à outils</a></li>
-                  <li><a class="red-text" ui-sref="activite">Communautaire</a></li>
-                  <li><a class="green-text" ui-sref="ressources">Scolaire</a></li>
-                  <li><a class="pink-text" ui-sref="homecontact">Santé</a></li>
+                  <li ng-repeat="parcours in allParcours | orderBy:'position'">
+                    <a class="{{ parcours.pageColor }}-text" ng-click="goToParcours(parcours)">
+                      {{ parcours.toString() }}
+                    </a>
+                  </li>
                 </ul>
               </div>
 
