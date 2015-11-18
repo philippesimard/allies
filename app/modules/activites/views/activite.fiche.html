@@ -1,4 +1,75 @@
-ACTIVITE FICHE
+<style>
+body {
+    background-color: #181818;
+}
+
+.position {
+    
+    margin: auto;
+    border: 8px solid #181818;
+}
+
+</style>
+
+<div class="container animated fadeIn">
+ 
+
+
+ <div class="espace row">
+
+<img class="left position" width="350" src="{{ activite.img }}">
+
+ 
+ <ul class="collection with-header" width="350">
+        <li class="collection-header center"><h3>{{ activite.name }}<h3></li>
+        <li class="collection-item"><span class="bold">Nom de l'activité:</span> {{ activite.name }}</li>
+        <li class="collection-item"><span class="bold">Sujet:</span> {{ activite.infos.sujet }}</li>
+        <li class="collection-item"><span class="bold">Niveau:</span> {{ activite.infos.niveau }} min</li>
+        <li class="collection-item"><span class="bold">Origine:</span> {{ activite.infos.origine }}</li>
+        <li class="collection-item"><span class="bold">Résumé:</span> {{ activite.infos.resume }}</li>
+        
+        <li class="collection-item">
+
+<div class="center">
+<a class="btn-floating btn waves-effect waves-light red z-depth-0" 
+	  tooltipped 
+      data-position="bottom"
+      data-delay="50" 
+      onclick="goBack()"
+      data-tooltip="Retour aux activités"><i class="material-icons">reply</i></a>
+
+<a class="btn-floating btn waves-effect waves-light red z-depth-0" ng-if="media.bandeAnnonceUrl"
+	 tooltipped 
+   target="_blank"
+   ng-href="{{ media.bandeAnnonceUrl }}"
+      data-position="bottom" 
+      data-delay="50" 
+      data-tooltip="Voir la bande annonce"><i class="material-icons">movie</i></a>
+
+<!--<media-favoriter media="media"></media-favoriter>--> 
+</div>
+        </li>
+      </ul>
+
+
+  </div>
+    </div>
+
+     
+     </div>
+
+
+
+
+<script>
+function goBack() {
+    window.history.back();
+}
+
+  $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
+ </script>
 
 
 <div>eh {{ activite.infos.eh }} ! </div>
