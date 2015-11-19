@@ -65,8 +65,8 @@
 
         <!-- Contenus -->
         <ul id="ressources" class="dropdown-content">
-          <li ng-repeat="mediaSection in mediaSections | orderBy:'position' ">
-            <a ng-click="goToMediaSection(mediaSection)">
+          <li ng-repeat="mediaSection in mediaSections | orderBy:'position' " >
+            <a ng-click="goToMediaSection(mediaSection)" class="black-text">
               {{ mediaSection.toString() }}
             </a>
           </li>
