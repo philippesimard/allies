@@ -13,9 +13,20 @@ angular.module('users').run(
       MaterializeService.toast('Un courriel de confirmation vous a été envoyé', toastDelay);
     });
 
-    /*$rootScope.$on('UserAuth:signup:fail', function($event, reason) {
+    $rootScope.$on('UserAuth:signup:fail', function ($event, error) {
+      var message;
 
-    });*/
+      switch (error.code) {
+      case 'UserExists':
+        message = 'Courriel existant, vous avez oublié votre mot de passe?';
+        break;
+      default:
+        message = error.code + ' : ' + error.message;
+      }
+
+      MaterializeService.toast(message, toastDelay);
+
+    });
 
     $rootScope.$on('UserAuth:signin:success', function (event, user) {
       MaterializeService.toast('Bonjour ' + user.toString(), toastDelay);
@@ -27,7 +38,6 @@ angular.module('users').run(
     });
 
     $rootScope.$on('UserAuth:signin:fail', function (event, error) {
-      console.log(error);
 
       var message;
 
@@ -38,6 +48,8 @@ angular.module('users').run(
       case 'EmailNonConfirmed':
         message = 'Votre courriel n\'a pas été confirmé';
         break;
+      default:
+        message = error.code + ' : ' + error.message;
       }
 
       MaterializeService.toast(message, toastDelay);
