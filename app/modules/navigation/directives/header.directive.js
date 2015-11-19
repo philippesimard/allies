@@ -1,20 +1,22 @@
 'use strict';
 
 angular.module('core').directive('header',
-  function (UserAuth, $window, $state, $timeout, $rootScope, Parcours, MediaSection, MaterializeService) {
+  function ($q, UserAuth, $window, $state, $timeout, $rootScope, Parcours, MediaSection, MaterializeService) {
 
     return {
 
       templateUrl: 'modules/navigation/views/header.html',
       link: function (scope) {
 
-        Parcours.find().then(function (parcours) {
-          scope.allParcours = parcours;
-        });
+        var promises = [];
 
-        MediaSection.find().then(function (mediaSections) {
+        promises.push(Parcours.find().then(function (parcours) {
+          scope.allParcours = parcours;
+        }));
+
+        promises.push(MediaSection.find().then(function (mediaSections) {
           scope.mediaSections = mediaSections;
-        });
+        }));
 
         scope.goToParcours = function (parcours) {
           $state.go('parcours-page', {
@@ -58,13 +60,15 @@ angular.module('core').directive('header',
           $state.go('userAccount');
         };
 
-        $('.dropdown-button').dropdown({
-          inDuration: 300,
-          outDuration: 225,
-          constrain_width: false, // jshint ignore:line
-          hover: true, // Activate on hover
-          gutter: 0, // Spacing from edge
-          belowOrigin: true // Displays dropdown below the button
+        $q.all(promises).then(function () {
+          $('.header-dropdown-button').dropdown({
+            inDuration: 300,
+            outDuration: 225,
+            constrain_width: false, // jshint ignore:line
+            hover: true, // Activate on hover
+            gutter: 0, // Spacing from edge
+            belowOrigin: true // Displays dropdown below the button
+          });
         });
       }
     };

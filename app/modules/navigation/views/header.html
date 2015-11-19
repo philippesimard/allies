@@ -38,14 +38,14 @@
             </a>
           </li>
           <li ng-class="{ active : isActive('ressources')}">
-            <a class="dropdown-button btn-white black-text"
+            <a class="header-dropdown-button btn-white black-text"
                data-activates="ressources"
                ui-sref="ressources">
               Médiagraphie
             </a>
           </li>
           <li ng-class="{ active : isActive('parcours')}">
-            <a class="dropdown-button btn-white black-text"
+            <a class="header-dropdown-button btn-white black-text"
                data-activates="parcours"
                ui-sref="parcours">
               Parcours
@@ -79,26 +79,6 @@
           </li>
         </ul>
       
-        
-
-        <script>
-$('.dropdown-button').dropdown({
-      inDuration: 300,
-      outDuration: 225,
-      constrain_width: false, // Does not change width of dropdown to that of the activator
-      hover: true, // Activate on hover
-      gutter: 0, // Spacing from edge
-      belowOrigin: false // Displays dropdown below the button
-    }
-  );
-
-
-
-
-          </script>
-
-           
-
           <ul id="slide-out" class="side-nav">
 
             <div class="center petitespace"><img height="80px" src="img/logo.png"></div>

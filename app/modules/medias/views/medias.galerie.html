@@ -1,6 +1,8 @@
 <div class="container">
   <div class="center">
-    <div class="espace">
+    <div class="espace" ng-show="galerie.medias">
+      
+
       <div class="input-field">
         <i class="material-icons prefix">search</i>
         <label for="email">Recherche par titre</label>
@@ -8,7 +10,7 @@
                ng-model="query"/>
       </div>
 
-      <button class="btn orange z-depth-0" ng-click="reinitialize() ">Réinitialiser</button>
+      <button class="btn orange z-depth-0" ng-click="reinitialize()">Réinitialiser</button>
 
       <span ng-if="niveaux.length > 0">
         <button class="dropdown-button btn red z-depth-0"
@@ -48,19 +50,3 @@
 		</div>
 	</div>
 </div>
-
-<script>
- $('.dropdown-button').dropdown({
-      inDuration: 300,
-      outDuration: 225,
-      constrain_width: false, // Does not change width of dropdown to that of the activator
-      hover: true, // Activate on hover
-      gutter: 0, // Spacing from edge
-      belowOrigin: false // Displays dropdown below the button
-    }
-  );
-</script>
-
-
-
-  

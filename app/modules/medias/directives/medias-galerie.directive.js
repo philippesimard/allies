@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('medias').directive('mediasGalerie',
-  function ($q, MediaSection, Media, Niveau) {
+  function ($q, $timeout, MediaSection, Media, Niveau) {
     return {
       restrict: 'E',
       scope: {
@@ -63,9 +63,21 @@ angular.module('medias').directive('mediasGalerie',
             newNiveauxIds = _.difference(media.niveau, _.pluck(scope.niveaux, '_id'));
           });
 
+          var promises = [];
           _.forEach(newNiveauxIds, function (newNiveauxId) {
-            Niveau.findById(newNiveauxId).then(function (niveau) {
+            promises.push(Niveau.findById(newNiveauxId).then(function (niveau) {
               scope.niveaux.push(niveau);
+            }));
+          });
+
+          $q.all(promises).then(function () {
+            $('.dropdown-button').dropdown({
+              inDuration: 300,
+              outDuration: 225,
+              constrain_width: false, // jshint ignore:line
+              hover: true, // Activate on hover
+              gutter: 0, // Spacing from edge
+              belowOrigin: true // Displays dropdown below the button
             });
           });
 
@@ -114,6 +126,11 @@ angular.module('medias').directive('mediasGalerie',
             scope.galerie.medias = filter(scope.query, scope.selectedNiveau);
           };
         });
+
+        $timeout(function () {
+
+        });
+
       }
     };
   });
