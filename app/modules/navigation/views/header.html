@@ -3,6 +3,7 @@
   <nav class="z-depth-0 ">
     <div class="nav-wrapper white ">
       <div class="container">
+        <img class="left hide-on-med-and-down" height="60px" src="img/logo.png"></a>
         
           <!-- Menu droite normal--> 
         <ul id="nav"
@@ -28,13 +29,9 @@
         <ul id="nav" class="left hide-on-med-and-down">
 
           <li ng-class="{ active : isActive('home')}">
-            <a ui-sref="home" class="black-text">
+            <a ui-sref="home" class="header-dropdown-button btn-white black-text"
+               data-activates="information">
               Accueil
-            </a>
-          </li>
-          <li ng-class="{ active : isActive('propos')}">
-            <a ui-sref="propos" class="header-dropdown-button btn-white black-text" data-activates="contact">
-              À propos
             </a>
           </li>
           <li ng-class="{ active : isActive('ressources')}">
@@ -78,9 +75,14 @@
           </li>
         </ul>
 
-        <ul id="contact" class="dropdown-content">
+        <ul id="information" class="dropdown-content">
           <li ng-class="{ active : isActive('homecontact')}">
             <a ui-sref="homecontact" class="black-text">Contact</a>
+          </li>
+          <li ng-class="{ active : isActive('propos')}">
+            <a ui-sref="propos" class="black-text" >
+              À propos
+            </a>
           </li>
         </ul>
       
