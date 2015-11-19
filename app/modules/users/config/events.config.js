@@ -37,6 +37,20 @@ angular.module('users').run(
       MaterializeService.toast('Un courriel de réinitialisation à été envoyé', toastDelay);
     });
 
+    $rootScope.$on('UserAuth:sendPasswordToken:fail', function ($event, error) {
+      var message;
+
+      switch (error.code) {
+      case 'NonExistantUser':
+        message = 'Courriel inexistant';
+        break;
+      default:
+        message = error.code + ' : ' + error.message;
+      }
+
+      MaterializeService.toast(message, toastDelay);
+    });
+
     $rootScope.$on('UserAuth:signin:fail', function (event, error) {
 
       var message;
