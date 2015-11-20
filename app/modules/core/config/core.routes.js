@@ -28,15 +28,12 @@ angular.module('core').config(
       controller: 'ContactController'
     })
 
-    .state('partenaire', {
-      url: '/partenaire',
-      templateUrl: 'modules/core/views/partenaire.html',
-      controller: 'ProposController'
-    })
-
     .state('propos', {
       url: '/propos',
       templateUrl: 'modules/core/views/propos.html',
-      controller: 'ProposController'
+      controller: 'ProposController',
+      data: {
+        breadcrumb: 'Home',
+      }
     });
   });

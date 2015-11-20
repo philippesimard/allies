@@ -55,6 +55,14 @@
 </div>
 
 
+<div ng-repeat="partenaire in partenaires">
+  <img class="responsive-img col s3 m3" 
+       width="200px" 
+       ng-src="{{ partenaire.img }}"
+       alt="{{ partenaire.toString() }}">
+
+</div>
+
 <script type="text/javascript">
 
 $(document).ready(function(){

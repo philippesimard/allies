@@ -27,6 +27,7 @@ angular.module('users').config(
         'userForm',
         'propos',
         'ressources',
+        'partenaire',
         'media-section',
         'media-fiche',
         'parcours',
