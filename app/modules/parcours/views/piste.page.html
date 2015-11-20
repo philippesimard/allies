@@ -27,14 +27,15 @@
 
 <div class="container">
        <ng-include src="piste.templateUrl"></ng-include>
-
-
-        <button ng-disabled="!piste.canAddBadge" ng-click="addBadge()">AJOUT BADGE</button>
-
+       </div>
+        
+        <div class="petitespace">
         <badge ng-if="piste.badge" badge-id="piste.badge"></badge>
+        <div class="center">
+        <button tooltipped data-position="bottom" data-delay="50" data-tooltip="Si vous avez complété l'exercice ou le jeux cliquez ici pour ajouter le badge à votre collection" class="btn center grey darken-3 z-depth-0" ng-disabled="!piste.canAddBadge" ng-click="addBadge()">Ajouter ce badge</button>
+        </div>
+      </div>
 
-
-</div>
 
 <script>
 function goBack() {
