@@ -31,7 +31,7 @@
              ng-minlength="7"
              ng-model="password"/>
       <div ng-messages="passwordForm.password.$error" ng-if="showMinlengthError">
-        <div ng-message="minlength" class="animated fadeIn">Votre mot de passe doit contenir au moins 7 caractères</div>
+        <div ng-message="minlength" class="animated fadeIn">Votre mot de passe doit être d'au moins 7 caractères</div>
       </div>
     </div>
     </div>
@@ -48,7 +48,7 @@
              password-verify="password"
              ng-model="confirmPassword"/>
       <div ng-messages="passwordForm.passwordConfirm.$error" ng-if="passwordForm.$submitted">
-        <div ng-message="required" class="animated fadeIn">Ce champ est requis.</div>
+        <div ng-message="required" class="animated fadeIn">Ce champs est requis.</div>
       </div>
       <div ng-messages="passwordForm.passwordConfirm.$error" ng-if="showInvalidPassword">
         <div ng-message="passwordVerify" class="animated fadeIn">Les mots de passe ne correspondent pas</div>
@@ -58,7 +58,7 @@
     </div>
 
      <div>
-      <button type="submit" class="waves-effect waves-light btn-large left red z-depth-0">Modifier votre mot de passe</button>
+      <button type="submit" class="waves-effect waves-light btn-large left red z-depth-0">Modifier mot de passe</button>
       </br>
     </div>
   </form>

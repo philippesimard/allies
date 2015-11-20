@@ -3,7 +3,7 @@
     <div class="container">
       <br><br>
       <h1 class="header light white-text">Paramètres</h1>
-        <h5 class="header light white-text">Cette page permet de modifier vos informations et paramètres personnels.</h5>
+        <h5 class="header light white-text">Cette page permet de mofifier vos informations et paramètres personnelles.</h5>
      </div>
   </div>
 </div>
@@ -29,7 +29,7 @@
              required
              ng-model="currentUser.lastname"/>
       <div ng-messages="userForm.lastname.$error" ng-if="userForm.$submitted">
-        <div ng-message="required" >Ce champ est requis.</div>
+        <div ng-message="required" >Ce champs est requis.</div>
       </div>
     </div>
     </div>
@@ -42,7 +42,7 @@
              required
              ng-model="currentUser.firstname"/>
       <div ng-messages="userForm.firstname.$error" ng-if="userForm.$submitted">
-        <div ng-message="required">Ce champ est requis.</div>
+        <div ng-message="required">Ce champs est requis.</div>
       </div>
     </div>
     </div>
@@ -72,10 +72,10 @@
              ng-focus="ShowInvalidEmail = false"
              ng-model="currentUser.email"/>
       <div ng-messages="userForm.email.$error" ng-if="userForm.$submitted">
-        <div ng-message="required">Ce champ est requis.</div>
+        <div ng-message="required">Ce champs est requis.</div>
       </div>
       <div ng-messages="userForm.email.$error" ng-if="ShowInvalidEmail">
-        <div ng-message="email">Entrez un courriel valide</div>
+        <div ng-message="email">Entrez un email valide</div>
       </div>
     </div>
     </div>
@@ -97,7 +97,7 @@
              ng-minlength="7"
              ng-model="currentUser.password"/>
       <div ng-messages="userForm.password.$error" ng-if="showMinlengthError">
-        <div ng-message="minlength">Votre mot de passe doit contenur au moins 7 caractères.</div>
+        <div ng-message="minlength">Votre mot de passe doit être d'au moins 7 caractères</div>
       </div>
     </div>
     </div>
@@ -114,7 +114,7 @@
              password-verify="currentUser.password"
              ng-model="currentUser.confirmPassword"/>
       <div ng-messages="userForm.passwordConfirm.$error" ng-if="userForm.$submitted">
-        <div ng-message="required">Ce champ est requis.</div>
+        <div ng-message="required">Ce champs est requis.</div>
       </div>
       <div ng-messages="userForm.passwordConfirm.$error" ng-if="showInvalidPassword">
         <div ng-message="passwordVerify">Les mots de passe ne correspondent pas</div>

@@ -4,8 +4,8 @@
       <div class="center">
       <img src="img/icons/key.svg" height="100px" width="100px">
       </div>
-      <h1 class="header light black-text center">Se connecter à votre compte A comme AlliéEs</h1>
-        <h5 class="header col s12 light black-text center">Connectez-vous à votre compte A comme AlliéEs et commencez à découvrir nos contenus et à créer votre propre bibliothèque de ressources.</h5>    
+      <h1 class="header light black-text center">Se connecter à votre compte AlliéEs</h1>
+        <h5 class="header col s12 light black-text center">Connectez-vous à votre compte AlliéEs et commencer à découvrir nos contenus et à créer votre propre biliothèque de ressources.</h5>    
     </div>
   </div>  
 </div>
@@ -20,7 +20,7 @@
         
 		<div class="input-field">
       <i class="material-icons prefix">perm_identity</i>
-    	<label for="email">Courriel</label>
+    	<label for="email">Email</label>
        	<input type="email" 
                name="email" 
                class="validate"
@@ -29,10 +29,10 @@
                ng-focus="showInvalidEmail = false"
        		     ng-model="loginInfo.username"/>
         <div ng-messages="loginForm.email.$error" ng-if="loginForm.$submitted">
-          <div ng-message="required">Courriel valide requis.</div>
+          <div ng-message="required">Email valide requis.</div>
         </div>
         <div ng-messages="loginForm.email.$error" ng-if="showInvalidEmail">
-          <div ng-message="email">Entrez un courriel valide.</div>
+          <div ng-message="email">Entrez un email valide.</div>
         </div>
       </div>
 
@@ -56,7 +56,7 @@
            ng-mouseover="showError = !showError">
            Mot de passe oublié ?
         </p>
-        <small ng-show="showError && loginForm.email.$error.required">Pour réinitialiser votre mot de passe, veuillez remplir le champ courriel</small>
+        <small ng-show="showError && loginForm.email.$error.required">Pour réinitialiser votre mot de passe veuillez remplir le champ email</small>
       </div>    
 	   <div class="col s6">
       <br>
@@ -67,12 +67,12 @@
 </div>
 </div>
 
-<div class="presentation">
+<div class="grispresentation">
   <div class="row center">
 
 <h3 class="light center">Vous n'êtes pas inscrit ?</h3>
-<h5 class="light center">C'est par ici.</h5>
-<a ui-sref="userForm" class="waves-effect waves-light btn-large red" z-depth-0><i class="material-icons left"></i>Je m'inscris</a>
+<h5 class="light center">Allez c'est par ici.</h5>
+<a ui-sref="userForm" class="waves-effect waves-light btn-large red" z-depth-0><i class="material-icons left"></i>Je m'inscrit</a>
 
 </div>
 </div>

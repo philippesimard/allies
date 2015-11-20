@@ -2,7 +2,7 @@
 	    <div class="section no-pad-bot" >
 	      <div class="container">
 	        <h1 class="header light white-text">Formulaire de contact</h1>
-	          <h5 class="header light white-text"></h5>
+	          <h5 class="header light white-text">Ici utilisateur contact</h5>
 	       </div>
 	    </div>
 	  </div>
@@ -10,7 +10,7 @@
 
 	  <div class="section container petitespace">
 	  				<h5>Pour nous joindre</h5>
-	  				<p>Utilisez le formulaire de contact afin de joindre notre équipe. Si vous souhaitez obtenir de l'aide voir la section aide du site. Pour signaler une page ou un contenu voir la page signaler un contenu.</p>
+	  				<p>Utilisez le formulaire de contact afin de joindre notre équipe. Si vous souhaiter obtenir de l'aide voir la section aide du site. Pour signaler une page ou un contenu voir la page signaler un contenu.</p>
 	  			</div>
 
 <form class="col s12 container" novalidate name="contactForm" ng-submit="send(contactForm)">
@@ -29,7 +29,7 @@
 	      <div class="row">
 			<div class="input-field col s12">
 	         <input id="input_text" type="email"  name="subject" ng-model="message.mail" class="validate" required />
-	         <label class="black-text" for="adresse" data-error="Adresse invalide" data-success="ok">Adresse courriel</label>
+	         <label class="black-text" for="adresse" data-error="Adresse invalide" data-success="ok">Adresse email</label>
 	        </div>
 	        <div ng-messages="contactForm.subject.$error" ng-if="contactForm.$submitted">
         		<div ng-message="required" class="animated fadeIn red-text" >Ce champs est requis.</div>

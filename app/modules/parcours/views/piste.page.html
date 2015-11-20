@@ -8,7 +8,7 @@
 
         <div class="col s12 m6 center espace z-depth-0">
         	<div class="center">
-    <button onclick="goBack()" tooltips class="btn-floating btn-large red waves-effect waves-light z-depth-0" tooltip-content="Retour aux pistes">
+    <button onclick="goBack()" tooltips class="btn-floating btn-large red waves-effect waves-light z-depth-0" tooltip-content="Retour pistes">
     <i class="material-icons">reply</i>
   </button>
   </div>
@@ -27,14 +27,15 @@
 
 <div class="container">
        <ng-include src="piste.templateUrl"></ng-include>
-
-
-        <button ng-disabled="!piste.canAddBadge" ng-click="addBadge()">AJOUT BADGE</button>
-
+       </div>
+        
+        <div class="petitespace">
         <badge ng-if="piste.badge" badge-id="piste.badge"></badge>
+        <div class="center">
+        <button tooltipped data-position="bottom" data-delay="50" data-tooltip="Si vous avez complété l'exercice ou le jeux cliquez ici pour ajouter le badge à votre collection" class="btn center grey darken-3 z-depth-0" ng-disabled="!piste.canAddBadge" ng-click="addBadge()">Ajouter ce badge</button>
+        </div>
+      </div>
 
-
-</div>
 
 <script>
 function goBack() {
