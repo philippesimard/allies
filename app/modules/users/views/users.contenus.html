@@ -20,36 +20,14 @@
             <span class="title">{{ savedThing.title }}</span>
             <p>{{ savedThing.things.length }}</p>
           </li>
-          <!--<li class="collection-item avatar">
-            <i class="material-icons circle red">book</i>
-            <span class="title">Livres</span>
-            <p>Vous avez: </p>
-            <a href="#!" class="secondary-content"><i class="material-icons red-text"></i></a>
-          </li>
-          <li class="collection-item avatar">
-            <i class="material-icons circle green">directions_run</i>
-            <span class="title">Activités</span>
-            <p>Vous avez: </p>
-            <a href="#!" class="secondary-content"><i class="material-icons red-text"></i></a>
-          </li>
-          <li class="collection-item avatar">
-            <i class="material-icons circle orange">people</i>
-            <span class="title">Partenaires</span>
-            <p>Vous avez: </p>
-            <a href="#!" class="secondary-content"><i class="material-icons red-text"></i></a>
-          </li>
-           <li class="collection-item avatar">
-            <i class="material-icons circle pink">link</i>
-            <span class="title">Pistes</span>
-            <p>Vous avez: </p>
-            <a href="#!" class="secondary-content"><i class="material-icons red-text"></i></a>
-          </li>-->
+          
         </ul>
       </div>
+      
       <div class="col s9">
         <medias-galerie ng-if="medias"
                         medias-ids="medias"
-                        medias-per-row="4">
+                        medias-per-row="3">
         </medias-galerie>
         <ul ng-if="pistes.length > 0">
           <li ng-repeat="parcours in allParcours">
@@ -67,5 +45,6 @@
           </li>
         </ul>
       </div>
+
   </div>
 </div>
