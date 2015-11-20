@@ -28,13 +28,13 @@
 <div class="container">
        <ng-include src="piste.templateUrl"></ng-include>
 
-
-        <button ng-disabled="!piste.canAddBadge" ng-click="addBadge()">AJOUT BADGE</button>
-
-        <badge ng-if="piste.badge" badge-id="piste.badge"></badge>
-
-
 </div>
+<div class="center">
+        <badge ng-if="piste.badge" badge-id="piste.badge"></badge>
+        <button class="btn flat grey darken-3 z-depth-0"ng-disabled="!piste.canAddBadge" ng-click="addBadge()">Ajouter ce badge</button>
+</div>
+
+
 
 <script>
 function goBack() {
