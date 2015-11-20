@@ -9,12 +9,12 @@ angular.module('partenaires').config(
       url: '/partenaires',
       templateUrl: 'modules/partenaires/views/partenaires.html',
       resolve: {
-        partenaires: function (Partenaire) {
-          return Partenaire.find();
+        partenairesCommunautaures: function (Partenaire) {
+          return Partenaire.find('communautaire');
         }
       },
-      controller: function ($scope, partenaires) {
-        $scope.partenaires = partenaires;
+      controller: function ($scope, partenairesCommunautaures) {
+        $scope.partenairesCommunautaures = partenairesCommunautaures;
       }
     });
   });
