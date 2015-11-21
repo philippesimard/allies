@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('medias').directive('mediasGalerie',
-  function ($q, $timeout, MediaSection, Media, Niveau) {
+  function($q, $timeout, MediaSection, Media, Niveau) {
     return {
       restrict: 'E',
       scope: {
@@ -12,35 +12,43 @@ angular.module('medias').directive('mediasGalerie',
         maxRows: '@',
         showFilters: '='
       },
-      templateUrl: function (element, attrs) {
+      templateUrl: function(element, attrs) {
         return attrs.mode === 'static' ? 'modules/medias/views/medias.static-galerie.html' : 'modules/medias/views/medias.galerie.html';
       },
-      link: function (scope) {
+      link: function(scope) {
 
-        var deffered;
+        var deffered = $q.defer();
 
         if (scope.mediaType) {
-          deffered = Media.findBySectionShortName(scope.mediaType);
+          Media.findBySectionShortName(scope.mediaType).then(function(medias) {
+            deffered.resolve(medias);
+          });
         } else if (scope.mediaSectionId) {
-          deffered = Media.find({
+          Media.find({
             sectionId: scope.mediaSectionId
+          }).then(function(medias) {
+            deffered.resolve(medias);
           });
         } else if (scope.mediasIds) {
           var promises = [],
             medias = [];
-
-          _.forEach(scope.mediasIds, function (mediasId) {
-            promises.push(Media.findById(mediasId).then(function (media) {
+          _.forEach(scope.mediasIds, function(mediasId) {
+            var deffered2 = $q.defer();
+            promises.push(deffered2.promise);
+            Media.findById(mediasId).then(function(media) {
               medias.push(media);
-            }));
+              deffered2.resolve(media);
+            }).catch(function() {
+              deffered2.resolve();
+            });
           });
 
-          deffered = $q.when(promises).then(function () {
-            return medias;
+          $q.all(promises).then(function() {
+            deffered.resolve(medias);
           });
         }
 
-        deffered.then(function (medias) {
+        deffered.promise.then(function(medias) {
 
           if (scope.maxRows) {
             var nbMedia = scope.mediasPerRow * scope.maxRows;
@@ -59,18 +67,18 @@ angular.module('medias').directive('mediasGalerie',
           scope.niveaux = [];
 
           var newNiveauxIds = [];
-          _.forEach(scope.galerie.medias, function (media) {
+          _.forEach(scope.galerie.medias, function(media) {
             newNiveauxIds = _.difference(media.niveau, _.pluck(scope.niveaux, '_id'));
           });
 
           var promises = [];
-          _.forEach(newNiveauxIds, function (newNiveauxId) {
-            promises.push(Niveau.findById(newNiveauxId).then(function (niveau) {
+          _.forEach(newNiveauxIds, function(newNiveauxId) {
+            promises.push(Niveau.findById(newNiveauxId).then(function(niveau) {
               scope.niveaux.push(niveau);
             }));
           });
 
-          $q.all(promises).then(function () {
+          $q.all(promises).then(function() {
             $('.dropdown-button').dropdown({
               inDuration: 300,
               outDuration: 225,
@@ -97,29 +105,29 @@ angular.module('medias').directive('mediasGalerie',
             if (niveau._id === 0) {
               medias = originalList;
             } else {
-              medias = _.filter(originalList, function (media) {
+              medias = _.filter(originalList, function(media) {
                 return _.contains(media.niveau, niveau._id);
               });
             }
 
-            return _.filter(medias, function (media) {
+            return _.filter(medias, function(media) {
               return _.deburr(media.toString().toLowerCase()).indexOf(query) > -1;
             });
           }
 
-          scope.$watch('query', function (newQuery) {
+          scope.$watch('query', function(newQuery) {
             if (newQuery) {
               currentQuery = _.deburr(newQuery).toLowerCase();
               scope.galerie.medias = filter(currentQuery, scope.selectedNiveau);
             }
           });
 
-          scope.filterByNiveau = function (niveau) {
+          scope.filterByNiveau = function(niveau) {
             scope.selectedNiveau = niveau;
             scope.galerie.medias = filter(currentQuery, niveau);
           };
 
-          scope.reinitialize = function () {
+          scope.reinitialize = function() {
             scope.query = '';
             currentQuery = scope.query;
             scope.selectedNiveau = allNiveaux;
@@ -127,7 +135,7 @@ angular.module('medias').directive('mediasGalerie',
           };
         });
 
-        $timeout(function () {
+        $timeout(function() {
 
         });
 
