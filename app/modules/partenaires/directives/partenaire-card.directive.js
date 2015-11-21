@@ -11,9 +11,9 @@ angular.module('partenaires').directive('partenaireCard',
       templateUrl: 'modules/partenaires/views/partenaire.card.html',
       link: function (scope) {
 
-      	scope.$watch('partenaire', function(A) {
-      		console.log(A);
-      	})
+        scope.$watch('partenaire', function (A) {
+          console.log(A);
+        });
 
         scope.goToPartenaire = function (partenaire) {
           $state.go('partenaire-fiche', {
