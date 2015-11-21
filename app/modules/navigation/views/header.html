@@ -1,9 +1,9 @@
 <div>
   <div class="navbar-fixed">
-  <nav class="z-depth-0 ">
+  <nav class="z-depth-1 ">
     <div class="nav-wrapper white  ">
       <div class="container">
-        <img class="left hide-on-med-and-down"  height="53spx" ui-sref="home" src="img/logo.png"></a>
+        <img class="left hide-on-med-and-down"  height="65px" ui-sref="home" src="img/logo.png"></a>
         
           <!-- Menu droite normal--> 
         <ul id="nav"
@@ -98,6 +98,7 @@
             <li ng-class="{ active : isActive('activite')}"><a ui-sref="activite" class="center">Activités</a></li>
             <li ng-class="{ active : isActive('partenaire')}"><a ui-sref="partenaire" class="center">Partenaires</a></li>
             <li ng-class="{ active : isActive('homecontact')}"><a ui-sref="homecontact" class="center">Contact</a></li>
+            <li class="red" ng-class="{ active : isActive('login')}"><a ui-sref="login" class="center white-text">Se connecter</a></li>
              <li 
               class="red"
               ng-show="isConnected"
@@ -113,13 +114,16 @@
             </ul>
           <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu black-text"></i></a>
 
-          <script >
+         <script >
 
     // Initialisation menu burger
     $(".button-collapse").sideNav();
       // Initialize collapsible (uncomment the line below if you use the dropdown variation)
       //$('.collapsible').collapsible();
 --> 
+
+
+
       </script>
       <div>
       </div>
