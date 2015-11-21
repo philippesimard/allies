@@ -7,66 +7,11 @@
        </div>
     </div>
   </div>
-  </div>
+</div>
 
 <div class="container">
 
-<div class="center">
-
-	<section id="financiers">
-		<div class="espace">
-  <h4 class="center">Merci à nos partenaires financiers</h4>
-
-<img class="responsive-img col s3 m3"  width="250px"  src="img/partenaires/centreaide.jpg">
-<img class="responsive-img col s3 m3"  width="250px"  src="img/partenaires/bnc.jpg">
-<img class="responsive-img col s3 m3"  width="250px"  src="img/partenaires/justice.png">
-<img class="responsive-img col s3 m3"  width="200px"  src="img/partenaires/desjardins.png">
-<img class="responsive-img col s3 m3"  width="200px"  src="img/partenaires/assemble.jpg">
-<img class="responsive-img col s3 m3"  width="100px"  src="img/partenaires/td.jpg">
-
+  <div class="center">
+    <partenaires-galerie partenaires="partenaires"></partenaires-galerie>
+  </div>
 </div>
-</section>
-
-
-<section id="partenaire">
-  <h4 class="center">Et à nos partenaires communautaires</h4>
-
-<img class="responsive-img col s3 m3"  width="200px"  src="img/partenaires/cf-lgbt.png">
-<img class="responsive-img col s3 m3"  width="200px"  src="img/partenaires/gayecoute.png">
-<img class="responsive-img col s3 m3"  width="200px"  src="img/partenaires/caawsacafs.jpg">
-<img class="responsive-img col s3 m3"  width="200px"  src="img/partenaires/condomquebec.png">
-<img class="responsive-img col s3 m3"  width="200px"  src="img/partenaires/soshomophobie.png">
-<img class="responsive-img col s3 m3"  width="200px"  src="img/partenaires/chaire.jpg">
-<img class="responsive-img col s3 m3"  width="200px"  src="img/partenaires/alliancearcenciel.png">
-<img class="responsive-img col s3 m3"  width="200px"  src="img/partenaires/jag.png">
-<img class="responsive-img col s3 m3"  width="200px"  src="img/partenaires/actuel.png">
-</section>
-
-<section id="gris">
-	<div class="espace">
-<img class="responsive-img col s4 m4"  width="200px"  src="img/partenaires/grisc.png">
-<img class="responsive-img col s4 m4"  width="200px"  src="img/partenaires/grise.png">
-<img class="responsive-img col s4 m4"  width="200px"  src="img/partenaires/grism.png">
-<img class="responsive-img col s4 m4"  width="200px"  src="img/partenaires/grismc.png">
-	</div>
-</section>
-
-</div>
-</div>
-
-
-<div ng-repeat="partenaire in partenaires">
-  <img class="responsive-img col s3 m3" 
-       width="200px" 
-       ng-src="{{ partenaire.img }}"
-       alt="{{ partenaire.toString() }}">
-
-</div>
-
-<script type="text/javascript">
-
-$(document).ready(function(){
-    $('.materialboxed').materialbox();
-  });
-
-</script>
