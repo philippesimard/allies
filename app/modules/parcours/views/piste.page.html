@@ -31,7 +31,7 @@
 </div>
 <div class="center">
         <badge ng-if="piste.badge" badge-id="piste.badge"></badge>
-        <button class="btn flat grey darken-3 z-depth-0" ng-hide="!piste.canAddBadge" ng-click="addBadge()">Ajouter ce badge</button>
+        <button class="btn flat grey darken-3 z-depth-0" ng-show="piste.canAddBadge" ng-click="addBadge()">Ajouter ce badge</button>
 </div>
 
 
