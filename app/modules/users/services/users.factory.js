@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('users').factory('User',
-  function (Schema, $q) {
+  function ($rootScope, Schema, $q) {
 
     var User = new Schema('user');
 
@@ -65,6 +65,7 @@ angular.module('users').factory('User',
     User.prototype.removeFavorite = function (type, element) {
       _.pull(this.favorites[type], element._id);
       return this.save().then(function () {
+        $rootScope.$broadcast(type + ':favorite:remove', element);
         return element.toString() + ' a été retiré de vos favoris.';
       });
     };

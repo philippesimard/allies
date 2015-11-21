@@ -10,7 +10,7 @@
 <div class="container">
     <div class="row">
       <div class="col s3">
-        <h5 class="center light">Types de contenus</h5>
+        <h5 class="center light petitespace">Types de contenus</h5>
         <ul class="collection">
           <li class="collection-item avatar"
               ng-class="{'lighten-1 {{ savedThing.color }}': savedThing.active }"
@@ -27,7 +27,8 @@
       <div class="col s9">
         <medias-galerie ng-if="medias"
                         medias-ids="medias"
-                        medias-per-row="3">
+                        medias-per-row="3"
+                        favorites="true">
         </medias-galerie>
         <ul ng-if="pistes.length > 0">
           <li ng-repeat="parcours in allParcours">
