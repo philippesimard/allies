@@ -16,5 +16,18 @@ angular.module('partenaires').config(
       controller: function ($scope, partenaires) {
         $scope.partenaires = partenaires;
       }
+    }).
+
+    state('partenaire-fiche', {
+      url: '/partenaire/:partenaireId',
+      resolve: {
+        partenaire: function (Partenaire, $stateParams) {
+          return Partenaire.findById($stateParams.partenaireId);
+        }
+      },
+      templateUrl: 'modules/partenaires/views/partenaire.fiche.html',
+      controller: function ($scope, partenaire) {
+        $scope.partenaire = partenaire;
+      }
     });
   });
