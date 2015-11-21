@@ -26,7 +26,6 @@ angular.module('parcours').directive('pistePage',
           if (scope.piste.canAddBadge) {
             $rootScope.currentUser.addBadge(scope.piste.badge).then(function () {
               scope.piste.canAddBadge = false;
-              console.log('badge Ajoutée!');
             });
           }
         };
