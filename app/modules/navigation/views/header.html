@@ -14,6 +14,7 @@
           </li>
         <!-- Menu droite utilisateur-->
           <li class="hide-on-med-and-down"
+              ng-class="{ active : isActive('userAccount')}"
               ng-show="isConnected"
               ng-click="monCompte()">
             <i class="material-icons left black-text">account_circle</i>

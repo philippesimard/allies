@@ -30,6 +30,8 @@ angular.module('core').directive('header',
               return _.contains(['parcours', 'parcours-page', 'secteur-page', 'piste-page'], $state.current.name);
             } else if (menuItemName === 'ressources') {
               return _.contains(['ressources', 'media-section', 'media-fiche'], $state.current.name);
+            } else if (menuItemName === 'userAccount') {
+              return _.contains(['userAccount', 'visite', 'contenus', 'experience', 'badges', 'contribution', 'achat', 'contact', 'parameters'], $state.current.name);
             } else {
               return menuItemName === $state.current.name;
             }
