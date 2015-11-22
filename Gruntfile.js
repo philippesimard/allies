@@ -184,15 +184,7 @@ module.exports = function (grunt) {
     usemin: {
       html: ['<%= yeoman.dist %>/index.html'],
       js: ['<%= yeoman.dist %>/scripts/*.js'],
-      css: ['<%= yeoman.dist %>/styles/*.css'],
-      options: {
-        assetsDirs: ['<%= yeoman.dist %>/**/'],
-        patterns: {
-          js: [
-            [/(img\/.*?\.(?:gif|jpeg|jpg|png|webp|svg))/gm, 'Update the JS to reference our revved images']
-          ]
-        }
-      }
+      css: ['<%= yeoman.dist %>/styles/*.css']
     },
 
     // The following *-min tasks produce minified files in the dist folder
@@ -471,7 +463,7 @@ module.exports = function (grunt) {
     'copy:materializeCss',
     'cssmin',
     'uglify',
-    'rev:dist',
+    //'rev:dist',
     'usemin',
     'htmlmin',
     'comments:dist',
