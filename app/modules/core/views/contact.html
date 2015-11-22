@@ -1,67 +1,79 @@
-	<div id="index-banner" class="jumbotron">
-	    <div class="section no-pad-bot" >
-	      <div class="container">
-	        <h1 class="header light white-text">Formulaire de contact</h1>
-	          <h5 class="header light white-text"></h5>
-	       </div>
-	    </div>
-	  </div>
+<div id="index-banner" class="jumbotron">
+  <div class="section no-pad-bot" >
+    <div class="container">
+      <h1 class="header light white-text">Formulaire de contact</h1>
+        <h5 class="header light white-text"></h5>
+     </div>
+  </div>
+</div>
 
-
-	  <div class="section container petitespace">
-	  				<h5>Pour nous joindre</h5>
-	  				<p>Utilisez le formulaire de contact afin de joindre notre équipe. Si vous souhaitez obtenir de l'aide voir la section aide du site. Pour signaler une page ou un contenu voir la page signaler un contenu.</p>
-	  			</div>
+<div class="section container petitespace">
+	<h5>Pour nous joindre</h5>
+	<p>Utilisez le formulaire de contact afin de joindre notre équipe. Si vous souhaitez obtenir de l'aide voir la section aide du site. Pour signaler une page ou un contenu voir la page signaler un contenu.</p>
+</div>
 
 <form class="col s12 container" novalidate name="contactForm" ng-submit="send(contactForm)">
-
-			
-			<div class="row">
-			<div class="input-field col s12">
-	         <input id="input_text" type="text"  name="subject" ng-model="message.lastname" class="validate" required/>
-	         <label class="black-text" for="lastename" data-error="Erreur" data-success="ok">Nom</label>
-	        </div>
-	        <div ng-messages="contactForm.subject.$error" ng-if="contactForm.$submitted">
-        		<div ng-message="required" class="animated fadeIn red-text" >Ce champs est requis.</div>
-      		</div>
-	      </div>
-
-	      <div class="row">
-			<div class="input-field col s12">
-	         <input id="input_text" type="email"  name="subject" ng-model="message.mail" class="validate" required />
-	         <label class="black-text" for="adresse" data-error="Adresse invalide" data-success="ok">Adresse courriel</label>
-	        </div>
-	        <div ng-messages="contactForm.subject.$error" ng-if="contactForm.$submitted">
-        		<div ng-message="required" class="animated fadeIn red-text" >Ce champs est requis.</div>
-      		</div>
-	      </div>
-
-	      <div class="row">
-			<div class="input-field col s12">
-	         <input id="input_text" type="text"  name="subject" ng-model="message.subject" class="validate" required/>
-	         <label class="black-text" for="subject" data-error="Erreur" data-success="ok">Titre du message</label>
-	        </div>
-	        <div ng-messages="contactForm.subject.$error" ng-if="contactForm.$submitted">
-        		<div ng-message="required" class="animated fadeIn red-text" >Ce champs est requis.</div>
-      		</div>
-	      </div>
-
-	      <div class="row">
-	          <div class="input-field col s12">
-	            <textarea id="textarea1" class="materialize-textarea" name="body" ng-model="message.body" length="500" required></textarea>
-	            <label class="black-text" for="body" >Votre message</label>
-	          </div>
-	          <div ng-messages="contactForm.body.$error" ng-if="contactForm.$submitted">
-        		<div ng-message="required" class="animated fadeIn red-text" >Ce champs est requis.</div>
-      		</div>
-	        </div>
-	  
-
-<div class="input-field col s12 espace">
-<button  type="submit" class="waves-effect waves-light btn-large left red z-depth-0"><i class="material-icons left">send</i>Envoyer</button>
-</div>
+	<div class="row">
+		<div class="input-field col s12">
+	    <input type="text"
+	    			 name="name"
+	    			 ng-model="message.name"
+	    			 ng-class="{'validate': !currentUser.isAuthentified()}"
+	    			 ng-disabled="currentUser.isAuthentified()"
+	    			 required/>
+	    <label class="black-text" for="name">Nom</label>
+	    <div ng-messages="contactForm.name.$error" ng-if="contactForm.$submitted">
+      	<div ng-message="required" class="animated fadeIn red-text">Ce champs est requis.</div>
+      </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div class="input-field col s12">
+	    <input type="email"
+	    			 name="email"
+	    			 ng-model="message.email"
+	    			 ng-class="{'validate': !currentUser.isAuthentified()}"
+	    			 ng-disabled="currentUser.isAuthentified()"
+	    			 required/>
+	    <label class="black-text" for="email">Adresse courriel</label>
+	    <div ng-messages="contactForm.email.$error" ng-if="contactForm.$submitted">
+	    	<div ng-message="email" class="animated fadeIn red-text">Courriel invalide</div>
+        <div ng-message="required" class="animated fadeIn red-text">Ce champs est requis.</div>
+      </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div class="input-field col s12">
+	    <input type="text"
+	    			 name="subject"
+	    			 ng-model="message.subject"
+	    			 class="validate"
+	    			 required/>
+	    <label class="black-text" for="subject">Titre du message</label>
+	    <div ng-messages="contactForm.subject.$error" ng-if="contactForm.$submitted">
+       	<div ng-message="required" class="animated fadeIn red-text">Ce champs est requis.</div>
+      </div>
+	  </div>
+	</div>
+	<div class="row">
+	  <div class="input-field col s12">
+	    <textarea character-counter="500"
+	    					class="materialize-textarea"
+	    				  name="body"
+	    				  ng-model="message.body"
+	    				  length="500"
+	    				  required>
+	    </textarea>
+	    <label class="black-text" for="body">Votre message</label>
+	    <div ng-messages="contactForm.body.$error" ng-if="contactForm.$submitted">
+        <div ng-message="required" class="animated fadeIn red-text">Ce champs est requis.</div>
+      </div>
+	  </div>
+	</div>
+	<div class="input-field col s12 espace">
+		<button type="submit" class="waves-effect waves-light btn-large left red z-depth-0">
+			<i class="material-icons left">send</i>
+			Envoyer
+		</button>
+	</div>
 </form>
-	</div>
-	</div>
-
-	
