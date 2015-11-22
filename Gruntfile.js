@@ -301,6 +301,15 @@ module.exports = function (grunt) {
           src: 'font/roboto/*'
         }]
       },
+      socialFonts: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= yeoman.app %>/lib/social-share-kit/dist',
+          dest: '<%= yeoman.dist %>',
+          src: 'fonts/*'
+        }]
+      },
       materializeCss: {
         dest: '<%= yeoman.dist %>/lib/materialize/templates/starter-template/css/style.css',
         src: '<%= yeoman.app %>/lib/materialize/templates/starter-template/css/style.css'
@@ -459,6 +468,7 @@ module.exports = function (grunt) {
     'concurrent:dist2',
     'copy:dist',
     'copy:fonts',
+    'copy:socialFonts',
     'copy:materializeCss',
     'cssmin',
     'uglify',
