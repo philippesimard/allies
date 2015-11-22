@@ -239,12 +239,14 @@ module.exports = function (grunt) {
       },
       dev: {
         constants: {
-          BACKEND: 'http://localhost:9001'
+          BACKEND: 'http://localhost:9001',
+          ENV: 'dev'
         }
       },
       dist: {
         constants: {
-          BACKEND: 'http://vps54578.vps.ovh.ca'
+          BACKEND: 'http://vps54578.vps.ovh.ca',
+          ENV: 'prod'
         }
       }
     },
