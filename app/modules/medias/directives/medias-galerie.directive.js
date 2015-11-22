@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('medias').directive('mediasGalerie',
-  function ($q, $timeout, MediaSection, Media, Niveau) {
+  function ($q, $rootScope, $timeout, MediaSection, Media, Niveau) {
     return {
       restrict: 'E',
       scope: {
@@ -10,7 +10,8 @@ angular.module('medias').directive('mediasGalerie',
         mediaSectionId: '@',
         mediasPerRow: '@',
         maxRows: '@',
-        showFilters: '='
+        showFilters: '=',
+        favorites: '@'
       },
       templateUrl: function (element, attrs) {
         return attrs.mode === 'static' ? 'modules/medias/views/medias.static-galerie.html' : 'modules/medias/views/medias.galerie.html';
@@ -49,6 +50,14 @@ angular.module('medias').directive('mediasGalerie',
         }
 
         deffered.promise.then(function (medias) {
+
+          if (scope.favorites) {
+            $rootScope.$on('media:favorite:remove', function ($event, removedMedia) {
+              _.remove(medias, function (media) {
+                return media._id === removedMedia._id;
+              });
+            });
+          }
 
           if (scope.maxRows) {
             var nbMedia = scope.mediasPerRow * scope.maxRows;
