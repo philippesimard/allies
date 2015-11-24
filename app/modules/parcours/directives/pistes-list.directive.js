@@ -30,9 +30,15 @@ angular.module('parcours').directive('pisteList',
           });
         };
 
+        scope.canRemove = function (piste) {
+          return $rootScope.currentUser.isAuthentified() && $rootScope.currentUser.hasFavorite('piste', piste);
+        };
+
         scope.removeFromFavorite = function (piste) {
           $rootScope.currentUser.removeFavorite('piste', piste).then(function (message) {
-            _.pull(scope.pistes, piste);
+            if ($state.current.name === 'contenus') {
+              _.pull(scope.pistes, piste);
+            }
             MaterializeService.toast('<i class="material-icons red-text">favorite</i>&nbsp;&nbsp;' + message, 3000);
           });
         };
