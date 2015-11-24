@@ -18,7 +18,7 @@ angular.module('users').run(
 
       switch (error.code) {
       case 'UserExists':
-        message = 'Courriel existant, vous avez oublié votre mot de passe?';
+        message = 'Un usager existe déjà avec ce courriel';
         break;
       default:
         message = error.code + ' : ' + error.message;
