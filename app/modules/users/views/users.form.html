@@ -41,13 +41,17 @@
 
     <div class="input col s12">
       <label for="dateNaissance" class="black-text">Date de naissance</label>
-      <input type="date"
+      <input type="text"
              name="dateNaissance"
              class="validate"
+             mask='39-19-9999'
+             placeholder="jj-mm-aaaa"
+             clean="false"
              required
              ng-model="newUser.dateNaissance"/>
       <div ng-messages="userForm.dateNaissance.$error" ng-if="userForm.$submitted">
         <div ng-message="required" class="animated fadeIn red-text">Ce champ est requis.</div>
+        <div ng-message="mask" class="animated fadeIn red-text">Date invalide.</div>
       </div>
     </div>
 
