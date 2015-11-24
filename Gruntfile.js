@@ -240,12 +240,14 @@ module.exports = function (grunt) {
       dev: {
         constants: {
           BACKEND: 'http://localhost:9001',
+          CLIENT_URL: 'http://localhost:9000',
           ENV: 'dev'
         }
       },
       dist: {
         constants: {
           BACKEND: 'http://vps54578.vps.ovh.ca',
+          CLIENT_URL: 'http://www.acommealliees.ca',
           ENV: 'prod'
         }
       }

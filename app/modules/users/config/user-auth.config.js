@@ -4,18 +4,18 @@
 
 angular.module('users').config(
 
-  function (UserAuthProvider) {
-
+  function (UserAuthProvider, CLIENT_URL) {
+    console.log(CLIENT_URL + '/#!/reset_password');
     UserAuthProvider.config({
 
       userSchema: 'User',
 
       sendPasswordToken: {
-        urlRedirection: 'http://localhost:9000/#!/reset_password',
+        urlRedirection: CLIENT_URL + '/#!/reset_password',
       },
 
       confirmEmail: {
-        urlRedirection: 'http://localhost:9000/#!/confirm_email',
+        urlRedirection: CLIENT_URL + '/#!/confirm_email',
       },
 
       apiRoot: '',
@@ -28,6 +28,7 @@ angular.module('users').config(
         'propos',
         'ressources',
         'partenaire',
+        'partenaire-fiche',
         'media-section',
         'media-fiche',
         'parcours',
