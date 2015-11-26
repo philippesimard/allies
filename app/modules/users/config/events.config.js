@@ -9,8 +9,10 @@ angular.module('users').run(
     var toastDelay = 3000;
 
     $rootScope.$on('UserAuth:signup:success', function () {
-      $state.go('home');
-      MaterializeService.toast('Un courriel de confirmation vous a été envoyé', toastDelay);
+      $state.go('login');
+      MaterializeService.toast('Merci, vous pouvez maintenant vous connectez.', toastDelay);
+      //$state.go('home');
+      //MaterializeService.toast('Un courriel de confirmation vous a été envoyé', toastDelay);
     });
 
     $rootScope.$on('UserAuth:signup:fail', function ($event, error) {
