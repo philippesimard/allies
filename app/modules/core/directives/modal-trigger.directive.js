@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('core').directive('modalTrigger',
-  function($templateCache, $q, $http, $compile, rfc4122, ENV) {
+  function ($templateCache, $q, $http, $compile, rfc4122, ENV) {
 
     var templatePromise;
 
     return {
-      compile: function(tElement, tAttrs) {
+      compile: function (tElement, tAttrs) {
 
         if (ENV === 'prod') {
           var deffered = $q.defer();
@@ -27,7 +27,7 @@ angular.module('core').directive('modalTrigger',
           deffered.resolve(template);
 
         } else {
-          templatePromise = $http.get(tAttrs.modalTrigger).then(function(response) {
+          templatePromise = $http.get(tAttrs.modalTrigger).then(function (response) {
 
             var modalId = rfc4122.v4(),
               template = angular.element(response.data).attr('id', modalId);
@@ -44,7 +44,7 @@ angular.module('core').directive('modalTrigger',
         }
 
         return function link(scope) {
-          templatePromise.then(function(template) {
+          templatePromise.then(function (template) {
             $compile(template)(scope);
           });
         };
