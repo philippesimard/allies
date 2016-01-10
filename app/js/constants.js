@@ -2,7 +2,7 @@
 
 angular.module('config', [])
 
-.constant('BACKEND', 'http://localhost:9001')
+.constant('BACKEND', 'http://vps54578.vps.ovh.ca')
 
 .constant('CLIENT_URL', 'http://localhost:9000')
 
