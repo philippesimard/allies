@@ -1,46 +1,6 @@
 <footer class="page-footer grey darken-3">
-          <div class="container">
-            <div class="row">
-
-
-              <div class="col s4">
-                <h5 class="white-text">Découvrir</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" ui-sref="parcours">Parcours</a></li>
-                  <li><a class="grey-text text-lighten-3" ui-sref="activite">Activités</a></li>
-                  <li><a class="grey-text text-lighten-3" ui-sref="ressources">Médiagraphie</a></li>
-                  <li><a class="grey-text text-lighten-3" ui-sref="homecontact">Contact</a></li>
-                </ul>
-              </div>
-
-
-              <div class="col s4">
-                <h5 class="white-text">Parcours disponibles</h5>
-                <ul>
-                  <li ng-repeat="parcours in allParcours | orderBy:'position'">
-                    <a class="{{ parcours.pageColor }}-text" ng-click="goToParcours(parcours)">
-                      {{ parcours.toString() }}
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="col s4" >
-                <h5 class="white-text">Les services du GRIS-Québec</h5>
-                <ul>
-                <li><a class="grey-text text-lighten-3" ><a href="http://www.grisquebec.org/demystification.html" class="white-text" target="_blank">Les Interventions</a></a></li>
-                  <li><a class="grey-text text-lighten-3" ><a href="http://www.grisquebec.org/jeunesse.html" class="white-text" target="_blank">L’Accès</a></a></li>
-                  <li><a class="grey-text text-lighten-3" ><a href="http://www.grisquebec.org/jeunesse.html" class="white-text" target="_blank">Le Jumelage Jeunesse</a></a></li>
-                  <li><a class="grey-text text-lighten-3" ><a href="http://www.grisquebec.org/parents.html" class="white-text" target="_blank">Le Jumelage Parents</a></a></li>
-
-                 
-                
-                </ul>
-              </div>
-
-
-            </div>
-          </div>
+          
+         
           <div class="footer-copyright grey darken-4">
             <div class="container">
             © 2016 Copyright GRIS-Québec - BETA 1.0 - Un projet du GRIS-Québec - <a  class="white-text" href="http://www.pswdesign.ca">PSWDesign</a>

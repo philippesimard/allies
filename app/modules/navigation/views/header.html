@@ -1,28 +1,28 @@
 <div>
   <div class="navbar-fixed">
-  <nav class="z-depth-1 ">
-    <div class="nav-wrapper white  ">
+  <nav class="z-depth-0 ">
+    <div class="nav-wrapper grey darken-4  ">
       <div class="container">
-        <img class="left hide-on-med-and-down"  height="65px" ui-sref="home" src="img/logo.png"></a>
+        <img class="left hide-on-med-and-down"  height="60px" ui-sref="home" src="img/logo.png"></a>
         
           <!-- Menu droite normal--> 
         <ul id="nav"
             class="right hide-on-med-and-down">
           <li ng-hide="isConnected || $state.current.name === 'login'"
               ui-sref="login">
-            <i class="material-icons left black-text">lock_outline</i>
+            <i class="material-icons left white-text">lock_outline</i>
           </li>
         <!-- Menu droite utilisateur-->
           <li class="hide-on-med-and-down"
               ng-class="{ active : isActive('userAccount')}"
               ng-show="isConnected"
               ng-click="monCompte()">
-            <i class="material-icons left black-text">account_circle</i>
+            <i class="material-icons left white-text">account_circle</i>
           </li>
           <li class="hide-on-med-and-down"
               ng-show="isConnected"
               ng-click="deconnect()">
-            <i class="material-icons left black-text">exit_to_app</i>
+            <i class="material-icons left white-text">exit_to_app</i>
           </li>
         </ul>
 
@@ -30,30 +30,30 @@
         <ul id="nav" class="left hide-on-med-and-down">
 
           <li ng-class="{ active : isActive('home')}">
-            <a ui-sref="home" class="header-dropdown-button btn-white black-text"
+            <a href="http://acommealliees.ca/accueil/" class="header-dropdown-button btn-white white-text"
                data-activates="information">
               Accueil
             </a>
           </li>
           <li ng-class="{ active : isActive('ressources')}">
-            <a class="header-dropdown-button btn-white black-text"
+            <a class="header-dropdown-button btn-white white-text"
                data-activates="ressources"
                ui-sref="ressources">
               Médiagraphie
             </a>
           </li>
           <li ng-class="{ active : isActive('parcours')}">
-            <a class="header-dropdown-button btn-white black-text"
+            <a class="header-dropdown-button btn-white white-text"
                data-activates="parcours"
                ui-sref="parcours">
               Parcours
             </a>
           </li>
           <li ng-class="{ active : isActive('activite')}">
-            <a ui-sref="activite" class="black-text">Activités</a>
+            <a ui-sref="activite" class="white-text">Activités</a>
           </li>
           <li ng-class="{ active : isActive('partenaire')}">
-            <a ui-sref="partenaire" class="black-text">Partenaires</a>
+            <a ui-sref="partenaire" class="white-text">Partenaires</a>
           </li>
         
         </ul>
