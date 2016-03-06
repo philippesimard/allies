@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#212121;}
+	.st1{fill:#232323;}
+	.st2{fill:#FFFFFF;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st3{fill:#E0E0E0;}
+</style>
+<path class="st0" d="M43.4,8.3L4,15l-0.3-2C3.3,10.8,4.8,8.8,7,8.4l31.6-5.3c2.2-0.4,4.2,1.1,4.6,3.3L43.4,8.3z"/>
+<path class="st1" d="M40,41H8c-2.2,0-4-1.8-4-4V15h40v22C44,39.2,42.2,41,40,41z"/>
+<circle class="st2" cx="7.5" cy="11.5" r="1.5"/>
+<g>
+	<polygon class="st3" points="40,15 36,21 40,21 44,15 	"/>
+	<polygon class="st3" points="32,15 28,21 32,21 36,15 	"/>
+	<polygon class="st3" points="24,15 20,21 24,21 28,15 	"/>
+	<polygon class="st3" points="16,15 12,21 16,21 20,15 	"/>
+	<polygon class="st3" points="8,15 4,21 8,21 12,15 	"/>
+</g>
+</svg>
