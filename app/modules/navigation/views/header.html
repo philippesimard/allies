@@ -1,7 +1,7 @@
 <div>
   <div class="navbar">
   <nav class="z-depth-0 ">
-    <div class="nav-wrapper grey darken-4  ">
+    <div class="nav-wrapper white">
       <div class="container">
         <img class="left hide-on-med-and-down"  height="60px" href="http://acommealliees.ca/accueil/" src="img/logo.png"></a>
         
@@ -17,12 +17,12 @@
               ng-class="{ active : isActive('userAccount')}"
               ng-show="isConnected"
               ng-click="monCompte()">
-            <i class="material-icons left white-text">account_circle</i>
+            <i class="material-icons left black-text">account_circle</i>
           </li>
           <li class="hide-on-med-and-down"
               ng-show="isConnected"
               ng-click="deconnect()">
-            <i class="material-icons left white-text">exit_to_app</i>
+            <i class="material-icons left black-text">exit_to_app</i>
           </li>
         </ul>
 
@@ -30,30 +30,30 @@
         <ul id="nav" class="left hide-on-med-and-down">
 
           <li ng-class="{ active : isActive('home')}">
-            <a href="http://acommealliees.ca/accueil/" class="header-dropdown-button btn-white white-text"
+            <a href="http://acommealliees.ca/accueil/" class="header-dropdown-button btn-white black-text"
                data-activates="information">
               Accueil
             </a>
           </li>
           <li ng-class="{ active : isActive('ressources')}">
-            <a class="header-dropdown-button btn-white white-text"
+            <a class="header-dropdown-button btn-white black-text"
                data-activates="ressources"
                ui-sref="ressources">
               Médiagraphie
             </a>
           </li>
           <li ng-class="{ active : isActive('parcours')}">
-            <a class="header-dropdown-button btn-white white-text"
+            <a class="header-dropdown-button btn-white black-text"
                data-activates="parcours"
                ui-sref="parcours">
               Parcours
             </a>
           </li>
           <li ng-class="{ active : isActive('activite')}">
-            <a ui-sref="activite" class="white-text">Activités</a>
+            <a ui-sref="activite" class="black-text">Activités</a>
           </li>
           <li ng-class="{ active : isActive('partenaire')}">
-            <a ui-sref="partenaire" class="white-text">Partenaires</a>
+            <a ui-sref="partenaire" class="black-text">Partenaires</a>
           </li>
         
         </ul>
