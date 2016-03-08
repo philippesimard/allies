@@ -28,6 +28,12 @@ angular.module('core').config(
       controller: 'ContactController'
     })
 
+    .state('lesparcours', {
+      url: '/lesparcours',
+      templateUrl: 'modules/core/views/lesparcours.html',
+      controller: 'LesparcoursController'
+    })
+
     .state('propos', {
       url: '/propos',
       templateUrl: 'modules/core/views/propos.html',
