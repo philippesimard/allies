@@ -10,12 +10,18 @@
                ng-model="query"/>
       </div>
 
+<!--
       <button class="btn orange z-depth-0" ng-click="reinitialize()">Réinitialiser</button>
 
       <span ng-if="niveaux.length > 0">
         <button class="dropdown-button btn red z-depth-0"
               data-activates="niveau">{{ selectedNiveau.toString() }}</button>
       </span>
+
+    -->
+
+<!-- Menu droite normal--> 
+
       <ul id="niveau" class="dropdown-content"
           ng-if="niveaux.length > 0">
         <li ng-repeat="niveau in niveaux | orderBy:'poids'">

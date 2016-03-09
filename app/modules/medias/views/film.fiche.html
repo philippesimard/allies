@@ -1,15 +1,10 @@
-<style>
-body {
-    background-color: #181818;
-}
+<div class="media center">
 
-.position {
-    
-    margin: auto;
-    border: 8px solid #181818;
-}
+  <div class="container">
+    <h1>{{ media.name }}</h1>
+  </div>
 
-</style>
+</div>
 
 <div class="container animated fadeIn">
  
@@ -17,11 +12,12 @@ body {
 
  <div class="espace row">
 
-<img class="left position" width="350" src="{{ media.img }}">
-
+<div class="center">
+<img width="300" src="{{ media.img }}">
+</div>
  
  <ul class="collection with-header" width="350">
-        <li class="collection-header center"><h3>{{ media.name }}<h3></li>
+        <li class="collection-header center"><h3>Information sur le film<h3></li>
         <li class="collection-item"><span class="bold">Nom du film:</span> {{ media.name }}</li>
         <li class="collection-item"><span class="bold">Réalisé par:</span> {{ media.infos.realisateur }}</li>
         <li class="collection-item"><span class="bold">Durée:</span> {{ media.infos.duree }} min</li>
@@ -29,26 +25,9 @@ body {
         <li class="collection-item"><span class="bold">Origine:</span> {{ media.infos.nationalite }}</li>
         <li class="collection-item"><span class="bold">Principaux acteurs et principales actrices:</span> {{ media.infos.acteurs }}</li>
         <li class="collection-item"><span class="bold">Synopsis:</span> {{ media.infos.synopsis }}</li>
-        <li class="collection-item">
+        
 
-<div class="center">
-<a class="btn-floating btn waves-effect waves-light red z-depth-0" 
-	  tooltipped 
-      data-position="bottom"
-      data-delay="50" 
-      onclick="goBack()"
-      data-tooltip="Retour aux films"><i class="material-icons">reply</i></a>
 
-<a class="btn-floating btn waves-effect waves-light red z-depth-0" ng-if="media.bandeAnnonceUrl"
-	 tooltipped 
-   target="_blank"
-   ng-href="{{ media.bandeAnnonceUrl }}"
-      data-position="bottom" 
-      data-delay="50" 
-      data-tooltip="Voir la bande annonce"><i class="material-icons">movie</i></a>
-
-<!--<media-favoriter media="media"></media-favoriter>--> 
-</div>
         </li>
       </ul>
 
@@ -56,19 +35,44 @@ body {
   </div>
     </div>
 
-  <div class="center"> <a class="waves-effect waves-light red btn" ui-sref="homecontact">Signaler une erreur pour ce film</a></div>
       
      </div>
 
 
 
 
-<script>
-function goBack() {
-    window.history.back();
-}
 
-  $(document).ready(function(){
-    $('.materialboxed').materialbox();
-  });
- </script>
+  
+   <div class="presentation"> <h2 class="center">Laissez un commentaire pour ce film<h2></div>
+
+<div class="container espace">
+
+<script id="dsq-count-scr" src="//acommeallies.disqus.com/count.js" async></script>
+
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+*/
+var disqus_config = function () {
+this.page.url = undefined; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//acommeallies.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript> <a href="https://disqus.com/?ref_noscript" rel="nofollow"></a></noscript>
+
+<script id="dsq-count-scr" src="//acommeallies.disqus.com/count.js" async></script>
+
+</div>

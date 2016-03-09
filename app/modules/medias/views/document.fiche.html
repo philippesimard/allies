@@ -1,15 +1,12 @@
-<style>
-body {
-    background-color: #ffffff;
-}
 
-.position {
-    
-    margin: auto;
-    border: 8px solid #ffffff;
-}
+<div class="media center">
 
-</style>
+  <div class="container">
+    <h1>{{ media.name }}</h1>
+  </div>
+
+</div>
+
 
 <div class="container animated fadeIn">
  
@@ -17,33 +14,24 @@ body {
 
  <div class="espace row">
 
-<img class="left position" width="350" src="{{ media.img }}">
+  <div class="center">
+
+<img width="300" src="{{ media.img }}">
+
+</div>
 
  
  <ul class="collection with-header" width="350">
-        <li class="collection-header center"><h3>{{ media.name }}<h3></li>
+        
         <li class="collection-item"><span class="bold">Type:</span> {{ media.type }}</li>
         <li class="collection-item"><span class="bold">Voir le document:</span> <a href="{{ media.infos.telechargerlink }}">Télécharger le document</a></li>
         <li class="collection-item"><span class="bold">Commander ce document:</span> <a href="{{ media.infos.commandelink }}">Commander</a></li>
-        <li class="collection-item">
+</ul>
 
 <div class="center">
-<a class="btn-floating btn waves-effect waves-light red z-depth-0" 
-	  tooltipped 
-      data-position="bottom"
-      data-delay="50" 
-      onclick="goBack()"
-      data-tooltip="Retour aux films"><i class="material-icons">reply</i></a>
 
-<a class="btn-floating btn waves-effect waves-light red z-depth-0" ng-if="media.bandeAnnonceUrl"
-	 tooltipped 
-   target="_blank"
-   ng-href="{{ media.bandeAnnonceUrl }}"
-      data-position="bottom" 
-      data-delay="50" 
-      data-tooltip="Voir la bande annonce"><i class="material-icons">movie</i></a>
 
-<!--<media-favoriter media="media"></media-favoriter>--> 
+
 </div>
         </li>
       </ul>
@@ -52,19 +40,7 @@ body {
   </div>
     </div>
 
-  <div class="center"> <a class="waves-effect waves-light red btn" ui-sref="homecontact">Signaler une erreur pour ce document</a></div>
       
      </div>
 
 
-
-
-<script>
-function goBack() {
-    window.history.back();
-}
-
-  $(document).ready(function(){
-    $('.materialboxed').materialbox();
-  });
- </script>
