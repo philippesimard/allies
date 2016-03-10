@@ -53,7 +53,8 @@ angular.module('users').config(
         'homecontact',
         'reset_password',
         'activite',
-        'activite-fiche'
+        'activite-fiche',
+        'lesparcours'
       ]
     });
   });

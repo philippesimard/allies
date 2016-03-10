@@ -1,15 +1,11 @@
-<style>
-body {
-    background-color: #f1f1f1;
-}
+<div class="media center">
 
-.position {
-    
-    margin: auto;
-    border: 8px solid #f1f1f1;
-}
+  <div class="container">
+    <h1>{{ partenaire.name }}</h1>
+  </div>
 
-</style>
+</div>
+
 
 <div class="container animated fadeIn">
  
@@ -17,33 +13,20 @@ body {
 
  <div class="espace row">
 
-<img class="left position" width="350" src="{{ partenaire.img }}">
+<div class="center">
+<img width="300" src="{{ partenaire.img }}">
+</div>
 
  
  <ul class="collection with-header" width="350">
-        <li class="collection-header center"><h3>{{ partenaire.name }}<h3></li>
+        <li class="collection-header center"><h3>Information<h3></li>
         <li class="collection-item"><span class="bold">Site:</span> {{ partenaire.infos.site }}</li>
         <li class="collection-item"><span class="bold">Téléphone:</span> {{ partenaire.infos.telephone }}</li>
         <li class="collection-item"><span class="bold">Présentation:</span> {{ partenaire.infos.presentation }}</li>
-        <li class="collection-item">
+</ul>
 
 <div class="center">
-<a class="btn-floating btn waves-effect waves-light red z-depth-0" 
-	  tooltipped 
-      data-position="bottom"
-      data-delay="50" 
-      onclick="goBack()"
-      data-tooltip="Retour aux partenaires"><i class="material-icons">reply</i></a>
 
-<a class="btn-floating btn waves-effect waves-light red z-depth-0" ng-if="media.bandeAnnonceUrl"
-	 tooltipped 
-   target="_blank"
-   ng-href="{{ media.bandeAnnonceUrl }}"
-      data-position="bottom" 
-      data-delay="50" 
-      data-tooltip="Voir la bande annonce"><i class="material-icons">movie</i></a>
-
-<!--<media-favoriter media="media"></media-favoriter>--> 
 </div>
         </li>
       </ul>
@@ -56,14 +39,3 @@ body {
      </div>
 
 
-
-
-<script>
-function goBack() {
-    window.history.back();
-}
-
-  $(document).ready(function(){
-    $('.materialboxed').materialbox();
-  });
- </script>
