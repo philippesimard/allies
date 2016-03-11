@@ -42,7 +42,7 @@
               Médiagraphie
             </a>
           </li>
-          <li ng-class="{ active : isActive('parcours')}">
+          <li ng-class="{ active : isActive('lesparcours')}">
             <a class="header-dropdown-button btn-white black-text"
                data-activates="parcours"
                ui-sref="lesparcours">
@@ -70,7 +70,7 @@
         </ul>
         <ul id="parcours" class="dropdown-content">
           <li ng-repeat="parcours in allParcours | orderBy:'position' ">
-            <a class="{{ parcours.pageColor }}-text" ng-click="goToParcours(parcours)">
+            <a class="black-text" ng-click="goToParcours(parcours)">
               {{ parcours.toString() }}
             </a>
           </li>

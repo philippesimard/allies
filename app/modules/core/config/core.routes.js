@@ -28,6 +28,12 @@ angular.module('core').config(
       controller: 'ContactController'
     })
 
+    .state('conditions', {
+      url: '/conditions',
+      templateUrl: 'modules/core/views/conditions.html',
+      controller: 'InfolettreController'
+    })
+
     .state('infolettre', {
       url: '/infolettre',
       templateUrl: 'modules/core/views/infolettre.html',

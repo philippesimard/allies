@@ -31,7 +31,7 @@
 .cbp-ig-grid li {
 	width: 33%;
 	float: left;
-	height: 420px;
+	height: 290px;
 	text-align: center;
 	border-top: 1px solid #ddd;
 }
@@ -58,7 +58,7 @@
 
 /* the icon with pseudo class for icon font */
 .cbp-ig-icon {
-	padding: 30px 0 0 0;
+	padding: 100px 0 0 0;
 	display: block;
 	-webkit-transition: -webkit-transform 0.2s;
 	transition: -moz-transform 0.2s;
@@ -67,7 +67,7 @@
 
 .cbp-ig-icon:before {
 	font-family: 'anyoldicon';
-	font-size: 14em;
+	font-size: 13em;
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
@@ -103,7 +103,7 @@
 
 /* title element */
 .cbp-ig-grid .cbp-ig-title {
-	margin: 20px 0 10px 0;
+	margin: 40px 0 10px 0;
 	padding: 20px 0 0 0;
 	font-size: 2em;
 	position: relative;

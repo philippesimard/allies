@@ -54,7 +54,9 @@ angular.module('users').config(
         'reset_password',
         'activite',
         'activite-fiche',
-        'lesparcours'
+        'lesparcours',
+        'infolettre',
+        'conditions'
       ]
     });
   });
