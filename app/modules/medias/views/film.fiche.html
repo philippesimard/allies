@@ -13,10 +13,25 @@
  <div class="espace row">
 
 <div class="center">
-<img width="350" src="{{ media.img }}">
+<img width="380" src="{{ media.img }}">
 </div>
+
+<div class="center espace">
+
+ <img class="materialboxed col s4 m2"  src="{{ media.infos.image1 }}">
+ <img class="materialboxed col s4 m2"  src="{{ media.infos.image2 }}">
+ <img class="materialboxed col s4 m2"  src="{{ media.infos.image3 }}">
+ <img class="materialboxed col s4 m2"  src="{{ media.infos.image4 }}">
+ <img class="materialboxed col s4 m2"  src="{{ media.infos.image5 }}">
+ <img class="materialboxed col s4 m2"  src="{{ media.infos.image6 }}">
+
+ <p class="petitespace light">{{ media.infos.copyright }}</p>
+
+</div>
+
+
  
- <ul class="collection with-header" width="350">
+ <ul class="collection with-header">
         <li class="collection-header center"><h3>Information sur le film<h3></li>
         <li class="collection-item"><span class="bold">Nom du film:</span> {{ media.name }}</li>
         <li class="collection-item"><span class="bold">Réalisé par:</span> {{ media.infos.realisateur }}</li>
@@ -48,7 +63,7 @@
 
 
      <div> 
-      <h3 class="center light-text">Commentaires pour ce  film<h3>
+      <h3 class="center light-text">Rédiger un commentaire pour ce  film<h3>
     
      </div>
 
@@ -84,6 +99,17 @@ s.setAttribute('data-timestamp', +new Date());
 <script id="dsq-count-scr" src="//acommeallies.disqus.com/count.js" async></script>
 
 </div>
+
+
+<script>
+
+ $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
+        
+
+
+</script>
 
 
 
