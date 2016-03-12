@@ -1,44 +1,70 @@
+<style>
 
-<div class="media center">
+.iframe-responsive-wrapper        {
+    position: relative;
+}
 
-  <div class="container">
-    <h1>{{ media.name }}</h1>
-  </div>
+.iframe-responsive-wrapper .iframe-ratio {
+    display: block;
+    width: 100%;
+    height: auto;
+}
 
-</div>
-
-
-<div class="container animated fadeIn">
- 
-
-
- <div class="espace row">
-
-  <div class="center">
-
-<img width="300" src="{{ media.img }}">
-
-</div>
-
- 
- <ul class="collection with-header" width="350">
-        
-        <li class="collection-item"><span class="bold">Type:</span> {{ media.type }}</li>
-        <li class="collection-item"><span class="bold">Voir le document:</span> <a href="{{ media.infos.telechargerlink }}">Télécharger le document</a></li>
-        <li class="collection-item"><span class="bold">Commander ce document:</span> <a href="{{ media.infos.commandelink }}">Commander</a></li>
-</ul>
-
-<div class="center">
+.iframe-responsive-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
 
+</style>
+  
+  <div class="media center">
 
-</div>
-        </li>
-      </ul>
-
-
-  </div>
+    <div class="container">
+      <h1>{{ media.name }}</h1>
     </div>
+
+  </div>
+
+
+  <div class="container animated fadeIn">
+   
+
+
+   <div class="espace row">
+
+    <div class="center">
+
+  <img width="300" src="{{ media.img }}">
+
+  </div>
+
+   
+   <ul class="collection with-header" width="350">
+          
+          <li class="collection-item"><span class="bold">Type:</span> {{ media.infos.genre }}</li>
+          <li class="collection-item"><span class="bold">Commander ce document:</span> <a href="{{ media.infos.commandelink }}">Commander</a></li>
+  </ul>
+
+
+
+
+    </div>
+      </div>
+
+      <div class="center presentation hide-on-med-and-down">
+
+<h3>Voir ce document</h3>
+
+
+<iframe class="iframe-responsive-wrapper " src="{{ media.infos.document }}" style="width:800px; height:500px;" ></iframe>
+
+
+</div>
+
 
       
      </div>
