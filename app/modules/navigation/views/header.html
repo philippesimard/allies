@@ -3,11 +3,13 @@
   <nav class="z-depth-0 ">
     <div class="nav-wrapper white">
       <div class="container">
-        <img class="left hide-on-med-and-down"  height="60px" href="http://acommealliees.ca/" src="img/logo.png"></a>
         
+        
+
           <!-- Menu droite normal--> 
-        <ul id="nav"
-            class="right hide-on-med-and-down">
+        <ul id="nav" class="right hide-on-med-and-down">
+
+
           <li ng-hide="isConnected || $state.current.name === 'login'"
               ui-sref="login">
             <i class="material-icons left black-text">lock_outline</i>
@@ -28,7 +30,7 @@
 
         <!-- Menu gauche-->
         <ul id="nav" class="left hide-on-med-and-down">
-
+          
           <li ng-class="{ active : isActive('home')}">
             <a href="https://acommealliees.ca/" class="header-dropdown-button btn-white black-text"
                data-activates="information">
