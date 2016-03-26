@@ -8,7 +8,7 @@
 </div>
 
 <div class="container col s12 m6 espace black-text ">
-
+{{userForm.$valid}}
   <form signup-form
         name="userForm"
         ng-submit="signup(userForm, newUser)"
@@ -40,18 +40,24 @@
     </div>
 
     <div class="input col s12">
-      <label for="dateNaissance" class="black-text" >Date de naissance (exemple: 06-10-1996)</label>
-      <input type="text"
+      <label for="dateNaissance" class="black-text">Date de naissance</label>
+      <input type="text" input-date
+             id="dateNaissance"
              name="dateNaissance"
              class="validate"
-             mask='39-19-9999'
-             placeholder="jj-mm-aaaa"
-             clean="false"
              required
+             format="dd/mm/yyyy"
+             months-full="{{ month }}"
+             months-short="{{ monthShort }}"
+             weekdays-full="{{ weekdaysFull }}"
+             weekdays-short="{{ weekdaysShort }}"
+             weekdays-letter="{{ weekdaysLetter }}"
+             select-years="100"
+             close="close"
              ng-model="newUser.dateNaissance"/>
       <div ng-messages="userForm.dateNaissance.$error" ng-if="userForm.$submitted">
         <div ng-message="required" class="animated fadeIn red-text">Ce champ est requis.</div>
-        <div ng-message="mask" class="animated fadeIn red-text">Date invalide.</div>
+        <div ng-message="max" class="animated fadeIn red-text">Date invalide.</div>
       </div>
     </div>
 

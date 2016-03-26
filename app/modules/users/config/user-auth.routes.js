@@ -7,7 +7,8 @@ angular.module('users').config(
 
       .state('userForm', {
       url: '/utilisateur/ajout',
-      templateUrl: 'modules/users/views/users.form.html'
+      templateUrl: 'modules/users/views/users.form.html',
+      controller: 'SignUpController'
     })
 
     .state('login', {
